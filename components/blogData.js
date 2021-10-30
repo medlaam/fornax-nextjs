@@ -15,7 +15,7 @@ export const blogData = [
   {
     id: 2,
     image:img3,
-    heading: "The highlight quote for this week",
+    heading: "The quote for this week!",
     name: "AZUMI",
     tech: "tech",
     date: " AUGUST 28, 2018",
