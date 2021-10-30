@@ -16,3 +16,11 @@
   height: 26px;
   margin-right: 8px;
 }
+
+.cardHeader {
+  height: 365px;
+}
+
+.container a:hover {
+  color: #dd5269;
+}

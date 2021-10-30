@@ -5,32 +5,44 @@ import Img1 from '../public/logo-dark.png';
 const Navbar = () => {
   return (
     <div>
-      <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-        <div class="flex items-center flex-shrink-0 text-white mr-6">
-          <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" /></svg>
-          <Image src={Img1}></Image>
+      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row
+      items-center">
+        <a className="flex title-font font-medium items-center text-gray-900
+        mb-4 md:mb-0">
+          <Image src={Img1} alt="" className="w-8" />
+        </a>
+        <nav
+          className="md:ml-auto flex flex-wrap items-center text-base justify-center"
+        >
+          <a className="mr-5 hover:text-gray-900">Home</a>
+          <a className="mr-5 hover:text-gray-900">Features</a>
+          <a className="mr-5 hover:text-gray-900">About</a>
+          <a className="mr-5 hover:text-gray-900">Contact</a>
+          <a className="mr-5 hover:text-gray-900">Pages</a>
+        </nav>
+        <div className="navbar-right">
+          <ul className="social-links list-unstyled list-inline">
+            <li className="list-inline-item"><a href="#!">
+              <i className="lab la-facebook-f"></i>
+            </a></li>
+            <li className="list-inline-item"><a href="#!">
+              <i className="lab la-twitter"></i>
+            </a></li>
+            <li className="list-inline-item"><a href="#!">
+              <i className="lab la-instagram"></i>
+            </a></li>
+            <li className="list-inline-item"><a href="#!">
+              <i className="lab la-pinterest"></i>
+            </a></li>
+
+            <li className="list-inline-item ml-3 d-none d-lg-inline-block">
+              <button className="search-toggle" data-toggle="search">
+                <i className="las la-search"></i>
+              </button>
+            </li>
+          </ul>
         </div>
-        <div class="block lg:hidden">
-          <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" /></svg>
-          </button>
-        </div>
-        <div class="w-full px-4 block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div class="text-sm lg:flex-grow px-12">
-            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-              Home
-            </a>
-            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-              Features
-            </a>
-          </div>
-          <div>
-            <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">About</a>
-            <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Contact</a>
-            <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Pages</a>
-          </div>
-        </div>
-      </nav>
+      </div>
     </div>
   );
 };

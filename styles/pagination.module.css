@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+.pagination {
+  font-family: 'Poppins', sans-serif;
+}
+.pagination .page {
+  padding: 0;
+  margin-left: 0;
+  color: #152035;
+  border: 0;
+  height: 48px;
+  width: 48px;
+  line-height: 48px;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 0 !important;
+  position: relative;
+
+}
+
+.pagination .arrow {
+  font-size: 22px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.active {
+  box-shadow: none;
+  color: #ffffff !important;
+  background-color: #e1677b !important;
+}
+
+.page:hover {
+  box-shadow: none;
+  color: #ffffff !important;
+  background-color: #e1677b;
+}
+
+.page:focus {
+  box-shadow: none;
+  color: #ffffff;
+  background-color: #e1677b;
+}
