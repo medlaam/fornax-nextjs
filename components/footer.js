@@ -18,7 +18,7 @@ const Footer = () => {
         </ul>
       </div>
       <div className="mt-5 text-center">
-        <p>© 2020, All rights reserved. <br /> Develop by  <a href="">GetHugoThemes</a></p>
+        <p>© 2020, All rights reserved. <br /> Develop by  <a className={styles.titles} href="">GetHugoThemes</a></p>
       </div>
     </div>
   );

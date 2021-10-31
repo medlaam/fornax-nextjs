@@ -3,6 +3,7 @@ import Image from 'next/dist/client/image';
 import Link from 'next/link';
 import styles from '../styles/blogs.module.css';
 import { blogData } from './blogData';
+import { useRouter } from 'next/dist/client/router';
 
 const Blogs = () => {
   return (
@@ -15,21 +16,21 @@ const Blogs = () => {
                 <div className={styles.cardHeader}>
                   <Image src={b.image} ></Image>
                   <div className="mt-4">
-                    <Link href="#" >{b.heading}</Link>
+                    <Link href={`/${b.id}`} >{b.heading}</Link>
                   </div>
                 </div>
 
-                <div class="flex mt-6">
-                  <div class="flex-auto">
+                <div className="flex mt-6">
+                  <div className="flex-auto">
                     <div className={`flex ${styles.author}`}>
                       <img src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
                       <span><small>{b.name}</small></span>
                     </div>
 
                   </div>
-                  <div class="flex-auto"><small>&#x25C8; TECH</small>
+                  <div className="flex-auto"><small>&#x25C8; TECH</small>
                   </div>
-                  <div class="flex-auto"><small>&#x25C8; AUGUST 28, 2018</small>
+                  <div className="flex-auto"><small>&#x25C8; AUGUST 28, 2018</small>
                   </div>
                 </div>
                 <div className="mt-4 mb-3">
@@ -46,3 +47,5 @@ const Blogs = () => {
 };
 
 export default Blogs;
+
+
