@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.Container {
+  font-family: 'Poppins', sans-serif;
+}
+
 .navLink {
   font-size: 16px;
   font-weight: 600;
@@ -7,4 +13,13 @@
 
 .dropdown:hover {
   display: block;
+}
+
+.socialLinks li{
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.socialLinks li:hover {
+  color: #dd5269;
 }

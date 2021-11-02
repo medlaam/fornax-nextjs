@@ -10,7 +10,11 @@ export const blogData = [
     name: "AZUMI",
     tech: "tech",
     date: " AUGUST 28, 2018",
-    details: "Among emphatic normal cowered busted athletically some noticeably while and inside near towards unexpected much some..."
+    details: "Among emphatic normal cowered busted athletically some noticeably while and inside near towards unexpected much some...",
+    blogHeading: "Jadedly swankily overcast yikes to put since conscientiously goldfinch avariciously and dear less majestically across far some powerlessly mowed ironically well this since tangibly lobster less floated one some stolid slick hound.",
+    blogDetails: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!",
+    blogDetails1:"Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.",
+    blogImage:img3
   },
   {
     id: 2,
@@ -19,7 +23,11 @@ export const blogData = [
     name: "AZUMI",
     tech: "tech",
     date: " AUGUST 28, 2018",
-    details: "Aside clever cumulatively alas bestial until like and much jeez erotically goose more adroitly won when pragmatic beat..."
+    details: "Aside clever cumulatively alas bestial until like and much jeez erotically goose more adroitly won when pragmatic beat...",
+    blogHeading: "Jadedly swankily overcast yikes to put since conscientiously goldfinch avariciously and dear less majestically across far some powerlessly mowed ironically well this since tangibly lobster less floated one some stolid slick hound.",
+    blogDetails: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!",
+    blogDetails1:"Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.",
+    blogImage:img2
   },
   {
     id: 3,
@@ -28,7 +36,11 @@ export const blogData = [
     name: "AZUMI",
     tech: "tech",
     date: " AUGUST 28, 2018",
-    details: "Haltered pill the forceful the ouch compactly dear and hit unbound so ouch clumsily forbidding fish aboard returned..."
+    details: "Haltered pill the forceful the ouch compactly dear and hit unbound so ouch clumsily forbidding fish aboard returned...",
+    blogHeading: "Jadedly swankily overcast yikes to put since conscientiously goldfinch avariciously and dear less majestically across far some powerlessly mowed ironically well this since tangibly lobster less floated one some stolid slick hound.",
+    blogDetails: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!",
+    blogDetails1:"Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.",
+    blogImage:img1
   },
   {
     id: 4,
@@ -37,7 +49,11 @@ export const blogData = [
     name: "AZUMI",
     tech: "tech",
     date: " AUGUST 28, 2018",
-    details: "Among emphatic normal cowered busted athletically some noticeably while and inside near towards unexpected much some..."
+    details: "Among emphatic normal cowered busted athletically some noticeably while and inside near towards unexpected much some...",
+    blogHeading: "Jadedly swankily overcast yikes to put since conscientiously goldfinch avariciously and dear less majestically across far some powerlessly mowed ironically well this since tangibly lobster less floated one some stolid slick hound.",
+    blogDetails: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!",
+    blogDetails1:"Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.",
+    blogImage:img1
   },
   {
     id: 5,
@@ -46,7 +62,11 @@ export const blogData = [
     name: "AZUMI",
     tech: "tech",
     date: " AUGUST 28, 2018",
-    details: "Forgave criminal anteater parrot much fallible goodness hence fluent ahead much waked some thus strived interwove..."
+    details: "Forgave criminal anteater parrot much fallible goodness hence fluent ahead much waked some thus strived interwove...",
+    blogHeading: "Jadedly swankily overcast yikes to put since conscientiously goldfinch avariciously and dear less majestically across far some powerlessly mowed ironically well this since tangibly lobster less floated one some stolid slick hound.",
+    blogDetails: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!",
+    blogDetails1:"Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.",
+    blogImage:img3
   },
 
 ]

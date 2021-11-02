@@ -1,7 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.footer {
+  font-family: 'Poppins', sans-serif;
+}
+
 .heading {
   font-size: 30px;
   color: #454e62
 }
 .titles {
+  color: #dd5269;
+}
+
+.icons a {
+  font-size: 14px;
+  padding: 7px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.icons a:hover {
   color: #dd5269;
 }

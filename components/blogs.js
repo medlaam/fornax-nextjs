@@ -3,12 +3,12 @@ import Image from 'next/dist/client/image';
 import Link from 'next/link';
 import styles from '../styles/blogs.module.css';
 import { blogData } from './blogData';
-import { useRouter } from 'next/dist/client/router';
+// import { useRouter } from 'next/dist/client/router';
 
 const Blogs = () => {
   return (
     <div className={styles.container}>
-      <div className="flex flex-wrap my-14 justify-center ">
+      <div className="flex flex-wrap my-14 justify-center">
         {
           blogData.map((b, i) => {
             return (
@@ -35,7 +35,6 @@ const Blogs = () => {
                 </div>
                 <div className="mt-4 mb-3">
                   <span>{b.details}</span>
-
                 </div>
               </div>
             )

@@ -3,7 +3,7 @@ import { FaFacebookF,FaTwitter,FaInstagram,FaDribbble, FaLinkedinIn, FaPinterest
 
 const Footer = () => {
   return (
-    <div className="mt-24 pt-5 border-t-2 mb-5">
+    <div className={`${styles.footer} mt-24 pt-5 border-t-2 mb-5`}>
       <div className="text-center">
         <p className={`${styles.heading} mt-5`}>Our Instagram</p>
       </div>

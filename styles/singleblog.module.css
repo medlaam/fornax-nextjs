@@ -1,6 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.singleBlog {
+  font-family: 'Poppins', sans-serif;
+}
+
+.secondHeader{
+  font-size: 30px;
+  color: #152035;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* .blogContainer {
+  font-family: "Lora", serif;
+} */
+
 .blogContainer h1 {
   font-size: 52px;
+  font-weight: 700;
+  color: #152035;
+  line-height: 1.4;
+}
+
+.blogContainer h3 {
+  font-size: 1.3rem;
+  font-weight: inherit;
+}
+
+.author img {
+  border-radius: 50%;
+  height: 26px;
+  margin-right: 8px;
+}
+
+.socialLink li {
+  font-size: 18px;
+  padding: 7px;
+  color: #ffff;
+}
+
+.socialLink li:hover {
+  /* color: #e1677b; */
+  opacity: 0.7;
+}
+
+.postTag a {
+  display: inline-block;
+  background-color: #f7f8fa;
+  color: #152035;
+  padding: 6px 13px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.postTag a:hover {
+  background-color: transparent;
+  color: #e1677b;
+}
+
+.cardHeader {
+  height: 350px;
+}
+
+.cardHeader a{
+  font-size: 20px;
   font-weight: 600;
   color: #152035;
   line-height: 1.4;
+}
+/* color: #454e62; */
+
+.cardHeader a:hover{
+  color: #e1677b;
+}
+
+.writer {
+  align-items: center;
+}
+
+.writer h5{
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.writer h5:hover{
+  color: #e1677b;
+}
+
+
+.writer img {
+  border-radius: 50%;
+}
+
+.writersLink li{
+  font-size: 14px;
+  padding: 7px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.writersLink li:hover {
+  cursor: pointer;
+  color: #e1677b;
+}
+
+.writer p {
+  color: #454e62;
+}
+
+.author span{
+  color: #454e62;
 }

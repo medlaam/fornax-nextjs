@@ -7,23 +7,22 @@ import styles from '../styles/navbar.module.css';
 
 const Navbar = () => {
   return (
-    <div>
-      <div className="container mx-auto flex flex-wrap  mt-3 p-5 flex-col md:flex-row
+    <div className={styles.Container}>
+      <div className="container mx-auto flex flex-wrap  mt-5 p-5 flex-col md:flex-row
       items-center">
-        <a className="flex title-font font-medium items-center text-gray-900
+        <a href="/" className="flex title-font font-medium items-center text-gray-900
         mb-4 md:mb-0">
           <Image src={Img1} alt="" className="w-8" />
         </a>
         <nav
-          className="md:ml-auto flex flex-wrap items-center text-base justify-center"
-        >
+          className="md:ml-auto flex flex-wrap items-center text-base justify-center">
           <ul className="flex mr-5">
             <li>
-              <a href="" className={`${styles.navLink} mr-5 `}>Home</a>
-              <ul class={`${styles.dropdown} dropdown-menu absolute hidden pt-1`}>
-                <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Home 1</a></li>
-                <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Home 2</a></li>
-                <li class=""><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Home 3</a></li>
+              <a href="/" className={`${styles.navLink} mr-5 `}>Home</a>
+              <ul className={`${styles.dropdown} dropdown-menu absolute hidden pt-1`}>
+                <li className=""><a className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Home 1</a></li>
+                <li className=""><a className="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Home 2</a></li>
+                <li className=""><a className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Home 3</a></li>
               </ul>
             </li>
             <li>
@@ -40,19 +39,19 @@ const Navbar = () => {
             </li>
           </ul>
         </nav>
-        <div className="navbar-right mr-10 mt-2">
-          <ul className="social-links flex">
+        <div className="navbar-right mr-6 mt-2">
+          <ul className={`${styles.socialLinks} flex`}>
             <li className="border-l-2 mr-10" ></li>
-            <li className="mr-10"><a href="#!">
+            <li className="mr-8"><a href="#!">
               <FaFacebookF />
             </a></li>
-            <li className="mr-10"><a href="#!">
+            <li className="mr-8"><a href="#!">
               <FaTwitter />
             </a></li>
-            <li className="mr-10"><a href="#!">
+            <li className="mr-8"><a href="#!">
               <FaInstagram />
             </a></li>
-            <li className="mr-10"><a href="#!">
+            <li className="mr-8"><a href="#!">
               <FaDribbble />
             </a></li>
 
