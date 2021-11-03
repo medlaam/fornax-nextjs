@@ -14,20 +14,24 @@ export const blogData = [
     blogHeading: "Jadedly swankily overcast yikes to put since conscientiously goldfinch avariciously and dear less majestically across far some powerlessly mowed ironically well this since tangibly lobster less floated one some stolid slick hound.",
     blogDetails: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!",
     blogDetails1:"Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.",
-    blogImage:img3
+    blogImage:img3,
+    tags: "Creative",
+    tags2:"Story"
   },
   {
     id: 2,
     image:img3,
     heading: "The quote for this week!",
-    name: "AZUMI",
+    name: "Melissa Hunter",
     tech: "tech",
     date: " AUGUST 28, 2018",
     details: "Aside clever cumulatively alas bestial until like and much jeez erotically goose more adroitly won when pragmatic beat...",
     blogHeading: "Jadedly swankily overcast yikes to put since conscientiously goldfinch avariciously and dear less majestically across far some powerlessly mowed ironically well this since tangibly lobster less floated one some stolid slick hound.",
     blogDetails: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!",
     blogDetails1:"Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.",
-    blogImage:img2
+    blogImage:img2,
+    tags:"Inspiration",
+    tags2:"Tech"
   },
   {
     id: 3,
@@ -40,20 +44,24 @@ export const blogData = [
     blogHeading: "Jadedly swankily overcast yikes to put since conscientiously goldfinch avariciously and dear less majestically across far some powerlessly mowed ironically well this since tangibly lobster less floated one some stolid slick hound.",
     blogDetails: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!",
     blogDetails1:"Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.",
-    blogImage:img1
+    blogImage:img1,
+    tags:"Inspiration",
+    tags2:"Story"
   },
   {
     id: 4,
     image:img2,
     heading: "Make the most of your LEAF with these tips.",
-    name: "AZUMI",
+    name: "Melissa Hunter",
     tech: "tech",
     date: " AUGUST 28, 2018",
     details: "Among emphatic normal cowered busted athletically some noticeably while and inside near towards unexpected much some...",
     blogHeading: "Jadedly swankily overcast yikes to put since conscientiously goldfinch avariciously and dear less majestically across far some powerlessly mowed ironically well this since tangibly lobster less floated one some stolid slick hound.",
     blogDetails: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!",
     blogDetails1:"Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.",
-    blogImage:img1
+    blogImage:img1,
+    tags:"Inspiration",
+    tags2:"Story"
   },
   {
     id: 5,
@@ -66,7 +74,9 @@ export const blogData = [
     blogHeading: "Jadedly swankily overcast yikes to put since conscientiously goldfinch avariciously and dear less majestically across far some powerlessly mowed ironically well this since tangibly lobster less floated one some stolid slick hound.",
     blogDetails: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!",
     blogDetails1:"Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.",
-    blogImage:img3
+    blogImage:img3,
+    tags:"Creative",
+    tags2:"Tech"
   },
 
 ]

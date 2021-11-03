@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { blogData } from '../../components/blogData';
 import { useRouter } from 'next/dist/client/router';
 import styles from '../../styles/singleblog.module.css';
@@ -7,12 +7,16 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaDribbble } from 'react-icons/fa'
 import Link from 'next/link';
 
 const SingleBlog = () => {
+  const [suggestBlog, setSuggestBlog] = useState(true);
   const router = useRouter()
   const blogID = router.query.blogId
   const blogs = [...blogData]
   const blog = blogData.find(b => b.id == blogID)
-  const remainingBlogs = blogs.filter(b => b.id != blogID)
-  const remBlog = remainingBlogs.slice(0, 2)
+  const remainingBlogs = blogs.filter(b => b.id != blogID && b.tags==blog.tags)
+  const remBlog = remainingBlogs.slice(0, 2);
+
+  const blogByAuthor = blogs.filter(ba => ba.id != blogID && ba.name == blog.name)
+  // console.log('blog by author', blogByAuthor);
 
   return (
     <div className={`${styles.singleBlog} container m-auto`}>
@@ -23,7 +27,7 @@ const SingleBlog = () => {
             <div className={`flex ${styles.author}`}>
               <img src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
               <span className=""><small>AZUMI</small></span>
-              <div className="flex-auto ml-5"><small>&#x25C8; TECH</small>
+              <div className="flex-auto ml-5"><small>&#x25C8; {blog.tags}</small>
               </div>
               <div className="flex-auto ml-5"><small>&#x25C8; AUGUST 28, 2018</small>
               </div>
@@ -47,7 +51,7 @@ const SingleBlog = () => {
       </div>
       <div className="flex justify-between my-5 p-10 m-20">
         <div className={`flex justify-evenly mr-24 ${styles.postTag}`}>
-          <a href="" className="ml-5">Creative</a>
+          <a href="" className="ml-5">{blog.tags}</a>
           <a href="" className="ml-5">Tech</a>
         </div>
         <div className="mr-10">
@@ -80,7 +84,7 @@ const SingleBlog = () => {
                     </div>
 
                   </div>
-                  <div className="flex-auto"><small>&#x25C8; TECH</small>
+                  <div className="flex-auto"><small>&#x25C8; {r.tags}</small>
                   </div>
                   <div className="flex-auto"><small>&#x25C8; AUGUST 28, 2018</small>
                   </div>
@@ -99,16 +103,15 @@ const SingleBlog = () => {
           </div>
           <div className="text-center mt-5 w-2/3">
             <p>Written By</p>
-            <h5 className="mt-3">Melissa Hunter</h5>
+            <h5 className="mt-3">{blog.name}</h5>
             <p className="mt-4">Maecenas sit amet purus eget ipsum elementum venenatis. Aenean maximus urna magna elementum venenatis, quis rutrum mi semper non purus eget ipsum elementum venenatis.</p>
           </div>
           <ul className={`flex mt-5 ${styles.writersLink}`}>
-            <li className="ml-5"><Link href="#"><FaFacebookF/></Link></li>
-            <li className="ml-5"><Link href="#"><FaTwitter/></Link></li>
-            <li className="ml-5"><Link href="#"><FaInstagram/></Link></li>
-            <li className="ml-5"><Link href="#"><FaDribbble/></Link></li>
+            <li className="ml-5"><a href="#"><FaFacebookF/></a></li>
+            <li className="ml-5"><a href="#"><FaTwitter/></a></li>
+            <li className="ml-5"><a href="#"><FaInstagram/></a></li>
+            <li className="ml-5"><a href="#"><FaDribbble/></a></li>
           </ul>
-
       </div>
     </div>
   );
