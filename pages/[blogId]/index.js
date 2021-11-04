@@ -7,16 +7,28 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaDribbble } from 'react-icons/fa'
 import Link from 'next/link';
 
 const SingleBlog = () => {
-  const [suggestBlog, setSuggestBlog] = useState(true);
+  // const [suggestBlog, setSuggestBlog] = useState(true);
   const router = useRouter()
   const blogID = router.query.blogId
   const blogs = [...blogData]
   const blog = blogData.find(b => b.id == blogID)
   const remainingBlogs = blogs.filter(b => b.id != blogID && b.tags==blog.tags)
   const remBlog = remainingBlogs.slice(0, 2);
+  console.log('rem', remBlog);
 
+  // Blog by Author
   const blogByAuthor = blogs.filter(ba => ba.id != blogID && ba.name == blog.name)
-  // console.log('blog by author', blogByAuthor);
+  console.log('blogByAuthor', blogByAuthor);
+
+  const b = [...remBlog, ...blogByAuthor]
+  console.log('b',b);
+  // const rd = b.filter((val,index) => b.indexOf(val.id) !== blogID);
+  // console.log('remaining',rd);
+  const rb = [...new Set(b)].slice(0,2)
+  console.log('remaining blog',rb);
+
+  // const blogsByDate = blogs.sort((a,b) => (a.date) - a.date)
+  // console.log('blogsbyDate',blogsByDate);
 
   return (
     <div className={`${styles.singleBlog} container m-auto`}>
@@ -67,7 +79,7 @@ const SingleBlog = () => {
       <div className="my-5 flex flex-wrap justify-center">
 
         {
-          remBlog.map(r => {
+          rb.map(r => {
             return (
               <div key={r.id} className="p-4 bg-white sm:w-1 lg:w-1/3 md:w-1/2  overflow-hidden">
                 <div className={styles.cardHeader}>

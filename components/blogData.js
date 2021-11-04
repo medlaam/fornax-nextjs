@@ -24,7 +24,7 @@ export const blogData = [
     heading: "The quote for this week!",
     name: "Melissa Hunter",
     tech: "tech",
-    date: " AUGUST 28, 2018",
+    date: "AUGUST 28, 2021",
     details: "Aside clever cumulatively alas bestial until like and much jeez erotically goose more adroitly won when pragmatic beat...",
     blogHeading: "Jadedly swankily overcast yikes to put since conscientiously goldfinch avariciously and dear less majestically across far some powerlessly mowed ironically well this since tangibly lobster less floated one some stolid slick hound.",
     blogDetails: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!",
