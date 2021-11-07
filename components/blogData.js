@@ -39,7 +39,7 @@ export const blogData = [
     heading: "The ten most important books to expand your brain",
     name: "AZUMI",
     tech: "tech",
-    date: " AUGUST 28, 2018",
+    date: " March 28, 2021",
     details: "Haltered pill the forceful the ouch compactly dear and hit unbound so ouch clumsily forbidding fish aboard returned...",
     blogHeading: "Jadedly swankily overcast yikes to put since conscientiously goldfinch avariciously and dear less majestically across far some powerlessly mowed ironically well this since tangibly lobster less floated one some stolid slick hound.",
     blogDetails: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!",

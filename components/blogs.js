@@ -30,7 +30,7 @@ const Blogs = () => {
                   </div>
                   <div className="flex-auto"><small>&#x25C8; {b.tags}</small>
                   </div>
-                  <div className="flex-auto"><small>&#x25C8; AUGUST 28, 2018</small>
+                  <div className="flex-auto"><small>&#x25C8; {b.date}</small>
                   </div>
                 </div>
                 <div className="mt-4 mb-3">

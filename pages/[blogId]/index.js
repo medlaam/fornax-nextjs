@@ -30,6 +30,10 @@ const SingleBlog = () => {
   // const blogsByDate = blogs.sort((a,b) => (a.date) - a.date)
   // console.log('blogsbyDate',blogsByDate);
 
+  const sortByDate = b.sort((a,c) => new Date(c.date) - new Date(a.date))
+  const uniqueBlog = [...new Set(sortByDate)].slice(0,2)
+  console.log('sortByDate',sortByDate);
+
   return (
     <div className={`${styles.singleBlog} container m-auto`}>
       <div className="w-2/3 items-center m-auto">
@@ -41,7 +45,7 @@ const SingleBlog = () => {
               <span className=""><small>AZUMI</small></span>
               <div className="flex-auto ml-5"><small>&#x25C8; {blog.tags}</small>
               </div>
-              <div className="flex-auto ml-5"><small>&#x25C8; AUGUST 28, 2018</small>
+              <div className="flex-auto ml-5"><small>&#x25C8; {blog.date}</small>
               </div>
             </div>
           </div>
@@ -79,7 +83,7 @@ const SingleBlog = () => {
       <div className="my-5 flex flex-wrap justify-center">
 
         {
-          rb.map(r => {
+          uniqueBlog.map(r => {
             return (
               <div key={r.id} className="p-4 bg-white sm:w-1 lg:w-1/3 md:w-1/2  overflow-hidden">
                 <div className={styles.cardHeader}>
@@ -98,7 +102,7 @@ const SingleBlog = () => {
                   </div>
                   <div className="flex-auto"><small>&#x25C8; {r.tags}</small>
                   </div>
-                  <div className="flex-auto"><small>&#x25C8; AUGUST 28, 2018</small>
+                  <div className="flex-auto"><small>&#x25C8; {r.date}</small>
                   </div>
                 </div>
                 <div className="mt-4 mb-3">
