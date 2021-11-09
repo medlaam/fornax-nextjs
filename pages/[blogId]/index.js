@@ -14,16 +14,13 @@ const SingleBlog = () => {
   const blog = blogData.find(b => b.id == blogID)
   const remainingBlogs = blogs.filter(b => b.id != blogID && b.tags==blog.tags)
   const remBlog = remainingBlogs.slice(0, 2);
-  console.log('rem', remBlog);
 
   // Blog by Author
   const blogByAuthor = blogs.filter(ba => ba.id != blogID && ba.name == blog.name)
-  console.log('blogByAuthor', blogByAuthor);
 
-  const b = [...remBlog, ...blogByAuthor]
-  console.log('b',b);
-  // const rd = b.filter((val,index) => b.indexOf(val.id) !== blogID);
-  // console.log('remaining',rd);
+  // All Blog
+  const b = [...blogByAuthor,...remBlog]
+
   const rb = [...new Set(b)].slice(0,2)
   console.log('remaining blog',rb);
 
@@ -32,7 +29,10 @@ const SingleBlog = () => {
 
   const sortByDate = b.sort((a,c) => new Date(c.date) - new Date(a.date))
   const uniqueBlog = [...new Set(sortByDate)].slice(0,2)
-  console.log('sortByDate',sortByDate);
+
+  // const suggestedBlog = [...blogByAuthor,...uniqueBlog].slice(0,2)
+  // console.log('suggested blog',suggestedBlog);
+  
 
   return (
     <div className={`${styles.singleBlog} container m-auto`}>
@@ -67,7 +67,7 @@ const SingleBlog = () => {
       </div>
       <div className="flex justify-between my-5 p-10 m-20">
         <div className={`flex justify-evenly mr-24 ${styles.postTag}`}>
-          <a href="" className="ml-5">{blog.tags}</a>
+          <a href={`/tagname/${blog.tags}`} className="ml-5">{blog.tags}</a>
           <a href="" className="ml-5">Tech</a>
         </div>
         <div className="mr-10">

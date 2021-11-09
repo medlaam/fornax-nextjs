@@ -3,7 +3,6 @@ import Image from 'next/dist/client/image';
 import Link from 'next/link';
 import styles from '../styles/blogs.module.css';
 import { blogData } from './blogData';
-// import { useRouter } from 'next/dist/client/router';
 
 const Blogs = () => {
   return (
