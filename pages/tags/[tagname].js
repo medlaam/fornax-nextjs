@@ -9,10 +9,15 @@ const TagName = ({ tagname }) => {
   // filter blogs by tagname
   const allBlogs = blogData.filter(a => a.tags == tagname)
 
-  
+
   return (
-    <div className={`my-14 flex flex-wrap justify-center ${styles.container}`}>
-      {
+    <>
+      <div className="my-5 text-center">
+        <h1 className={styles.heading}>All {tagname} blogs are here</h1>
+      </div>
+
+      <div className={`my-14 flex flex-wrap justify-center ${styles.container}`}>
+        {
           allBlogs.map(r => {
             return (
               <div key={r.id} className="p-4 bg-white sm:w-1 lg:w-1/3 md:w-1/2  overflow-hidden">
@@ -42,7 +47,8 @@ const TagName = ({ tagname }) => {
             )
           })
         }
-    </div>
+      </div>
+    </>
   );
 };
 

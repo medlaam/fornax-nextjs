@@ -4,7 +4,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.navLink{
+.navLink {
   font-size: 16px;
   font-weight: 600;
   color: #152035 !important;
@@ -19,7 +19,7 @@
   display: block;
 }
 
-.socialLinks li{
+.socialLinks li {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.8);
 }
@@ -27,3 +27,17 @@
 .socialLinks li:hover {
   color: #dd5269;
 }
+
+.search_toggle {
+  background-color: transparent;
+  border: 0;
+  transition: .3s ease;
+  padding: 10px;
+  transform: scale(1.3);
+}
+.search_toggle:hover {
+  color: #dd5269;
+}
+
+
+

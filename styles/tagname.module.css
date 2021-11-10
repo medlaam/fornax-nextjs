@@ -20,3 +20,11 @@
 .container a:hover {
   color: #dd5269;
 }
+
+.heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: #152035;
+  line-height: 1.4;
+}

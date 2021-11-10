@@ -56,7 +56,7 @@ const Navbar = () => {
             </a></li>
 
             <li className="list-inline-item ml-3 d-none d-lg-inline-block">
-              <button className="search-toggle" data-toggle="search">
+              <button className={styles.search_toggle} data-toggle="search">
                 <FaSearch />
               </button>
             </li>
