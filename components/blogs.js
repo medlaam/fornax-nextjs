@@ -1,15 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/dist/client/image';
 import Link from 'next/link';
 import styles from '../styles/blogs.module.css';
 import { blogData } from './blogData';
 
 const Blogs = () => {
+  const [searchTerm,setSearchTerm] = useState('')
+
+  const searchData = blogData.filter(val => {
+    if(searchTerm === ""){
+      return val
+    }
+    else if(val.heading.toLowerCase().includes(searchTerm.toLowerCase())){
+      return val
+    }
+  })
+  
   return (
     <div className={styles.container}>
-      <div className="flex flex-wrap my-14 justify-center">
+      <form className="text-center" action="" method="post">
+        <input className="border-2 rounded focus:outline-none	" type="text" placeholder="Search here" onChange={e => setSearchTerm(e.target.value)}  />
+      </form>
+      {
+        searchData.length ?
+        <div className="flex flex-wrap my-14 justify-center">
         {
-          blogData.map((b, i) => {
+          searchData.map((b, i) => {
             return (
               <div key={b.id} className=" p-4 bg-white sm:w-1 lg:w-1/3 md:w-1/2  overflow-hidden">
                 <div className={styles.cardHeader}>
@@ -39,7 +55,11 @@ const Blogs = () => {
             )
           })
         }
+      </div>:
+      <div className='my-14'>
+        <p className='text-center text-2xl'>Not found!</p>
       </div>
+      }
     </div>
   );
 };
