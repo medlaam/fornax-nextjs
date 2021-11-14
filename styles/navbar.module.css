@@ -8,11 +8,15 @@
   font-size: 16px;
   font-weight: 600;
   color: #152035 !important;
-  padding: 15px !important;
+  padding: 15px;
 }
 
-.navLink:hover {
+.navLink li:hover {
   color: #dd5269 !important;
+}
+
+.active {
+  color: #dd5269;
 }
 
 .dropdown:hover {

@@ -26,11 +26,11 @@ const Blogs = () => {
       </form>
       {
         searchData.length ?
-          <div className="flex flex-wrap my-14 justify-center">
+          <div className="flex flex-wrap my-7 justify-center">
             {
               searchData.map((b, i) => {
                 return (
-                  <div key={b.id} className="p-4 bg-white w-1 sm:w-1 md:w-1/2 lg:w-1/3   overflow-hidden">
+                  <div key={b.id} className="p-4 bg-white sm:w-1 md:w-1/2 lg:w-1/3   overflow-hidden">
                     <div className={styles.cardHeader}>
                       <Image src={b.image} ></Image>
                       <div className="mt-4">
