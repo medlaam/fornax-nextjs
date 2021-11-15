@@ -1,11 +1,20 @@
+import React from 'react';
 import React, { useState } from 'react';
 import Image from 'next/dist/client/image';
 import Link from 'next/link';
-import styles from '../styles/blogs.module.css';
-// import { blogData } from './blogData';
+import styles from '../../styles/blog.module.css';
+import { blogData } from '../../components/blogData';
 
-const Blogs = ({ blogData }) => {
+const Pages = ({ page }) => {
   const [searchTerm, setSearchTerm] = useState('')
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postPerPage, setPostPerPage] = useState(2)
+
+  const indexOfLastPost = currentPage * postPerPage
+  const indexOfFirstPost = indexOfLastPost - postPerPage
+  const currentPosts = blogData.slice(indexOfFirstPost, indexOfLastPost);
+
+  // const currentPage = currentPosts.map(c => c.id)
 
   const searchData = blogData.filter(val => {
     if (searchTerm === "") {
@@ -18,17 +27,18 @@ const Blogs = ({ blogData }) => {
       return val
     }
   })
-
+  const pageNumber = currentPosts.filter(b => b.id == page)
+  console.log(pageNumber);
   return (
     <div className={styles.container}>
       <form className="text-center" action="" method="post">
         <input className="border-2 rounded focus:outline-none	" type="text" placeholder="Search here" onChange={e => setSearchTerm(e.target.value)} />
       </form>
       {
-        searchData.length ?
+        pageNumber.length ?
           <div className="flex flex-wrap my-7 justify-center">
             {
-              searchData.map((b, i) => {
+              pageNumber.map((b, i) => {
                 return (
                   <div key={b.id} className="p-4 bg-white sm:w-1 md:w-1/2 lg:w-1/3   overflow-hidden">
                     <div className={styles.cardHeader}>
@@ -67,6 +77,9 @@ const Blogs = ({ blogData }) => {
   );
 };
 
-export default Blogs;
+Pages.getInitialProps = async ({ query }) => {
+  const { page } = query;
+  return { page }
+}
 
-
+export default Pages;
