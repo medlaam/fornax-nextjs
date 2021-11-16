@@ -1,10 +1,8 @@
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import styles from '../styles/pagination.module.css';
-import Link from 'next/link';
 
 const Pagination = ({ postPerPage, totalPost, paginate }) => {
   const pageNumber = [];
-  // console.log(pageNumber);
 
   for (let i = 1; i <= Math.ceil(totalPost / postPerPage); i++) {
     pageNumber.push(i)

@@ -5,6 +5,7 @@ import styles from '../../styles/singleblog.module.css';
 import Image from 'next/dist/client/image';
 import { FaFacebookF, FaTwitter, FaInstagram, FaDribbble } from 'react-icons/fa';
 import Link from 'next/link';
+import Head from 'next/head';
 
 const SingleBlog = () => {
   // const [suggestBlog, setSuggestBlog] = useState(true);
@@ -35,6 +36,10 @@ const SingleBlog = () => {
   
 
   return (
+    <>
+    <Head>
+      <title>{blog.heading}</title>
+    </Head>
     <div className={`${styles.singleBlog} container m-auto`}>
       <div className="w-2/3 items-center m-auto">
         <div className={`${styles.blogContainer} p-10 m-10`}>
@@ -130,6 +135,7 @@ const SingleBlog = () => {
           </ul>
       </div>
     </div>
+    </>
   );
 };
 
