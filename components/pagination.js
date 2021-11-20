@@ -15,22 +15,35 @@ const Pagination = ({ postPerPage, totalPost, page, paginate, hasNextPage, hasPr
   return (
     <div className="p-4 mb-5">
       <ul className={`flex justify-between ${styles.pagination}`}>
-        <li onClick={() => router.push(`/?page=${page - 1}`)} className={`px-5 h-10 ${styles.page}`}>
-          <a className={styles.arrow}><FaAngleLeft /></a>
-        </li>
+        {
+          hasPreviousPage ?
+            <li onClick={() => router.push(`/?page=${page - 1}`)} className={`px-5 h-10 ${styles.page}`}>
+              <a className={styles.arrow}><FaAngleLeft /></a>
+            </li> :
+            <button disabled onClick={() => router.push(`/?page=${page - 1}`)} className={`px-5 h-10 ${styles.page}`}>
+              <a className={styles.arrow}><FaAngleLeft /></a>
+            </button>
+        }
         <li>
           <ul className={`flex flex-wrap ${styles.pagination}`}>
             {
               pageNumber.map(num => (
-                <li key={num} className={`px-5 h-10 ${styles.page} `}><a onClick={() => {paginate(num); router.push(`/?page=${num}`)}}>{num}</a>
+                <li key={num} className={`px-5 h-10 ${styles.page} `}><a onClick={() => { paginate(num); router.push(`/?page=${num}`) }}>{num}</a>
                 </li>
               ))
             }
           </ul>
         </li>
-        <li disabled={hasNextPage} onClick={() => router.push(`/?page=${page + 1}`)} className={`px-5 h-10 ${styles.page}`}>
-          <a className={styles.arrow}><FaAngleRight /></a>
-        </li>
+        {
+          hasNextPage ?
+            <li onClick={() => router.push(`/?page=${page + 1}`)} className={`px-5 h-10 ${styles.page}`}>
+              <a className={styles.arrow}><FaAngleRight /></a>
+            </li>
+            :
+            <button onClick={() => router.push(`/?page=${page + 1}`)} className={`px-5 h-10 text-gray-400 ${styles.page}`} disabled>
+              <a className={`${styles.arrow} `}><FaAngleRight /></a>
+            </button>
+        }
       </ul>
     </div>
   );

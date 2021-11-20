@@ -5,7 +5,25 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      variantOrder: [
+        'first',
+        'last',
+        'odd',
+        'even',
+        'visited',
+        'checked',
+        'group-hover',
+        'group-focus',
+        'focus-within',
+        'hover',
+        'focus',
+        'focus-visible',
+        'active',
+        'disabled',
+      ],
+      opacity: ['disabled']
+    },
   },
   plugins: [],
 }

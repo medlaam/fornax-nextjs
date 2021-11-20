@@ -16,7 +16,6 @@ function Home({ posts, page }) {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   const hasNextPage = Math.ceil(posts.length / postPerPage) > page;
-  console.log(hasNextPage);
   const hasPreviousPage = page > 1;
 
   return (
