@@ -30,7 +30,7 @@ const TagName = ({ tagname }) => {
                 <div className="flex mt-6">
                   <div className="flex-auto">
                     <div className={`flex ${styles.author}`}>
-                      <img src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
+                      <img loading="lazy" src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
                       <span><small>{r.name}</small></span>
                     </div>
 

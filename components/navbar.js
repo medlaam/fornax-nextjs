@@ -1,5 +1,4 @@
 import Image from 'next/image';
-// import Link from 'next/link';
 import Img1 from '../public/logo-dark.png';
 import { FaFacebookF, FaTwitter, FaInstagram, FaPinterest, FaSearch, FaBuromobelexperte } from 'react-icons/fa';
 import { VscSearch } from 'react-icons/vsc'

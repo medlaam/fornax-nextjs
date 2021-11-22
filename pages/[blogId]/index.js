@@ -23,7 +23,7 @@ const SingleBlog = () => {
   const b = [...blogByAuthor,...remBlog]
 
   const rb = [...new Set(b)].slice(0,2)
-  console.log('remaining blog',rb);
+  // console.log('remaining blog',rb);
 
   // const blogsByDate = blogs.sort((a,b) => (a.date) - a.date)
   // console.log('blogsbyDate',blogsByDate);
@@ -43,10 +43,10 @@ const SingleBlog = () => {
     <div className={`${styles.singleBlog} container m-auto`}>
       <div className="w-2/3 items-center m-auto">
         <div className={`${styles.blogContainer} p-10 m-10`}>
-          <h1 className="">{blog.heading}</h1>
-          <div className="flex mt-5">
+          <p className="sm:text-4xl lg:text-5xl ">{blog.heading}</p>
+          <div className="flex items-center sm:justify-between mt-5">
             <div className={`flex ${styles.author}`}>
-              <img src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
+              <img loading="lazy" src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
               <span className=""><small>AZUMI</small></span>
               <div className="flex-auto ml-5"><small>&#x25C8; {blog.tags}</small>
               </div>

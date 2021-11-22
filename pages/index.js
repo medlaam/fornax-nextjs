@@ -3,6 +3,9 @@ import Pagination from '../components/pagination';
 import Head from 'next/head';
 import { useState } from 'react';
 import { blogData } from '../components/blogData';
+// import dynamic from 'next/dynamic';
+
+// export const dynamicBlog = dynamic(() => import('../components/blogs'))
 
 function Home({ posts, page }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,11 +23,11 @@ function Home({ posts, page }) {
 
   return (
     <>
-      <Head>
-        <title>Leberte blog</title>
-      </Head>
-      <Blogs blogData={currentPosts} />
-      <Pagination page={page} hasNextPage={hasNextPage} hasPreviousPage={hasPreviousPage} postPerPage={postPerPage} totalPost={posts.length} paginate={paginate} />
+        <Head>
+          <title>Leberte blog</title>
+        </Head>
+        <Blogs blogData={currentPosts} />
+        <Pagination page={page} hasNextPage={hasNextPage} hasPreviousPage={hasPreviousPage} postPerPage={postPerPage} totalPost={posts.length} paginate={paginate} />
     </>
   )
 }

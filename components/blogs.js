@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Image from 'next/dist/client/image';
 import Link from 'next/link';
 import styles from '../styles/blogs.module.css';
-// import { blogData } from './blogData';
 
 const Blogs = ({ blogData }) => {
   const [searchTerm, setSearchTerm] = useState('')

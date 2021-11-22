@@ -15,8 +15,8 @@
   font-family: "Lora", serif;
 } */
 
-.blogContainer h1 {
-  font-size: 52px;
+.blogContainer p {
+  /* font-size: 52px; */
   font-weight: 700;
   color: #152035;
   line-height: 1.4;
