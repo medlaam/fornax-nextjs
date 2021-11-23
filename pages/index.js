@@ -28,20 +28,20 @@ function Home({ posts, page }) {
       <Head>
         <title>Leberte blog</title>
       </Head>
-      {/* <Suspense fallback={`loading`}> */}
       <Blogs blogData={currentPosts} />
-      {/* </Suspense> */}
       <Pagination page={page} hasNextPage={hasNextPage} hasPreviousPage={hasPreviousPage} postPerPage={postPerPage} totalPost={posts.length} paginate={paginate} />
     </div>
   )
 }
 
-Home.getInitialProps = ({ query: { page = 1 } }) => {
+export const getServerSideProps = async ({ query: { page = 1 } }) => {
   const posts = blogData
 
   return {
-    posts: posts,
-    page: +page
+    props: {
+      posts,
+      page: +page
+    }
   }
 }
 

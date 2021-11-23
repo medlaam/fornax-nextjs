@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Img1 from '../public/logo-dark.png';
-import { FaFacebookF, FaTwitter, FaInstagram, FaPinterest, FaSearch, FaBuromobelexperte } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaInstagram, FaPinterest, FaBuromobelexperte } from 'react-icons/fa';
 import { VscSearch } from 'react-icons/vsc'
 import styles from '../styles/navbar.module.css';
 
