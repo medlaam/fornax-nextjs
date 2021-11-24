@@ -6,20 +6,23 @@ import { blogData } from './blogData';
 
 const Blogs = ({ blogs }) => {
   const [searchTerm, setSearchTerm] = useState('')
-
   const blog = blogData
+
+  //search filter blogs
   const searchData = blogs.filter(val => {
     if (searchTerm === "") {
-      return val
+      return blog
     }
-    else if (val.tags.toLowerCase().includes(searchTerm.toLowerCase())) {
-      return val
-    }
-    else if (val.heading.toLowerCase().includes(searchTerm.toLowerCase())) {
-      return val
-    }
+    // else if (val.tags.toLowerCase().includes(searchTerm.toLowerCase())) {
+    //   return val
+    // }
+    // else if (val.heading.toLowerCase().includes(searchTerm.toLowerCase())) {
+    //   return val
+    // }
   })
-  const searchData2 = blog.filter(val => {
+
+  // Search all blogs
+  const searchAllBlogs = blog.filter(val => {
     if (searchTerm === "") {
       return val
     }
@@ -70,44 +73,45 @@ const Blogs = ({ blogs }) => {
                 )
               })
             }
-          </div> 
+          </div>
           :
-          <div className="flex flex-wrap my-7 justify-center">
-          {
-            searchData2.map((b, i) => {
-              return (
-                <div key={b.id} className="p-4 bg-white sm:w-1 md:w-1/2 lg:w-1/3   overflow-hidden">
-                  <div className={styles.cardHeader}>
-                    <Image src={b.image} ></Image>
-                    <div className="mt-4">
-                      <Link href={`/${b.id}`} >{b.heading}</Link>
-                    </div>
-                  </div>
-
-                  <div className="flex mt-6">
-                    <div className="flex-auto">
-                      <div className={`flex ${styles.author}`}>
-                        <img src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
-                        <span><small>{b.name}</small></span>
+          searchAllBlogs.length ?
+            <div className="flex flex-wrap my-7 justify-center">
+              {
+                searchAllBlogs.map((b, i) => {
+                  return (
+                    <div key={b.id} className="p-4 bg-white sm:w-1 md:w-1/2 lg:w-1/3   overflow-hidden">
+                      <div className={styles.cardHeader}>
+                        <Image src={b.image} ></Image>
+                        <div className="mt-4">
+                          <Link href={`/${b.id}`} >{b.heading}</Link>
+                        </div>
                       </div>
 
+                      <div className="flex mt-6">
+                        <div className="flex-auto">
+                          <div className={`flex ${styles.author}`}>
+                            <img src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
+                            <span><small>{b.name}</small></span>
+                          </div>
+
+                        </div>
+                        <div className="flex-auto"><small>&#x25C8; {b.tags}</small>
+                        </div>
+                        <div className="flex-auto"><small>&#x25C8; {b.date}</small>
+                        </div>
+                      </div>
+                      <div className="mt-4 mb-3">
+                        <span>{b.details}</span>
+                      </div>
                     </div>
-                    <div className="flex-auto"><small>&#x25C8; {b.tags}</small>
-                    </div>
-                    <div className="flex-auto"><small>&#x25C8; {b.date}</small>
-                    </div>
-                  </div>
-                  <div className="mt-4 mb-3">
-                    <span>{b.details}</span>
-                  </div>
-                </div>
-              )
-            })
-          }
-        </div> 
-          // <div className='my-14'>
-          //   <p className='text-center text-2xl'>Not found!</p>
-          // </div>
+                  )
+                })
+              }
+            </div> :
+            <div className='my-14'>
+              <p className='text-center text-2xl'>Not found!</p>
+            </div>
       }
     </div>
   );
