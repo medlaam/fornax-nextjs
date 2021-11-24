@@ -28,7 +28,7 @@ function Home({ posts, page }) {
       <Head>
         <title>Leberte blog</title>
       </Head>
-      <Blogs blogData={currentPosts} />
+      <Blogs blogs={currentPosts} />
       <Pagination page={page} hasNextPage={hasNextPage} hasPreviousPage={hasPreviousPage} postPerPage={postPerPage} totalPost={posts.length} paginate={paginate} />
     </div>
   )
