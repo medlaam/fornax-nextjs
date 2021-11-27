@@ -35,7 +35,8 @@ function Home({ posts, page }) {
 }
 
 export const getServerSideProps = async ({ query: { page = 1 } }) => {
-  const posts = blogData
+
+  const posts = blogData.sort((a, b) => new Date(b.date) - new Date(a.date))
 
   return {
     props: {
