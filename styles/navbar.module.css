@@ -30,6 +30,7 @@
 
 .socialLinks li:hover {
   color: #dd5269;
+  cursor: pointer;
 }
 
 /* .search_toggle {

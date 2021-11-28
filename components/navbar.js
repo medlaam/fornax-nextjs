@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import Img1 from '../public/logo-dark.png';
-import { FaFacebookF, FaTwitter, FaInstagram, FaPinterest, FaBuromobelexperte } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaInstagram, FaPinterest, FaBuromobelexperte, FaTimes} from 'react-icons/fa';
 import { VscSearch } from 'react-icons/vsc'
 import styles from '../styles/navbar.module.css';
 
 
-const Navbar = () => {
+const Navbar = ({ toggle, isOpen }) => {
   return (
     <div className={styles.Container}>
       <nav className="flex justify-between items-center h-18 bg-white  relative shadow-sm" role="navigation">
@@ -13,7 +13,7 @@ const Navbar = () => {
           <Image src={Img1}></Image>
         </a>
         <div className="px-4 cursor-pointer md:hidden">
-          <FaBuromobelexperte />
+          {isOpen ? <FaTimes size={25} onClick={toggle} /> : <FaBuromobelexperte size={25} onClick={toggle} />}
         </div>
         <div className={`${styles.navLink} pr-8 md:block hidden`}>
           <ul className="flex items-center justify-center">
