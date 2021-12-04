@@ -12,12 +12,12 @@ const SingleBlog = () => {
   const router = useRouter()
   const blogID = router.query.blogId
   const blogs = [...blogData]
-  const blog = blogData.find(b => b.id == blogID)
-  const remainingBlogs = blogs.filter(b => b.id != blogID && b.tags == blog.tags)
+  const blog = blogData.find(b => b.heading == blogID)
+  const remainingBlogs = blogs.filter(b => b.heading != blogID && b.tags == blog.tags)
   const remBlog = remainingBlogs.slice(0, 2);
 
   // Blog by Author
-  const blogByAuthor = blogs.filter(ba => ba.id != blogID && ba.name == blog.name)
+  const blogByAuthor = blogs.filter(ba => ba.heading != blogID && ba.name == blog.name)
 
   // All Blog
   const b = [...blogByAuthor, ...remBlog]
@@ -77,8 +77,8 @@ const SingleBlog = () => {
           </div>
           <div className="mr-10">
             <ul className={`${styles.socialLink} flex`}>
-              <li style={{ backgroundColor: '#395693' }} className="ml-5"><a href={`https://www.facebook.com/sharer/sharer.php?u=+https://liberte-blogs.vercel.app/${blog.id}`}target="_blank" rel="noopener noreferrer"><FaFacebookF /></a></li>
-              <li style={{ backgroundColor: '#1C9CEA' }} className="ml-5"><a href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://liberte-blogs.vercel.app/${blog.id}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a></li>
+              <li style={{ backgroundColor: '#395693' }} className="ml-5"><a href={`https://www.facebook.com/sharer/sharer.php?u=+https://liberte-blogs.vercel.app/${blog.heading}`}target="_blank" rel="noopener noreferrer"><FaFacebookF /></a></li>
+              <li style={{ backgroundColor: '#1C9CEA' }} className="ml-5"><a href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://liberte-blogs.vercel.app/${blog.heading}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a></li>
               <li style={{ backgroundColor: '#894DB8' }} className="ml-5"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a></li>
               <li style={{ backgroundColor: '#E34A85' }} className="ml-5"><a href=""><FaDribbble /></a> </li>
             </ul>
@@ -94,7 +94,7 @@ const SingleBlog = () => {
                   <div className={styles.cardHeader}>
                     <Image src={r.image} ></Image>
                     <div className="mt-4">
-                      <Link href={`/${r.id}`} >{r.heading}</Link>
+                      <Link href={`/${r.heading}`} >{r.heading}</Link>
                     </div>
                   </div>
                   <div className="flex mt-6">

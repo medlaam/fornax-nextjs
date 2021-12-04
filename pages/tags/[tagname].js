@@ -24,7 +24,7 @@ const TagName = ({ tagname }) => {
                 <div >
                   <Image src={r.image} ></Image>
                   <div className="mt-4">
-                    <Link href={`/${r.id}`} >{r.heading}</Link>
+                    <Link href={`/${r.heading}`} >{r.heading}</Link>
                   </div>
                 </div>
                 <div className="flex mt-6">
