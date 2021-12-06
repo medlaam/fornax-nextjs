@@ -32,7 +32,7 @@ const Contact = () => {
           onSubmit={handleSubmit(onSubmitForm)}
           className="grid grid-cols-1 gap-y-6">
           <div>
-            <label for="name" className="sr-only">
+            <label htmlFor="name" className="sr-only">
               Full name
             </label>
             <input
@@ -52,7 +52,7 @@ const Contact = () => {
             </span>
           </div>
           <div>
-            <label for="email" className="sr-only">
+            <label htmlFor="email" className="sr-only">
               Email
             </label>
             <input
@@ -84,7 +84,7 @@ const Contact = () => {
             </span>
           </div>
           <div>
-            <label for="phone" className="sr-only">
+            <label htmlFor="phone" className="sr-only">
               Phone
             </label>
             <input
@@ -95,7 +95,7 @@ const Contact = () => {
             />
           </div>
           <div>
-            <label for="message" className="sr-only">
+            <label htmlFor="message" className="sr-only">
               Message
             </label>
             <textarea

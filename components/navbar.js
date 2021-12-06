@@ -3,6 +3,7 @@ import Img1 from '../public/logo-dark.png';
 import { FaFacebookF, FaTwitter, FaInstagram, FaPinterest, FaBuromobelexperte, FaTimes} from 'react-icons/fa';
 import { VscSearch } from 'react-icons/vsc'
 import styles from '../styles/navbar.module.css';
+import Link from 'next/link';
 
 
 const Navbar = ({ toggle, isOpen }) => {
@@ -20,7 +21,7 @@ const Navbar = ({ toggle, isOpen }) => {
             <li><a className={`${styles.active} p-4`} href="/">Home</a></li>
             <li><a className="p-4" href="/">Features</a></li>
             <li><a className="p-4" href="/">About</a></li>
-            <li><a className="p-4" href="/">Contact</a></li>
+            <li><Link href="/contact"><a className="p-4">Contact</a></Link></li>
             <li><a className="p-4" href="/">Pages</a></li>
             <li className=" flex items-center justify-center border-l-2 p-4 ml-4"></li>
             <li><a className="mr-8 p-4" href="/"><FaFacebookF /></a></li>
