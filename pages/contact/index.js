@@ -26,11 +26,11 @@ const Contact = () => {
   }
 
   return (
-    <div className="b py-16 bg-gray-50 px-4 sm:px-6 h-screen w-screen flex justify-center items-center">
+    <div className="b py-16 bg-gray-50 px-4 sm:px-6 h-screen flex justify-center items-center">
       <div className="mx-auto w-full max-w-2xl rounded-xl bg-white p-8 shadow">
         <form
           onSubmit={handleSubmit(onSubmitForm)}
-          className="grid grid-cols-1 gap-y-6">
+          action="https://airform.io/rakibur74@gmail.com" method="post" className="grid grid-cols-1 gap-y-6">
           <div>
             <label htmlFor="name" className="sr-only">
               Full name
@@ -110,7 +110,7 @@ const Contact = () => {
                   message: "Your message can't be more than 1000 characters",
                 },
                 minLength: {
-                  value: 50,
+                  value: 20,
                   message: 'Your message must be longer than this!',
                 },
               })}
