@@ -9,8 +9,8 @@ export default async (req, res) => {
     port: 465,
     secure: true,
     auth: {
-      user: process.env.user,
-      pass: process.env.pass,
+      user: 'rakibur74@gmail.com',
+      pass: "potwcvmmlnmuzcfn",
     },
   });
 

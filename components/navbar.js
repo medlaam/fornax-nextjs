@@ -18,7 +18,7 @@ const Navbar = ({ toggle, isOpen }) => {
         </div>
         <div className={`${styles.navLink} pr-8 md:block hidden`}>
           <ul className="flex items-center justify-center">
-            <li><a className={`${styles.active} p-4`} href="/">Home</a></li>
+            <li><Link href="/"><a className={`${styles.active} p-4`} >Home</a></Link></li>
             <li><a className="p-4" href="/">Features</a></li>
             <li><a className="p-4" href="/">About</a></li>
             <li><Link href="/contact"><a className="p-4">Contact</a></Link></li>

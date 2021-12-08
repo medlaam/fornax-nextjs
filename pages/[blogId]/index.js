@@ -11,11 +11,9 @@ const SingleBlog = () => {
   // const [suggestBlog, setSuggestBlog] = useState(true);
   const router = useRouter()
   const blogID = router.query.blogId
-  console.log(blogID);
   const blogs = [...blogData]
   const blog = blogData.find(b => b.heading == blogID)
   const remainingBlogs = blogs.filter(b => b.heading != blogID && b.tags == blog.tags)
-  console.log('remainingBlogs',remainingBlogs);
   const remBlog = remainingBlogs.slice(0, 2);
 
   // Blog by Author
