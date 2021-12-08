@@ -1,12 +1,9 @@
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-// import { useState } from 'react';
 import { contactType } from '../../config/contactFormType';
-import Airform from 'react-airform';
 
 const Contact = () => {
   const { register, handleSubmit, errors, reset } = useForm();
-  // const [airForm, setAirForm] = useState(true);
 
   async function onSubmitForm(values) {
     let config = {
@@ -28,10 +25,6 @@ const Contact = () => {
     } catch (err) { }
     console.log(values);
   }
-
-  // const handleClick = () => {
-  //   setAirForm(!airForm)
-  // }
 
   return (
     <div className="b py-16 bg-gray-50 px-4 sm:px-6 h-screen flex justify-center items-center">
@@ -143,8 +136,8 @@ const Contact = () => {
 
         {
           contactType.type === 'airForm' &&
-          <Airform
-            email="rakibur74@gmail.com"
+          <form
+          action="https://airform.io/rakibur74@gmail.com" method="post"
             className="grid grid-cols-1 gap-y-6">
             <div>
               <label htmlFor="name" className="sr-only">
@@ -209,7 +202,7 @@ const Contact = () => {
                 Send
               </button>
             </div>
-          </Airform>
+          </form>
         }
 
         {/* <button onClick={handleClick}>Toggle</button> */}
