@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Image from 'next/dist/client/image';
 import Link from 'next/link';
 import styles from '../styles/blogs.module.css';
 import { blogData } from './blogData';
+import { AppContext } from './context';
 
 const Blogs = ({ blogs }) => {
+  const [showSearch] = useContext(AppContext);
   const [searchTerm, setSearchTerm] = useState('')
   const blog = blogData
 
@@ -36,9 +38,12 @@ const Blogs = ({ blogs }) => {
 
   return (
     <div className={styles.container}>
-      <form className="text-center" action="" method="post">
-        <input className="border-2 rounded focus:outline-none	" type="text" placeholder="Search here" onChange={e => setSearchTerm(e.target.value)} />
-      </form>
+      {
+        showSearch &&
+        <form className="text-center" action="" method="post">
+          <input className="border-2 rounded focus:outline-none	" type="text" placeholder="Search here" onChange={e => setSearchTerm(e.target.value)} />
+        </form>
+      }
       {
         searchData.length ?
           <div className="flex flex-wrap my-7 justify-center">

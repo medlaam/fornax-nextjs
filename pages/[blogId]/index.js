@@ -72,7 +72,7 @@ const SingleBlog = () => {
         </div>
         <div className="flex justify-between my-5 p-10 m-20">
           <div className={`flex justify-evenly mr-24 ${styles.postTag}`}>
-            <a href={`/tags/${blog.tags}`} className="ml-5">{blog.tags}</a>
+            <Link  href={`/tags/${blog.tags}`}><a className="ml-5">{blog.tags}</a></Link>
             <a href="" className="ml-5">Tech</a>
           </div>
           <div className="mr-10">
