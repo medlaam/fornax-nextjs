@@ -44,5 +44,12 @@
   color: #dd5269;
 } */
 
+.mobileMenu li{
+  list-style: none;
+}
+
+.mobileMenu li:hover{
+  color: #dd5269;
+}
 
 
