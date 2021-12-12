@@ -50,7 +50,7 @@ const Blogs = ({ blogs }) => {
             {
               searchData.map((b, i) => {
                 return (
-                  <div key={b.id} className="p-4 bg-white sm:w-1 md:w-1/2 lg:w-1/3   overflow-hidden">
+                  <div key={b.id} className="p-4 bg-white md:w-1/2 lg:w-1/3   overflow-hidden">
                     <div className={styles.cardHeader}>
                       <Image src={b.image} ></Image>
                       <div className="mt-4">
@@ -85,7 +85,7 @@ const Blogs = ({ blogs }) => {
               {
                 searchAllBlogs.map((b, i) => {
                   return (
-                    <div key={b.id} className="p-4 bg-white md:w-1 lg:w-1/3  overflow-hidden">
+                    <div key={b.id} className="p-4 bg-white lg:w-1/3  overflow-hidden">
                       <div className={styles.cardHeader}>
                         <Image src={b.image} ></Image>
                         <div className="mt-4">
