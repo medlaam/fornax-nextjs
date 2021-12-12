@@ -40,10 +40,10 @@ const SingleBlog = () => {
       <Head>
         <title>{blog.heading}</title>
       </Head>
-      <div className={`${styles.singleBlog} container m-auto`}>
-        <div className="w-2/3 items-center m-auto">
-          <div className={`${styles.blogContainer} p-10 m-10`}>
-            <p className="sm:text-4xl lg:text-5xl ">{blog.heading}</p>
+      <div className={`${styles.singleBlog} container md:m-auto`}>
+        <div className="sm:w-full lg:w-2/3 items-center md:m-auto ">
+          <div className={`${styles.blogContainer} p-10 `}>
+            <p className="lg:text-5xl text-4xl">{blog.heading}</p>
             <div className="flex items-center sm:justify-between mt-5">
               <div className={`flex ${styles.author}`}>
                 <img loading="lazy" src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
@@ -70,14 +70,18 @@ const SingleBlog = () => {
             <Image layout={'responsive'} src={blog.blogImage}></Image>
           </div>
         </div>
-        <div className="flex justify-between my-5 p-10 m-20">
-          <div className={`flex justify-evenly mr-24 ${styles.postTag}`}>
-            <Link  href={`/tags/${blog.tags}`}><a className="ml-5">{blog.tags}</a></Link>
-            <a href="" className="ml-5">Tech</a>
+
+        <div className="md:flex md:justify-between block my-5 p-10 m-20">
+          <div className={`justify-evenly ${styles.postTag}`}>
+            <ul className="flex items-center">
+              <li><Link href={`/tags/${blog.tags}`}><a className="ml-5">{blog.tags}</a></Link>
+              </li>
+              <li><a href="" className="ml-5">Tech</a></li>
+            </ul>
           </div>
-          <div className="mr-10">
-            <ul className={`${styles.socialLink} flex`}>
-              <li style={{ backgroundColor: '#395693' }} className="ml-5"><a href={`https://www.facebook.com/sharer/sharer.php?u=+https://liberte-blogs.vercel.app/${blog.heading}`}target="_blank" rel="noopener noreferrer"><FaFacebookF /></a></li>
+          <div className="text-center md:text-right md:justify-between">
+            <ul className={`${styles.socialLink} my-5 md:my-0 flex `}>
+              <li style={{ backgroundColor: '#395693' }} className="ml-5"><a href={`https://www.facebook.com/sharer/sharer.php?u=+https://liberte-blogs.vercel.app/${blog.heading}`} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a></li>
               <li style={{ backgroundColor: '#1C9CEA' }} className="ml-5"><a href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://liberte-blogs.vercel.app/${blog.heading}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a></li>
               <li style={{ backgroundColor: '#894DB8' }} className="ml-5"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a></li>
               <li style={{ backgroundColor: '#E34A85' }} className="ml-5"><a href=""><FaDribbble /></a> </li>
