@@ -94,7 +94,7 @@ const SingleBlog = () => {
           {
             uniqueBlog.map(r => {
               return (
-                <div key={r.id} className="p-4 bg-white sm:w-1 lg:w-1/3 md:w-1/2  overflow-hidden">
+                <div key={r.id} className="p-4 bg-white md:w-1 lg:w-1/3  overflow-hidden">
                   <div className={styles.cardHeader}>
                     <Image src={r.image} ></Image>
                     <div className="mt-4">
