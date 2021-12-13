@@ -19,14 +19,14 @@ const Navbar = ({ toggle, isOpen }) => {
         </a></Link>
 
         {/* for mobile Menu */}
-        <div className={`px-4 flex items-center cursor-pointer md:hidden ${styles.mobileMenu}`}>
+        <div className={`px-4 flex items-center cursor-pointer lg:hidden ${styles.mobileMenu}`}>
           <li onClick={() => setShowSearch(!showSearch)}><a className="mr-8 p-4"><VscSearch size={20} /></a></li>
           <li>
             {isOpen ? <FaTimes size={25} onClick={toggle} /> : <FaBuromobelexperte size={25} onClick={toggle} />}
           </li>
         </div>
 
-        <div className={`${styles.navLink} pr-8 md:block hidden`}>
+        <div className={`${styles.navLink} pr-8 lg:block hidden`}>
           <ul className="flex items-center justify-center">
             <li><Link href="/"><a className={`${styles.active} p-4`} >Home</a></Link></li>
             <li><Link href="/"><a className="p-4">Features</a></Link></li>

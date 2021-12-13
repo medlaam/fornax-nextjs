@@ -4,7 +4,7 @@ import NavLinks from '../data/NavLinks';
 import SocialIcons from '../data/SocialIcons';
 
 
-const MobileMenu = ({ isOpen }) => {
+const MobileMenu = ({ isOpen, toggle }) => {
   return (
     <div className={`${styles.Container} `}>
       <div className={isOpen ? "text-center block shadow-sm" : 'hidden top-0 h-0'}>
@@ -12,7 +12,7 @@ const MobileMenu = ({ isOpen }) => {
           {
             NavLinks.map(n => {
               return (
-                <li key={n.title} className="p-2">
+                <li onClick={toggle} key={n.title} className="p-2">
                   <Link href={n.href}><a className="">{n.title}</a></Link>
                 </li>
               )
