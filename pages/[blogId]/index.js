@@ -41,7 +41,7 @@ const SingleBlog = () => {
         <title>{blog.heading}</title>
       </Head>
       <div className={`${styles.singleBlog} container md:m-auto`}>
-        <div className="sm:w-full lg:w-2/3 items-center md:m-auto ">
+        <div className="w-full xl:w-2/3 items-center md:m-auto ">
           <div className={`${styles.blogContainer} p-10 `}>
             <p className="lg:text-5xl text-4xl">{blog.heading}</p>
             <div className="flex items-center sm:justify-between mt-5">
@@ -67,7 +67,7 @@ const SingleBlog = () => {
           <p className="mt-5 text-xl text-gray-500">{blog.blogDetails}</p>
           <p className="mt-5 text-xl text-gray-500">{blog.blogDetails1}</p>
           <div className="my-5">
-            <Image layout={'responsive'} src={blog.blogImage}></Image>
+            <Image layout={'responsive'} objectFit={'cover'} src={blog.blogImage}></Image>
           </div>
         </div>
 

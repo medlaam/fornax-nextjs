@@ -14,15 +14,15 @@ const Navbar = ({ toggle, isOpen }) => {
   return (
     <div className={styles.Container}>
       <nav className="flex justify-between items-center h-18 bg-white  relative shadow-sm" role="navigation">
-        <Link href="/"><a className="ml-6 p-8 mt-2" >
+        <Link href="/"><a className="md:ml-8 p-4 md:p-8 mt-2" >
           <Image src={Img1}></Image>
         </a></Link>
 
         {/* for mobile Menu */}
-        <div className={`px-4 flex items-center cursor-pointer lg:hidden ${styles.mobileMenu}`}>
-          <li onClick={() => setShowSearch(!showSearch)}><a className="mr-8 p-4"><VscSearch size={20} /></a></li>
+        <div className={`px-4 flex items-center lg:hidden ${styles.mobileMenu}`}>
+          <li onClick={() => setShowSearch(!showSearch)}><a className="mr-8 p-4 cursor-pointer"><VscSearch size={20} /></a></li>
           <li>
-            {isOpen ? <FaTimes size={25} onClick={toggle} /> : <FaBuromobelexperte size={25} onClick={toggle} />}
+            {isOpen ? <FaTimes className="cursor-pointer" size={25} onClick={toggle} /> : <FaBuromobelexperte className="cursor-pointer" size={25} onClick={toggle} />}
           </li>
         </div>
 
