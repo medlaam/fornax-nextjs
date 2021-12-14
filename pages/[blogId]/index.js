@@ -42,7 +42,7 @@ const SingleBlog = () => {
       </Head>
       <div className={`${styles.singleBlog} container md:m-auto`}>
         <div className="w-full xl:w-2/3 items-center md:m-auto ">
-          <div className={`${styles.blogContainer} p-10 `}>
+          <div className={`${styles.blogContainer} p-4  py-16 `}>
             <p className="lg:text-5xl text-4xl">{blog.heading}</p>
             <div className="flex items-center sm:justify-between mt-5">
               <div className={`flex ${styles.author}`}>
@@ -60,7 +60,7 @@ const SingleBlog = () => {
           <Image layout={'responsive'} height={550} objectFit={'cover'} src={blog.image}></Image>
         </div>
 
-        <div className="my-5 w-2/3 m-auto">
+        <div className="my-5 w-full p-4 md:w-2/3 m-auto">
           <h3 className="text-2xl text-gray-500	">{blog.blogHeading}</h3>
           <p className="mt-5 text-xl text-gray-500">{blog.blogDetails}</p>
           <h1 className="mt-10 text-3xl font-bold">Creative Design</h1>
@@ -71,7 +71,7 @@ const SingleBlog = () => {
           </div>
         </div>
 
-        <div className="md:flex md:justify-between block my-5 p-10 m-20">
+        <div className="md:flex md:justify-between block my-5 sm:py-10 m-20">
           <div className={`justify-evenly ${styles.postTag}`}>
             <ul className="flex items-center">
               <li><Link href={`/tags/${blog.tags}`}><a className="ml-5">{blog.tags}</a></Link>

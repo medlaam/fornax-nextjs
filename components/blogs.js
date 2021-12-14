@@ -72,7 +72,7 @@ const Blogs = ({ blogs }) => {
                       </div>
                     </div>
                     <div className="mt-4 mb-3">
-                      <span>{b.details}</span>
+                      <span className='text-gray-400'>{b.details}</span>
                     </div>
                   </div>
                 )
@@ -107,7 +107,7 @@ const Blogs = ({ blogs }) => {
                         </div>
                       </div>
                       <div className="mt-4 mb-3">
-                        <span>{b.details}</span>
+                        <span className="text-gray-400" >{b.details}</span>
                       </div>
                     </div>
                   )
