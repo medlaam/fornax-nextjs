@@ -28,7 +28,7 @@ const Pagination = ({ postPerPage, totalPost, page, paginate, hasNextPage, hasPr
           <ul className={`flex flex-wrap ${styles.pagination}`}>
             {
               pageNumber.map(num => (
-                <li key={num} className={`px-5 h-10 ${styles.page} `}><a onClick={() => { paginate(num); router.push(`/?page=${num}`) }}>{num}</a>
+                <li key={num} onClick={() => { paginate(num); router.push(`/?page=${num}`) }} className={`px-5 h-10 ${styles.page} `}><a >{num}</a>
                 </li>
               ))
             }
