@@ -34,6 +34,15 @@
   box-shadow: none;
   color: #ffffff !important;
   background-color: #e1677b !important;
+  padding: 0;
+  margin-left: 0;
+  border: 0;
+  height: 48px;
+  width: 48px;
+  line-height: 48px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .page:hover {

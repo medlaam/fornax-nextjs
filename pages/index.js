@@ -11,7 +11,7 @@ const Blogs = dynamic(() => import('../components/blogs'),
 
 function Home({ posts, page }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage] = useState(2);
+  const [postPerPage] = useState(5);
 
   const indexOfLastPost = page * postPerPage
   const indexOfFirstPost = indexOfLastPost - postPerPage

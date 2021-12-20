@@ -59,16 +59,19 @@ const Blogs = ({ blogs }) => {
                     </div>
 
                     <div className="flex mt-6">
-                      <div className="flex-auto">
+                      <div className="mr-4">
                         <div className={`flex ${styles.author}`}>
                           <img src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
-                          <span><small className="text-gray-500">{b.name}</small></span>
+                          <span><Link href="/"><a className="text-gray-500">{b.name}</a></Link></span>
                         </div>
 
                       </div>
-                      <div className="flex-auto"><small className="text-gray-500">&#x25C8; {b.tags}</small>
+                      <div className="mr-4">
+                        <Link href={`/tags/${b.tags}`} >
+                          <a className={`text-gray-500 ${styles.tags}`}>&#x25C8; {b.tags}</a>
+                        </Link>
                       </div>
-                      <div className="flex-auto"><small className="text-gray-700">&#x25C8; {b.date}</small>
+                      <div className="mr-4"><small className="text-gray-700">&#x25C8; {b.date}</small>
                       </div>
                     </div>
                     <div className="mt-4 mb-3">
@@ -94,16 +97,16 @@ const Blogs = ({ blogs }) => {
                       </div>
 
                       <div className="flex mt-6">
-                        <div className="flex-auto">
+                        <div className="mr-4">
                           <div className={`flex ${styles.author}`}>
                             <img src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
-                            <span><small className="text-gray-500">{b.name}</small></span>
+                            <span><Link href="/"><a className="text-gray-500">{b.name}</a></Link></span>
                           </div>
 
                         </div>
-                        <div className="flex-auto"><small className="text-gray-500">&#x25C8; {b.tags}</small>
+                        <div className="mr-4"><small className="text-gray-500">&#x25C8; {b.tags}</small>
                         </div>
-                        <div className="flex-auto"><small className="text-gray-700">&#x25C8; {b.date}</small>
+                        <div className="mr-4"><small className="text-gray-700">&#x25C8; {b.date}</small>
                         </div>
                       </div>
                       <div className="mt-4 mb-3">

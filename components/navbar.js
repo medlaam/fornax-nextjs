@@ -30,7 +30,7 @@ const Navbar = ({ toggle, isOpen }) => {
           <ul className="flex items-center justify-center">
             <li><Link href="/"><a className={`${styles.active} p-4`} >Home</a></Link></li>
             <li><Link href="/"><a className="p-4">Features</a></Link></li>
-            <li><a className="p-4" href="/">About</a></li>
+            <li><Link href="/about"><a className="p-4">About</a></Link></li>
             <li><Link href="/contact"><a className="p-4">Contact</a></Link></li>
             <li><a className="p-4" href="/">Pages</a></li>
             <li className=" flex items-center justify-center border-l-2 p-4 ml-4"></li>

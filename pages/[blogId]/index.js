@@ -47,7 +47,7 @@ const SingleBlog = () => {
             <div className="flex items-center sm:justify-between mt-5">
               <div className={`flex ${styles.author}`}>
                 <img loading="lazy" src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
-                <span  className="text-gray-500"><small>AZUMI</small></span>
+                <span className="text-gray-500"><small>AZUMI</small></span>
                 <div className="flex-auto ml-5 text-gray-500"><small>&#x25C8; {blog.tags}</small>
                 </div>
                 <div className="flex-auto ml-5"><small className="text-gray-500">&#x25C8; {blog.date}</small>
@@ -96,22 +96,22 @@ const SingleBlog = () => {
               return (
                 <div key={r.id} className="p-4 bg-white md:w-1/2 lg:w-1/3 overflow-hidden">
                   <div className={styles.cardHeader}>
-                    <Image layout={'responsive'}  objectFit={'cover'} src={r.image} ></Image>
+                    <Image layout={'responsive'} objectFit={'cover'} src={r.image} ></Image>
                     <div className="mt-4">
                       <Link href={`/${r.heading}`} >{r.heading}</Link>
                     </div>
                   </div>
                   <div className="flex mt-6">
-                    <div className="flex-auto">
+                    <div className="mr-4">
                       <div className={`flex ${styles.author}`}>
                         <img src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
                         <span><small className="text-gray-500">{r.name}</small></span>
                       </div>
 
                     </div>
-                    <div className="flex-auto"><small className="text-gray-500">&#x25C8; {r.tags}</small>
+                    <div className="mr-4"><small className="text-gray-500">&#x25C8; {r.tags}</small>
                     </div>
-                    <div className="flex-auto"><small className="text-gray-700">&#x25C8; {r.date}</small>
+                    <div className="mr-4"><small className="text-gray-700">&#x25C8; {r.date}</small>
                     </div>
                   </div>
                   <div className="mt-4 mb-3">
