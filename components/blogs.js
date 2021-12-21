@@ -62,7 +62,7 @@ const Blogs = ({ blogs }) => {
                       <div className="mr-4">
                         <div className={`flex ${styles.author}`}>
                           <img src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
-                          <span><Link href="/about"><a className="text-gray-500">{b.name}</a></Link></span>
+                          <span><Link href={`/about/${b.name}`}><a className="text-gray-500">{b.name}</a></Link></span>
                         </div>
 
                       </div>
@@ -100,7 +100,7 @@ const Blogs = ({ blogs }) => {
                         <div className="mr-4">
                           <div className={`flex ${styles.author}`}>
                             <img src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
-                            <span><Link href="/about"><a className="text-gray-500">{b.name}</a></Link></span>
+                            <span><Link href={`/about/${b.name}`}><a className="text-gray-500">{b.name}</a></Link></span>
                           </div>
 
                         </div>
