@@ -2,6 +2,8 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { contactType } from '../../config/contactFormType';
 import Head from 'next/head';
+import styles from '../../styles/contact.module.css';
+
 
 const Contact = () => {
   const { register, handleSubmit, errors, reset } = useForm();
@@ -32,8 +34,8 @@ const Contact = () => {
       <Head>
         <title>Contact</title>
       </Head>
-      <div className="b py-16 bg-gray-50 px-4 sm:px-6 h-screen flex justify-center items-center">
-        <div className="mx-auto w-full max-w-2xl rounded-xl bg-white p-8 shadow">
+      <div className={`b py-16 px-4 sm:px-6 h-screen flex justify-center items-center ${styles.contact}`}>
+        <div className="mx-auto w-full max-w-2xl rounded-xl p-8 ">
           {
             contactType.type === 'nodemailer' &&
             <form
