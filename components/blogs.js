@@ -54,7 +54,7 @@ const Blogs = ({ blogs }) => {
                     <div className={styles.cardHeader}>
                       <Image src={b.image} ></Image>
                       <div className="mt-4">
-                        <Link href={`/${b.heading}`} >{b.heading}</Link>
+                        <Link href={`/${b.heading.replace(/ /g,"-")}`} >{b.heading}</Link>
                       </div>
                     </div>
 

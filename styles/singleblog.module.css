@@ -113,3 +113,15 @@
 .author span{
   color: #454e62;
 }
+
+.author a {
+  font-size:13px !important;
+  color:#788193 !important;
+  font-weight: 500 !important;
+}
+
+.tags {
+  font-size:13px !important;
+  color:#788193 !important;
+  font-weight: 500 !important;
+}

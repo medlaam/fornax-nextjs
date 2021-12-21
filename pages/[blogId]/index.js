@@ -10,14 +10,14 @@ import Head from 'next/head';
 const SingleBlog = () => {
   // const [suggestBlog, setSuggestBlog] = useState(true);
   const router = useRouter()
-  const blogID = router.query.blogId
+  const blogID = router.query.blogId.replace(/ /g, "-")
   const blogs = [...blogData]
-  const blog = blogData.find(b => b.heading == blogID)
-  const remainingBlogs = blogs.filter(b => b.heading != blogID && b.tags == blog.tags)
+  const blog = blogData.find(b => b.heading == blogID.replace(/-/g, " "))
+  const remainingBlogs = blogs.filter(b => b.heading != blogID.replace(/-/g, " ") && b.tags == blog.tags)
   const remBlog = remainingBlogs.slice(0, 2);
 
   // Blog by Author
-  const blogByAuthor = blogs.filter(ba => ba.heading != blogID && ba.name == blog.name)
+  const blogByAuthor = blogs.filter(ba => ba.heading != blogID.replace(/-/g, " ") && ba.name == blog.name)
 
   // All Blog
   const b = [...blogByAuthor, ...remBlog]
@@ -98,18 +98,20 @@ const SingleBlog = () => {
                   <div className={styles.cardHeader}>
                     <Image layout={'responsive'} objectFit={'cover'} src={r.image} ></Image>
                     <div className="mt-4">
-                      <Link href={`/${r.heading}`} >{r.heading}</Link>
+                      <Link href={`/${r.heading.replace(/ /g, "-")}`} >{r.heading}</Link>
                     </div>
                   </div>
                   <div className="flex mt-6">
                     <div className="mr-4">
                       <div className={`flex ${styles.author}`}>
                         <img src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
-                        <span><small className="text-gray-500">{r.name}</small></span>
+                        <span><Link href="/about"><a className="text-gray-500">{r.name}</a></Link></span>
                       </div>
 
                     </div>
-                    <div className="mr-4"><small className="text-gray-500">&#x25C8; {r.tags}</small>
+                    <div className="mr-4"> <Link href={`/tags/${r.tags}`}>
+                      <a className={`text-gray-500 ${styles.tags}`}>&#x25C8; {r.tags}</a>
+                    </Link>
                     </div>
                     <div className="mr-4"><small className="text-gray-700">&#x25C8; {r.date}</small>
                     </div>
