@@ -47,7 +47,7 @@ const SingleBlog = () => {
             <div className="flex items-center sm:justify-between mt-5">
               <div className={`flex ${styles.author}`}>
                 <img loading="lazy" src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
-                <span className="text-gray-500"><small>AZUMI</small></span>
+                <span className="text-gray-500"><Link href={`/about/${blog.name}`}><a className="text-gray-500">{blog.name}</a></Link></span>
                 <div className="flex-auto ml-5 text-gray-500"><small>&#x25C8; {blog.tags}</small>
                 </div>
                 <div className="flex-auto ml-5"><small className="text-gray-500">&#x25C8; {blog.date}</small>
@@ -105,7 +105,7 @@ const SingleBlog = () => {
                     <div className="mr-4">
                       <div className={`flex ${styles.author}`}>
                         <img src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
-                        <span><Link href="/about"><a className="text-gray-500">{r.name}</a></Link></span>
+                        <span><Link href={`/about/${r.name}`}><a className="text-gray-500">{r.name}</a></Link></span>
                       </div>
 
                     </div>
