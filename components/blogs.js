@@ -46,7 +46,7 @@ const Blogs = ({ blogs }) => {
       }
       {
         searchData.length ?
-          <div className="flex flex-wrap my-7 justify-center">
+          <div className="flex flex-wrap my-7 justify-center container m-auto">
             {
               searchData.map((b, i) => {
                 return (
@@ -84,7 +84,7 @@ const Blogs = ({ blogs }) => {
           </div>
           :
           searchAllBlogs.length ?
-            <div className="flex flex-wrap my-7 justify-center">
+            <div className="flex flex-wrap my-7 justify-center container m-auto">
               {
                 searchAllBlogs.map((b, i) => {
                   return (
