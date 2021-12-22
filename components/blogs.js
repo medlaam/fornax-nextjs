@@ -66,13 +66,14 @@ const Blogs = ({ blogs }) => {
                         </div>
 
                       </div>
+                      <div className="mr-4"><small className="text-gray-700">&#x25C8; {b.date}</small>
+                      </div>
                       <div className="mr-4">
                         <Link href={`/tags/${b.tags}`} >
                           <a className={`text-gray-500 ${styles.tags}`}>&#x25C8; {b.tags}</a>
                         </Link>
                       </div>
-                      <div className="mr-4"><small className="text-gray-700">&#x25C8; {b.date}</small>
-                      </div>
+                      
                     </div>
                     <div className="mt-4 mb-3">
                       <span className='text-gray-400'>{b.details}</span>
@@ -104,10 +105,10 @@ const Blogs = ({ blogs }) => {
                           </div>
 
                         </div>
-                        <div className="mr-4"><small className="text-gray-500">&#x25C8; {b.tags}</small>
-                        </div>
                         <div className="mr-4"><small className="text-gray-700">&#x25C8; {b.date}</small>
                         </div>
+                        <div className="mr-4"><small className="text-gray-500">&#x25C8; {b.tags}</small>
+                        </div>                       
                       </div>
                       <div className="mt-4 mb-3">
                         <span className="text-gray-400" >{b.details}</span>

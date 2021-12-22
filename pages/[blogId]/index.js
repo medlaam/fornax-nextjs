@@ -48,10 +48,14 @@ const SingleBlog = () => {
               <div className={`flex ${styles.author}`}>
                 <img loading="lazy" src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
                 <span className="text-gray-500"><Link href={`/about/${blog.name}`}><a className="text-gray-500">{blog.name}</a></Link></span>
-                <div className="flex-auto ml-5 text-gray-500"><small>&#x25C8; {blog.tags}</small>
-                </div>
                 <div className="flex-auto ml-5"><small className="text-gray-500">&#x25C8; {blog.date}</small>
                 </div>
+                <div className="flex-auto ml-5 text-gray-500">
+                  <Link href={`/tags/${blog.tags}`}>
+                    <a>&#x25C8; {blog.tags}</a>
+                  </Link>
+                </div>
+
               </div>
             </div>
           </div>
@@ -109,12 +113,13 @@ const SingleBlog = () => {
                       </div>
 
                     </div>
+                    <div className="mr-4"><small className="text-gray-700">&#x25C8; {r.date}</small>
+                    </div>
                     <div className="mr-4"> <Link href={`/tags/${r.tags}`}>
                       <a className={`text-gray-500 ${styles.tags}`}>&#x25C8; {r.tags}</a>
                     </Link>
                     </div>
-                    <div className="mr-4"><small className="text-gray-700">&#x25C8; {r.date}</small>
-                    </div>
+
                   </div>
                   <div className="mt-4 mb-3">
                     <span className="text-gray-500">{r.details}</span>
