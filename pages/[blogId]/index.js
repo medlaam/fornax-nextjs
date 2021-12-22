@@ -106,16 +106,16 @@ const SingleBlog = () => {
                     </div>
                   </div>
                   <div className="flex mt-6">
-                    <div className="mr-4">
+                    <div className="sm:mr-4 mr-1">
                       <div className={`flex ${styles.author}`}>
                         <img src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
                         <span><Link href={`/about/${r.name}`}><a className="text-gray-500">{r.name}</a></Link></span>
                       </div>
 
                     </div>
-                    <div className="mr-4"><small className="text-gray-700">&#x25C8; {r.date}</small>
+                    <div className="sm:mr-4 mr-1"><small className="text-gray-700">&#x25C8; {r.date}</small>
                     </div>
-                    <div className="mr-4"> <Link href={`/tags/${r.tags}`}>
+                    <div className="sm:mr-4 mr-1"> <Link href={`/tags/${r.tags}`}>
                       <a className={`text-gray-500 ${styles.tags}`}>&#x25C8; {r.tags}</a>
                     </Link>
                     </div>
