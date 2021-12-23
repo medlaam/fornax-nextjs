@@ -6,7 +6,7 @@ import { blogData } from './blogData';
 import { AppContext } from './context';
 
 const Blogs = ({ blogs }) => {
-  const [showSearch] = useContext(AppContext);
+  const [showSearch,setShowSearch] = useContext(AppContext);
   const [searchTerm, setSearchTerm] = useState('')
   const blog = blogData
 
@@ -38,12 +38,12 @@ const Blogs = ({ blogs }) => {
 
   return (
     <div className={styles.container}>
-      {
+      {/* {
         showSearch &&
         <form className="text-center" action="" method="post">
           <input className="border-2 rounded focus:outline-none	" type="text" placeholder="Search here" onChange={e => setSearchTerm(e.target.value)} />
         </form>
-      }
+      } */}
       {
         searchData.length ?
           <div className="flex flex-wrap my-7 justify-center container m-auto">
@@ -93,7 +93,7 @@ const Blogs = ({ blogs }) => {
                       <div className={styles.cardHeader}>
                         <Image src={b.image} ></Image>
                         <div className="mt-4">
-                          <Link href={`/${b.heading}`} >{b.heading}</Link>
+                          <Link href={`/${b.heading.replace(/ /g,"-")}`} >{b.heading}</Link>
                         </div>
                       </div>
 

@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useContext } from 'react';
 import { AppContext } from './context';
 import { useRouter } from 'next/router';
+import Search from './search';
 
 
 const Navbar = ({ toggle, isOpen }) => {
@@ -23,7 +24,10 @@ const Navbar = ({ toggle, isOpen }) => {
 
         {/* for mobile Menu */}
         <div className={`px-4 flex items-center lg:hidden ${styles.mobileMenu}`}>
-          <li onClick={() => setShowSearch(!showSearch)}><a className="mr-8 p-4 cursor-pointer"><VscSearch size={20} /></a></li>
+          <li><a onClick={() => setShowSearch(!showSearch)} className="mr-8 p-4 cursor-pointer"><VscSearch size={20} /></a></li>
+          <ul className={showSearch ? `block absolute ${styles.showSearch}` : 'hidden'} >
+              <li ><Search></Search></li>
+            </ul>
           <li>
             {isOpen ? <FaTimes className="cursor-pointer" size={25} onClick={toggle} /> : <FaBuromobelexperte className="cursor-pointer" size={25} onClick={toggle} />}
           </li>
@@ -48,7 +52,11 @@ const Navbar = ({ toggle, isOpen }) => {
             <li><a className="mr-8 p-4" href="/"><FaTwitter /></a></li>
             <li><a className="mr-8 p-4" href="/"><FaInstagram /></a></li>
             <li><a className="mr-8 p-4" href="/"><FaPinterest /></a></li>
-            <li className="cursor-pointer" onClick={() => setShowSearch(!showSearch)}><a className="mr-8 p-4"><VscSearch /></a></li>
+            <li className="cursor-pointer relative" ><a onClick={() => setShowSearch(!showSearch)} className="mr-8 p-4"><VscSearch /></a>
+            <ul className={showSearch ? `block absolute ${styles.showSearch}` : 'hidden'} >
+              <li ><Search></Search></li>
+            </ul>
+            </li>
           </ul>
         </div>
       </nav>
