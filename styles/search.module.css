@@ -1,3 +1,12 @@
+/* .searchContainer {
+  bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1100;
+  background-color:rgba(0,0,0,.25) !important;
+} */
 .searchContainer input {
   width: 90%;
   padding: 10px 15px;
@@ -16,4 +25,8 @@
 .searchContainer img{
   border-radius: 50%;
   height: 26px;
+}
+
+.heading:hover {
+  color: #dd5269;
 }

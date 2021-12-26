@@ -52,12 +52,12 @@ const Navbar = ({ toggle, isOpen }) => {
             <li><a className="mr-8 p-4" href="/"><FaTwitter /></a></li>
             <li><a className="mr-8 p-4" href="/"><FaInstagram /></a></li>
             <li><a className="mr-8 p-4" href="/"><FaPinterest /></a></li>
-            <li className="cursor-pointer relative" ><a onClick={() => setShowSearch(!showSearch)} className="mr-8 p-4"><VscSearch /></a>
-            <ul className={showSearch ? `block absolute ${styles.showSearch}` : 'hidden'} >
-              <li ><Search></Search></li>
-            </ul>
+            <li className="cursor-pointer" ><a onClick={() => setShowSearch(!showSearch)} className="mr-8 p-4"><VscSearch /></a>
             </li>
           </ul>
+          <div className={showSearch ? `block relative ${styles.showSearch}` : 'hidden'} >
+              <Search></Search>
+            </div>
         </div>
       </nav>
     </div>
