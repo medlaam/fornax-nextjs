@@ -50,7 +50,8 @@ const Search = () => {
                         <div key={b.id} className="p-4 block border-b-2  overflow-hidden">
 
                           <div onClick={() => setShowSearch(!showSearch)} className={`text-2xl ${styles.heading}`}>
-                            <Link href={`/${b.heading.replace(/ /g, "-")}`} >{b.heading}</Link>
+                            {/* <Link href={`/${b.heading.replace(/ /g, "-")}`} >{b.heading}</Link> */}
+                            <Link href={`/blog/${b.heading}`} >{b.heading}</Link>
                           </div>
 
                           <div className="flex mt-6">

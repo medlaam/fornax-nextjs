@@ -1,47 +1,59 @@
 import React from 'react';
-import { blogData } from '../../components/blogData';
 import Link from 'next/dist/client/link';
 import Image from 'next/dist/client/image';
 import styles from '../../styles/tagname.module.css';
+import Head from 'next/head';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { marked } from 'marked';
 
-const TagName = ({ tagname }) => {
+
+const TagName = ({ tagname, Blogs }) => {
 
   // filter blogs by tagname
-  const allBlogs = blogData.filter(a => a.tags == tagname)
+  const blogsByTag = Blogs.filter(a => a.frontmatter.tags === tagname || a.frontmatter.tags2 === tagname);
 
 
   return (
     <>
-      <div className="my-5 text-center">
-        <h1 className={styles.heading}>All {tagname} blogs are here</h1>
+      <Head>
+        <title>{tagname}</title>
+      </Head>
+      <div className="my-7 text-center m-auto">
+        <h1 className={styles.heading}>All <span> {tagname}</span> blogs are here</h1>
       </div>
 
-      <div className={`my-14 flex flex-wrap justify-center ${styles.container}`}>
+      <div className={`my-14 flex flex-wrap justify-center container m-auto ${styles.container}`}>
         {
-          allBlogs.map(r => {
+          blogsByTag.map((r, i) => {
             return (
-              <div key={r.id} className="p-4 bg-white sm:w-1 lg:w-1/3 md:w-1/2  overflow-hidden">
+              <div key={i} className="p-4 bg-white sm:w-1 lg:w-1/3 md:w-1/2  overflow-hidden">
                 <div >
-                  <Image src={r.image} ></Image>
+                  <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image>
                   <div className="mt-4">
-                    <Link href={`/${r.heading}`} >{r.heading}</Link>
+                    <Link href={`/blog/${r.frontmatter.title}`} >{r.frontmatter.title}</Link>
                   </div>
                 </div>
                 <div className="flex mt-6">
-                  <div className="mr-4">
+                  <div className="sm:mr-4 mr-1">
                     <div className={`flex ${styles.author}`}>
                       <img loading="lazy" src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
-                      <span><small>{r.name}</small></span>
+                      <span><Link href={`/about/${r.frontmatter.name}`}><a className="text-gray-500">{r.frontmatter.name}</a></Link></span>
                     </div>
 
                   </div>
-                  <div className="mr-4"><small>&#x25C8; {r.tags}</small>
+                  <div className="sm:mr-4 mr-1"><small>&#x25C8; {r.frontmatter.date}</small>
                   </div>
-                  <div className="mr-4"><small>&#x25C8; {r.date}</small>
+                  <div className="sm:mr-4 mr-1">
+                    <Link href={`/tags/${r.frontmatter.tags}`} >
+                      <a className={`text-gray-500 ${styles.tags}`}>&#x25C8; {r.frontmatter.tags}</a>
+                    </Link>
                   </div>
+                  
                 </div>
                 <div className="mt-4 mb-3">
-                  <span>{r.details}</span>
+                  <span dangerouslySetInnerHTML={{ __html: marked.parse(r.content).slice(0, 130) + ' ...' }}></span>
                 </div>
               </div>
             )
@@ -52,9 +64,31 @@ const TagName = ({ tagname }) => {
   );
 };
 
-TagName.getInitialProps = async ({ query }) => {
+
+export async function getServerSideProps({ query }) {
   const { tagname } = query
-  return { tagname }
+
+  const files = fs.readdirSync(path.join('posts'))
+
+  const Blogs = files.map(filename => {
+    // get frontmatter
+    const markedDownMeta = fs.readFileSync(path.join('posts', filename),
+      'utf8')
+
+    const { data: frontmatter, content } = matter(markedDownMeta)
+
+    return {
+      frontmatter,
+      content
+    }
+  })
+
+  return {
+    props: {
+      Blogs,
+      tagname
+    }
+  }
 
 }
 
