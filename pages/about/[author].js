@@ -28,9 +28,13 @@ const Author = ({ author }) => {
   );
 };
 
-Author.getInitialProps = async ({ query }) => {
+export const getServerSideProps = async ({ query }) => {
   const { author } = query
-  return { author }
+  return {
+    props: {
+      author
+    }
+  }
 
 }
 

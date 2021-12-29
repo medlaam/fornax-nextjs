@@ -28,3 +28,18 @@
   color: #152035;
   line-height: 1.4;
 }
+.heading span {
+  color: #dd5269;
+}
+
+.tags {
+  font-size:13px !important;
+  color:#788193 !important;
+  font-weight: 500 !important;
+}
+
+.author a {
+  font-size:13px !important;
+  color:#788193 !important;
+  font-weight: 500 !important;
+}
