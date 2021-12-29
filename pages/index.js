@@ -16,7 +16,7 @@ function Home({ page, postsBlog }) {
   const [postPerPage] = useState(5);
 
   const SortedBlog  = postsBlog.sort((a, b) => {
-    return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+    new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
   })
 
   const indexOfLastPost = page * postPerPage
