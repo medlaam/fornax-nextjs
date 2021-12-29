@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { sortByDate } from '../utils';
+// import { sortByDate } from '../utils';
 
 const Blogs = dynamic(() => import('../components/blogs'),
   { loading: () => <p>Loading...</p> }
@@ -15,9 +15,13 @@ function Home({ page, postsBlog }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage] = useState(5);
 
+  const SortedBlog  = postsBlog.sort((a, b) => {
+    return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+  })
+
   const indexOfLastPost = page * postPerPage
   const indexOfFirstPost = indexOfLastPost - postPerPage
-  const currentPosts = postsBlog.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = SortedBlog.slice(indexOfFirstPost, indexOfLastPost);
 
   // change page
   const paginate = pageNumber => setCurrentPage(pageNumber);
@@ -30,7 +34,7 @@ function Home({ page, postsBlog }) {
       <Head>
         <title>Leberte blog</title>
       </Head>
-      <Blogs postsBlog={currentPosts} blogs={currentPosts} />
+      <Blogs postsBlog={currentPosts}  />
       <Pagination page={page} hasNextPage={hasNextPage} hasPreviousPage={hasPreviousPage} postPerPage={postPerPage} totalPost={postsBlog.length} paginate={paginate} />
     </div>
   )
@@ -62,7 +66,7 @@ export const getServerSideProps = async ({ query: { page = 1 } }) => {
   return {
     props: {
       page: +page,
-      postsBlog: postsBlog.sort(sortByDate)
+      postsBlog: postsBlog
     }
   }
 }
