@@ -2,8 +2,8 @@ import Pagination from '../components/pagination';
 import Head from 'next/head';
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
-import fs from 'fs';
-import path from 'path';
+// import fs from 'fs';
+// import path from 'path';
 import matter from 'gray-matter';
 // import { sortByDate } from '../utils';
 
@@ -15,7 +15,7 @@ function Home({ page, postsBlog }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage] = useState(5);
 
-  const SortedBlog  = postsBlog.sort((a, b) => {
+  const SortedBlog = postsBlog.sort((a, b) => {
     new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
   })
 
@@ -34,7 +34,7 @@ function Home({ page, postsBlog }) {
       <Head>
         <title>Leberte blog</title>
       </Head>
-      <Blogs postsBlog={currentPosts}  />
+      <Blogs postsBlog={currentPosts} />
       <Pagination page={page} hasNextPage={hasNextPage} hasPreviousPage={hasPreviousPage} postPerPage={postPerPage} totalPost={postsBlog.length} paginate={paginate} />
     </div>
   )
@@ -42,10 +42,15 @@ function Home({ page, postsBlog }) {
 
 export const getServerSideProps = async ({ query: { page = 1 } }) => {
 
-  // get files from posts dir
-  const files = fs.readdirSync(path.join('posts'))
+  const fs = require("fs");
+  const path = require("path");
+  const directoryPath = path.join(process.cwd(), "posts");
+  const pageSlugs = fs.readdirSync(directoryPath);
 
-  const postsBlog = files.map(filename => {
+  // get files from posts dir
+  // const files = fs.readdirSync(path.join('posts'))
+
+  const postsBlog = pageSlugs.map(filename => {
     // create slug
     const slug = filename.replace('.md', '')
     // const slug = filename.replace('.md', '').replace(/ /g,"-")
