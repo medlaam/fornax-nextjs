@@ -11,7 +11,8 @@ import Search from './search';
 
 
 const Navbar = ({ toggle, isOpen }) => {
-  const [showSearch, setShowSearch] = useContext(AppContext);
+  const {value1} = useContext(AppContext);
+  const [showSearch, setShowSearch] = value1;
 
   const router = useRouter()
 

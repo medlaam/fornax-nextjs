@@ -1,10 +1,9 @@
 import Pagination from '../components/pagination';
 import Head from 'next/head';
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-// import fs from 'fs';
-// import path from 'path';
 import matter from 'gray-matter';
+import { AppContext } from '../components/context';
 // import { sortByDate } from '../utils';
 
 const Blogs = dynamic(() => import('../components/blogs'),
@@ -12,8 +11,15 @@ const Blogs = dynamic(() => import('../components/blogs'),
 )
 
 function Home({ page, postsBlog }) {
+  const {value2} = useContext(AppContext);
+  const [showSearchPosts, setShowSearchPosts] = value2
+
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage] = useState(5);
+
+  useEffect(() => {
+    setShowSearchPosts(postsBlog)
+  })
 
   const SortedBlog = postsBlog.sort((a, b) => {
     new Date(b.frontmatter.date) - new Date(a.frontmatter.date)

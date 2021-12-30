@@ -3,22 +3,27 @@ import styles from '../styles/search.module.css';
 import { useContext } from 'react';
 import Link from 'next/link';
 import { AppContext } from './context';
-import { blogData } from './blogData';
+// import { blogData } from './blogData';
 
 
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('')
-  const [showSearch, setShowSearch] = useContext(AppContext);
+  const { value1, value2 } = useContext(AppContext);
+  const [showSearch, setShowSearch] = value1
+  const [showSearchPosts, setShowSearchPosts] = value2
 
-  const searchAllBlogs = blogData.filter(val => {
+  const searchAllBlogs = showSearchPosts.filter(val => {
     if (searchTerm === "") {
       return ""
     }
-    else if (val.tags.toLowerCase().includes(searchTerm.toLowerCase())) {
+    else if (searchTerm === "a") {
+      return ""
+    }
+    else if (val.frontmatter.tags.toLowerCase().includes(searchTerm.toLowerCase())) {
       return val
     }
-    else if (val.heading.toLowerCase().includes(searchTerm.toLowerCase())) {
+    else if (val.frontmatter.title.toLowerCase().includes(searchTerm.toLowerCase())) {
       return val
     }
   })
@@ -47,26 +52,26 @@ const Search = () => {
                   {
                     searchAllBlogs.map((b, i) => {
                       return (
-                        <div key={b.id} className="p-4 block border-b-2  overflow-hidden">
+                        <div key={i} className="p-4 block border-b-2  overflow-hidden">
 
                           <div onClick={() => setShowSearch(!showSearch)} className={`text-2xl ${styles.heading}`}>
                             {/* <Link href={`/${b.heading.replace(/ /g, "-")}`} >{b.heading}</Link> */}
-                            <Link href={`/blog/${b.heading}`} >{b.heading}</Link>
+                            <Link href={`/blog/${b.frontmatter.title}`} >{b.frontmatter.title}</Link>
                           </div>
 
                           <div className="flex mt-6">
                             <div className="sm:mr-4 mr-1">
                               <div className={`flex ${styles.author}`}>
                                 <img className="mr-2" src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
-                                <span><Link href={`/about/${b.name}`}><a className="text-gray-500">{b.name}</a></Link></span>
+                                <span><Link href={`/about/${b.frontmatter.name}`}><a className="text-gray-500">{b.frontmatter.name}</a></Link></span>
                               </div>
 
                             </div>
-                            <div className="sm:mr-4 mr-1"><small className="text-gray-700">&#x25C8; {b.date}</small>
+                            <div className="sm:mr-4 mr-1"><small className="text-gray-700">&#x25C8; {b.frontmatter.date}</small>
                             </div>
                             <div className="sm:mr-4 mr-1">
-                              <Link href={`/tags/${b.tags}`}>
-                                <a className="text-gray-500">&#x25C8; {b.tags}</a>
+                              <Link href={`/tags/${b.frontmatter.tags}`}>
+                                <a className="text-gray-500">&#x25C8; {b.frontmatter.tags}</a>
                               </Link>
                             </div>
                           </div>
