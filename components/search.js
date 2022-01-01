@@ -17,9 +17,6 @@ const Search = () => {
     if (searchTerm === "") {
       return ""
     }
-    else if (searchTerm === "a") {
-      return ""
-    }
     else if (val.frontmatter.tags.toLowerCase().includes(searchTerm.toLowerCase())) {
       return val
     }
@@ -35,8 +32,8 @@ const Search = () => {
 
 
   return (
-    <div className={`${styles.searchContainer} container`}>
-      <div className="fixed right-0 left-0 top-0 sm:top-20 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="large-modal">
+    <div className={`${styles.searchContainer} container relative`}>
+      <div className={`${styles.search} overflow-auto fixed right-0 left-0 top-0 sm:top-20 z-50 justify-center items-center md:inset-0 h-modal sm:h-full`} id="large-modal">
         <div className={`relative px-4 w-full md:w-2/3 max-w-4xl h-full md:h-auto ${styles.searchModal}`}>
           <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <div className="flex justify-between items-center rounded-t border-b dark:border-gray-600">
