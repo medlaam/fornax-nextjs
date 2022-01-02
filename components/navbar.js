@@ -4,7 +4,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaPinterest, FaBuromobelexperte, F
 import { VscSearch } from 'react-icons/vsc'
 import styles from '../styles/navbar.module.css';
 import Link from 'next/link';
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { AppContext } from './context';
 import { useRouter } from 'next/router';
 import Search from './search';
