@@ -11,9 +11,9 @@ import styles from '../../styles/singleblog.module.css';
 import { sortByDate } from '../../utils';
 
 
-export default function PostPage({ frontmatter: { title, date, tags, name, images, tags2 }, content, slug, uniqueBlog }) {
+export default function PostPage({ frontmatter: { title, date, tags, name, images, tags2 }, content, slug, suggestedBlog }) {
 
-  const remainingBlogs = uniqueBlog.filter(b => b.frontmatter.title !== slug);
+  const remainingBlogs = suggestedBlog.filter(b => b.slug !== slug);
   const blogByAuthor = remainingBlogs.filter(r => r.frontmatter.name === name);
   const sortedBlogByAuthor = blogByAuthor.sort(sortByDate)
   const recentBlogByAuthor = sortedBlogByAuthor.slice(0, 2)
@@ -47,17 +47,10 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
           <Image layout={'responsive'} height={140} width={350} objectFit={'cover'} src={images}></Image>
         </div>
 
-        <div className="my-5 w-full p-4 md:w-2/3 m-auto">
-          {/* <h3 dangerouslySetInnerHTML={{__html:marked(content)}} className="text-2xl text-gray-500	"></h3> */}
-          {/* <p className="mt-5 text-xl text-gray-500">{blog.blogDetails}</p>
-          <h1 className="mt-10 text-3xl font-bold">Creative Design</h1>
-          <p className="mt-5 text-xl text-gray-500">{blog.blogDetails}</p>
-          <p className="mt-5 text-xl text-gray-500">{blog.blogDetails1}</p>
-          <div className="my-5">
-            <Image layout={'responsive'} objectFit={'cover'} src={images}></Image>
-          </div> */}
-          <div className="mt-5 text-xl text-gray-500" dangerouslySetInnerHTML={{ __html: marked.parse(content) }}>
+        {/* Read content from markdown files */}
 
+        <div className="my-5 w-full p-4 md:w-2/3 m-auto">
+          <div className="mt-5 text-xl text-gray-500" dangerouslySetInnerHTML={{ __html: marked.parse(content) }}>
           </div>
         </div>
 
@@ -71,8 +64,8 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
           </div>
           <div className="text-center md:text-right md:justify-between">
             <ul className={`${styles.socialLink} my-5 md:my-0 flex `}>
-              <li style={{ backgroundColor: '#395693' }} className="ml-5"><a href={`https://www.facebook.com/sharer/sharer.php?u=+https://liberte-blogs.vercel.app/${title}`} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a></li>
-              <li style={{ backgroundColor: '#1C9CEA' }} className="ml-5"><a href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://liberte-blogs.vercel.app/${title}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a></li>
+              <li style={{ backgroundColor: '#395693' }} className="ml-5"><a href={`https://www.facebook.com/sharer/sharer.php?u=+https://liberte-blogs.vercel.app/${slug}`} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a></li>
+              <li style={{ backgroundColor: '#1C9CEA' }} className="ml-5"><a href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://liberte-blogs.vercel.app/${slug}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a></li>
               <li style={{ backgroundColor: '#894DB8' }} className="ml-5"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a></li>
               <li style={{ backgroundColor: '#E34A85' }} className="ml-5"><a href=""><FaDribbble /></a> </li>
             </ul>
@@ -88,7 +81,7 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
                   <div className={styles.cardHeader}>
                     <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image>
                     <div className="mt-4">
-                      <Link href={`/blog/${r.frontmatter.title}`} >{r.frontmatter.title}</Link>
+                      <Link href={`/blog/${r.slug}`} >{r.frontmatter.title}</Link>
                     </div>
                   </div>
                   <div className="flex mt-6">
@@ -142,7 +135,7 @@ export async function getStaticPaths() {
 
   const paths = files.map(filename => ({
     params: {
-      slug: filename.replace('.md', '')
+      slug: filename.replace('.md', '').replace(/ /g,"-")
     }
   }))
 
@@ -153,13 +146,14 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const markedDownMeta = fs.readFileSync(path.join('posts', slug + '.md'), 'utf8')
-  const files = fs.readdirSync(path.join('posts'))
+  const markedDownMeta = fs.readFileSync(path.join('posts',
+  slug.replace(/-/g, " ") + ".md"), 'utf8')
+  const { data: frontmatter, content } = matter(markedDownMeta)
 
-  const uniqueBlog = files.map(filename => {
-    // create slug
-    const slug = filename.replace('.md', '')
-    // const slug = filename.replace('.md', '').replace(/ /g,"-")
+  // Read suggested blog from markdown
+  const files = fs.readdirSync(path.join('posts'))
+  const suggestedBlog = files.map(filename => {
+    const slug = filename.replace('.md', '').replace(/ /g,"-")
 
     // get frontmatter
     const markedDownMeta = fs.readFileSync(path.join('posts', filename),
@@ -173,14 +167,12 @@ export async function getStaticProps({ params: { slug } }) {
       content
     }
   })
-
-  const { data: frontmatter, content } = matter(markedDownMeta)
   return {
     props: {
-      frontmatter,
+      frontmatter: frontmatter,
       content,
       slug,
-      uniqueBlog
+      suggestedBlog
     }
   }
 }

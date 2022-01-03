@@ -32,7 +32,7 @@ const TagName = ({ tagname, Blogs }) => {
                 <div >
                   <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image>
                   <div className="mt-4">
-                    <Link href={`/blog/${r.frontmatter.title}`} >{r.frontmatter.title}</Link>
+                    <Link href={`/blog/${r.frontmatter.title.replace(/ /g,"-")}`} >{r.frontmatter.title}</Link>
                   </div>
                 </div>
                 <div className="flex mt-6">

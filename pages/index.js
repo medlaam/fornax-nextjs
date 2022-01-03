@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import matter from 'gray-matter';
 import { AppContext } from '../components/context';
-// import { sortByDate } from '../utils';
+import { sortByDate } from '../utils';
 
 const Blogs = dynamic(() => import('../components/blogs'),
   { loading: () => <p>Loading...</p> }
@@ -53,13 +53,8 @@ export const getServerSideProps = async ({ query: { page = 1 } }) => {
   const directoryPath = path.join(process.cwd(), "posts");
   const pageSlugs = fs.readdirSync(directoryPath);
 
-  // get files from posts dir
-  // const files = fs.readdirSync(path.join('posts'))
-
   const postsBlog = pageSlugs.map(filename => {
-    // create slug
-    const slug = filename.replace('.md', '')
-    // const slug = filename.replace('.md', '').replace(/ /g,"-")
+    const slug = filename.replace('.md', '').replace(/ /g,"-")
 
     // get frontmatter
     const markedDownMeta = fs.readFileSync(path.join('posts', filename),
@@ -77,7 +72,7 @@ export const getServerSideProps = async ({ query: { page = 1 } }) => {
   return {
     props: {
       page: +page,
-      postsBlog: postsBlog
+      postsBlog: postsBlog.sort(sortByDate)
     }
   }
 }

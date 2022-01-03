@@ -6,7 +6,6 @@ import { marked } from 'marked';
 
 
 const Blogs = ({ postsBlog }) => {
-
   return (
     <div className={styles.container}>
       <div className="flex flex-wrap my-7 justify-center container m-auto">
@@ -17,7 +16,7 @@ const Blogs = ({ postsBlog }) => {
                 <div className={styles.cardHeader}>
                   <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={b.frontmatter.images} ></Image>
                   <div className="mt-4">
-                    <Link href={`/blog/${b.frontmatter.title}`} >{b.frontmatter.title}</Link>
+                    <Link href={`/blog/${b.slug}`} >{b.frontmatter.title}</Link>
                   </div>
                 </div>
 
@@ -39,7 +38,7 @@ const Blogs = ({ postsBlog }) => {
 
                 </div>
                 <div className="mt-4 mb-3">
-                  <span dangerouslySetInnerHTML={{__html:marked.parse(b.content).slice(0,140)+ ' ...'}}  className='text-gray-400'>
+                  <span dangerouslySetInnerHTML={{ __html: marked.parse(b.content).slice(0, 140) + ' ...' }} className='text-gray-400'>
                   </span>
                 </div>
               </div>
@@ -52,5 +51,3 @@ const Blogs = ({ postsBlog }) => {
 };
 
 export default Blogs;
-
-
