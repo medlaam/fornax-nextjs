@@ -52,7 +52,7 @@ const Search = () => {
 
                             <div onClick={() => setShowSearch(!showSearch)} className={`text-2xl ${styles.heading}`}>
                               {/* <Link href={`/${b.heading.replace(/ /g, "-")}`} >{b.heading}</Link> */}
-                              <Link href={`/blog/${b.frontmatter.title}`} >{b.frontmatter.title}</Link>
+                              <Link href={`/blog/${b.slug}`} >{b.frontmatter.title}</Link>
                             </div>
 
                             <div className="flex mt-6">
