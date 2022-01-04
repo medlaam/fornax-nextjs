@@ -17,10 +17,10 @@ const Pagination = ({ postPerPage, totalPost, page, paginate, hasNextPage, hasPr
       <ul className={`flex justify-between ${styles.pagination}`}>
         {
           hasPreviousPage ?
-            <li onClick={() => router.push(`/?page=${page - 1}`)} className={`px-5 h-10 ${styles.page}`}>
+            <li onClick={() => router.push(`/page/${page - 1}`)} className={`px-5 h-10 ${styles.page}`}>
               <a className={styles.arrow}><FaAngleLeft /></a>
             </li> :
-            <button disabled onClick={() => router.push(`/?page=${page - 1}`)} className={`px-5 h-10 ${styles.page}`}>
+            <button disabled onClick={() => router.push(`/page/${page - 1}`)} className={`px-5 h-10 ${styles.page}`}>
               <a className={styles.arrow}><FaAngleLeft /></a>
             </button>
         }
@@ -28,7 +28,7 @@ const Pagination = ({ postPerPage, totalPost, page, paginate, hasNextPage, hasPr
           <ul className={`flex flex-wrap ${styles.pagination}`}>
             {
               pageNumber.map(num => (
-                <li key={num} onClick={() => { paginate(num); router.push(`/?page=${num}`) }} className={num==page ? `px-5 h-10 ${styles.active} `: `px-5 h-10 ${styles.page} `}><a >{num}</a>
+                <li key={num} onClick={() => { paginate(num); router.push(`/page/${num}`) }} className={num==page ? `px-5 h-10 ${styles.active} `: `px-5 h-10 ${styles.page} `}><a >{num}</a>
                 </li>
               ))
             }
@@ -36,11 +36,11 @@ const Pagination = ({ postPerPage, totalPost, page, paginate, hasNextPage, hasPr
         </li>
         {
           hasNextPage ?
-            <li onClick={() => router.push(`/?page=${page + 1}`)} className={`px-5 h-10 ${styles.page}`}>
+            <li onClick={() => router.push(`/page/${page + 1}`)} className={`px-5 h-10 ${styles.page}`}>
               <a className={styles.arrow}><FaAngleRight /></a>
             </li>
             :
-            <button onClick={() => router.push(`/?page=${page + 1}`)} className={`px-5 h-10 text-gray-400 ${styles.page}`} disabled>
+            <button onClick={() => router.push(`/page/${page + 1}`)} className={`px-5 h-10 text-gray-400 ${styles.page}`} disabled>
               <a className={`${styles.arrow} `}><FaAngleRight /></a>
             </button>
         }
