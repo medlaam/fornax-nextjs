@@ -64,8 +64,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const page = parseInt((params && params.page_index) || 1)
-  console.log(page);
-
   const posts = getPosts()
 
   return {

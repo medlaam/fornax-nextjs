@@ -3,16 +3,14 @@ import Link from 'next/dist/client/link';
 import Image from 'next/dist/client/image';
 import styles from '../../styles/tagname.module.css';
 import Head from 'next/head';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import { marked } from 'marked';
+import { getPosts } from '../../lib/posts';
 
 
-const TagName = ({ tagname, Blogs }) => {
+const TagName = ({ tagname, posts }) => {
 
   // filter blogs by tagname
-  const blogsByTag = Blogs.filter(a => a.frontmatter.tags === tagname || a.frontmatter.tags2 === tagname);
+  const blogsByTag = posts.filter(a => a.frontmatter.tags === tagname || a.frontmatter.tags2 == tagname);
 
 
   return (
@@ -32,7 +30,7 @@ const TagName = ({ tagname, Blogs }) => {
                 <div >
                   <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image>
                   <div className="mt-4">
-                    <Link href={`/blog/${r.frontmatter.title.replace(/ /g,"-")}`} >{r.frontmatter.title}</Link>
+                    <Link href={`/blog/${r.frontmatter.title.replace(/ /g, "-")}`} >{r.frontmatter.title}</Link>
                   </div>
                 </div>
                 <div className="flex mt-6">
@@ -50,7 +48,7 @@ const TagName = ({ tagname, Blogs }) => {
                       <a className={`text-gray-500 ${styles.tags}`}>&#x25C8; {r.frontmatter.tags}</a>
                     </Link>
                   </div>
-                  
+
                 </div>
                 <div className="mt-4 mb-3">
                   <span dangerouslySetInnerHTML={{ __html: marked.parse(r.content).slice(0, 130) + ' ...' }}></span>
@@ -64,33 +62,33 @@ const TagName = ({ tagname, Blogs }) => {
   );
 };
 
-
-export async function getServerSideProps({ query }) {
-  const { tagname } = query
-
-  const files = fs.readdirSync(path.join('posts'))
-
-  const Blogs = files.map(filename => {
-    // get frontmatter
-    const markedDownMeta = fs.readFileSync(path.join('posts', filename),
-      'utf8')
-
-    const { data: frontmatter, content } = matter(markedDownMeta)
-
-    return {
-      frontmatter,
-      content
-    }
-  })
+export async function getStaticPaths() {
+  const posts = getPosts();
+  const paths = posts.map((tags) => ({
+    params: {
+      tagname: tags.frontmatter.tags,
+      tagname: tags.frontmatter.tags2
+    },
+  }));
 
   return {
-    props: {
-      Blogs,
-      tagname
-    }
-  }
+    paths,
+    fallback: false,
+  };
+};
 
-}
+export async function getStaticProps({ params }) {
+  const { tagname } = params;
+
+  const posts = getPosts();
+  return {
+    props: {
+      tagname: tagname,
+      posts: posts,
+    },
+  };
+};
+
 
 export default TagName;
 
