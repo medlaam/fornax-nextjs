@@ -66,8 +66,7 @@ export async function getStaticPaths() {
   const posts = getPosts();
   const paths = posts.map((tags) => ({
     params: {
-      tagname: tags.frontmatter.tags,
-      tagname: tags.frontmatter.tags2
+      tagname: tags.frontmatter.tags 
     },
   }));
 
