@@ -114,7 +114,7 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
           </div>
           <div className="text-center mt-5 w-2/3">
             <p>Written By</p>
-            <h5 className="mt-3">{name}</h5>
+            <h5 className="mt-3"><Link href={`/about/${name}`}>{name}</Link></h5>
             <p className="mt-4">Maecenas sit amet purus eget ipsum elementum venenatis. Aenean maximus urna magna elementum venenatis, quis rutrum mi semper non purus eget ipsum elementum venenatis.</p>
           </div>
           <ul className={`flex mt-5 ${styles.writersLink}`}>

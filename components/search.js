@@ -35,7 +35,7 @@ const Search = () => {
         <div className={`${styles.search} overflow-auto fixed right-0 left-0 top-0 sm:top-20 z-50 justify-center items-center md:inset-0 h-modal sm:h-full`} id="large-modal">
           <div className={`relative px-4 w-full md:w-2/3 max-w-4xl h-full md:h-auto ${styles.searchModal}`}>
             <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-              <div className="flex justify-between items-center rounded-t border-b dark:border-gray-600">
+              <div className="flex justify-between items-center rounded-t  dark:border-gray-600">
                 <input className="rounded focus:outline-none	w-full" type="text" value={searchTerm} placeholder="Search here" onChange={(e) => { setSearchTerm(e.target.value) }} />
 
                 <button onClick={resetSearchInput} type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-3 mr-2 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="large-modal">
@@ -51,24 +51,20 @@ const Search = () => {
                           <div key={i} className="p-4 block border-b-2  overflow-hidden">
 
                             <div onClick={() => setShowSearch(!showSearch)} className={`text-2xl ${styles.heading}`}>
-                              {/* <Link href={`/${b.heading.replace(/ /g, "-")}`} >{b.heading}</Link> */}
                               <Link href={`/blog/${b.slug}`} >{b.frontmatter.title}</Link>
                             </div>
-
                             <div className="flex mt-6">
                               <div className="sm:mr-4 mr-1">
                                 <div className={`flex ${styles.author}`}>
                                   <img className="mr-2" src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
-                                  <span><Link href={`/about/${b.frontmatter.name}`}><a className="text-gray-500">{b.frontmatter.name}</a></Link></span>
+                                  <span>
+                                    <a className="text-gray-500">{b.frontmatter.name}</a></span>
                                 </div>
-
                               </div>
                               <div className="sm:mr-4 mr-1"><small className="text-gray-700">&#x25C8; {b.frontmatter.date}</small>
                               </div>
                               <div className="sm:mr-4 mr-1">
-                                <Link href={`/tags/${b.frontmatter.tags}`}>
-                                  <a className="text-gray-500">&#x25C8; {b.frontmatter.tags}</a>
-                                </Link>
+                                <a className="text-gray-500">&#x25C8; {b.frontmatter.tags}</a>
                               </div>
                             </div>
 

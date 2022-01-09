@@ -17,3 +17,9 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.primary-button {
+  background-color: #e1677b;
+  color: #ffff;
+  padding:12px;
+}

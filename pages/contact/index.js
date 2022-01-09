@@ -34,8 +34,10 @@ const Contact = () => {
       <Head>
         <title>Contact</title>
       </Head>
-      <div className={`b py-16 px-4 sm:px-6 h-screen flex justify-center items-center ${styles.contact}`}>
-        <div className="mx-auto w-full max-w-2xl rounded-xl p-8 ">
+      <div className= {`mt-10 ${styles.contact}`}>
+        <h2 className="text-center text-4xl">Contact Me</h2>
+      <div className={`py-16 px-4 sm:px-6 h-screen flex justify-center items-center `}>
+        <div className="mx-auto w-full max-w-2xl rounded-xl p-8">
           {
             contactType.type === 'nodemailer' &&
             <form
@@ -53,7 +55,7 @@ const Contact = () => {
                       message: 'You must enter your name',
                     },
                   })}
-                  className={`block w-full shadow py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md focus:outline-none focus:ring-2 ${errors ? 'ring-2 ring-red-500' : null
+                  className={`block w-full border-2 py-3 px-4 placeholder-gray-500 ${errors ? 'ring-2 ring-red-500' : null
                     }`}
                   placeholder="Full name"
                 />
@@ -85,7 +87,7 @@ const Contact = () => {
                       message: 'This needs to be a valid email address',
                     },
                   })}
-                  className={`block w-full shadow py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md focus:outline-none focus:ring-2 ${errors ? 'ring-2 ring-red-500' : null
+                  className={`block w-full py-3 border-2 px-4 placeholder-gray-500 ${errors ? 'ring-2 ring-red-500' : null
                     }`}
                   placeholder="Email"
                 />
@@ -100,7 +102,7 @@ const Contact = () => {
                 <input
                   type="text"
                   {...register('phone')}
-                  className="block w-full shadow py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md focus:outline-none focus:ring-2"
+                  className="block w-full py-3 px-4 border-2 placeholder-gray-500"
                   placeholder="Phone"
                 />
               </div>
@@ -124,7 +126,7 @@ const Contact = () => {
                       message: 'Your message must be longer than this!',
                     },
                   })}
-                  className={`block w-full shadow py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md focus:outline-none focus:ring-2 ${errors ? 'ring-2 ring-red-500' : null
+                  className={`block w-full py-3 px-4 border-2 placeholder-gray-500 ${errors ? 'ring-2 ring-red-500' : null
                     }`}
                   placeholder="Message"></textarea>
                 <span className="text-red-400 text-sm py-2">
@@ -134,7 +136,7 @@ const Contact = () => {
               <div>
                 <button
                   type="submit"
-                  className="inline-flex justify-center py-3 px-6 border border-transparent shadow text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                  className="primary-button">
                   Submit
                 </button>
               </div>
@@ -158,7 +160,7 @@ const Contact = () => {
                       message: 'You must enter your name',
                     },
                   })}
-                  className={`block w-full shadow py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md focus:outline-none focus:ring-2 ${errors ? 'ring-2 ring-red-500' : null
+                  className={`block w-full shadow py-3 px-4 placeholder-gray-500 ${errors ? 'ring-2 ring-red-500' : null
                     }`}
                   placeholder="Full name"
                 />
@@ -214,6 +216,7 @@ const Contact = () => {
 
           {/* <button onClick={handleClick}>Toggle</button> */}
         </div>
+      </div>
       </div>
     </>
   );
