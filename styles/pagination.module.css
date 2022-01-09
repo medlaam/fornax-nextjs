@@ -56,3 +56,26 @@
   color: #ffffff;
   background-color: #e1677b;
 }
+
+.disabled {
+  font-size: 22px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor:not-allowed;
+}
+.disablePage {
+  padding: 0;
+  margin-left: 0;
+  color: #152035;
+  border: 0;
+  height: 48px;
+  width: 48px;
+  line-height: 48px;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 0 !important;
+  position: relative;
+  cursor: not-allowed;
+}
