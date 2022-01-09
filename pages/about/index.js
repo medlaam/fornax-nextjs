@@ -14,7 +14,7 @@ const About = () => {
       </Head>
       <div className={`mt-10 ${styles.about}`}>
         <div className="text-center ">
-          <Image height={100} width={100} objectFit="cover" src={aboutMe}></Image>
+          <Image height={150} width={150} objectFit="cover" src={aboutMe}></Image>
           <p className="mt-3 font-bold">Sarah Taylor</p>
           <p className="mt-4 m-auto w-1/3">Maecenas sit amet purus eget ipsum elementum venenatis. Aenean maximus urna magna elementum venenatis, quis rutrum mi semper non purus eget ipsum elementum venenatis.aecenas sit amet purus eget ipsum elementum venenatis. Aenean maximus urna magna elementum venenatis, quis rutrum mi semper non purus eget ipsum elementum venenatis.</p>
         </div>

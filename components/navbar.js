@@ -11,14 +11,14 @@ import Search from './search';
 
 
 const Navbar = ({ toggle, isOpen }) => {
-  const {value1} = useContext(AppContext);
+  const { value1 } = useContext(AppContext);
   const [showSearch, setShowSearch] = value1;
 
-    useEffect(()=>{
-      document.addEventListener('keydown', (e) => {
-        e.key === 'Escape' && setShowSearch(false) ;
-      })
-    },[])
+  useEffect(() => {
+    document.addEventListener('keydown', (e) => {
+      e.key === 'Escape' && setShowSearch(false);
+    })
+  }, [])
 
   const router = useRouter()
 
@@ -33,8 +33,8 @@ const Navbar = ({ toggle, isOpen }) => {
         <div className={`px-4 flex items-center lg:hidden ${styles.mobileMenu}`}>
           <li><a onClick={() => setShowSearch(!showSearch)} className="mr-8 p-4 cursor-pointer"><VscSearch size={20} /></a></li>
           <ul className={showSearch ? `block absolute ${styles.showSearch}` : 'hidden'} >
-              <li ><Search></Search></li>
-            </ul>
+            <li ><Search></Search></li>
+          </ul>
           <li>
             {isOpen ? <FaTimes className="cursor-pointer" size={25} onClick={toggle} /> : <FaBuromobelexperte className="cursor-pointer" size={25} onClick={toggle} />}
           </li>
@@ -45,25 +45,25 @@ const Navbar = ({ toggle, isOpen }) => {
             <li>
               <Link href="/"><a className={router.pathname == '/' ? `${styles.active} p-6` : "p-6"}>Home</a></Link>
             </li>
-            {/* <li>
-              <Link href="/"><a className={router.pathname == '/feature' ? `${styles.active} p-4` : "p-4"}>Features</a></Link>
-            </li> */}
             <li><Link href="/about"><a className={router.pathname == '/about' ? `${styles.active} p-6` : "p-6"}>About</a></Link>
+            </li>
+            <li>
+              <Link href="/authors"><a className={router.pathname == '/authors' ? `${styles.active} p-6` : "p-6"}>Author</a></Link>
             </li>
             <li>
               <Link href="/contact"><a className={router.pathname == '/contact' ? `${styles.active} p-6` : "p-6"}>Contact</a></Link>
             </li>
             <li className=" flex items-center justify-center border-l-2 p-4 ml-4"></li>
-            <li><a className="mr-8 p-6" href="/"><FaFacebookF /></a></li>
-            <li><a className="mr-8 p-6" href="/"><FaTwitter /></a></li>
-            <li><a className="mr-8 p-6" href="/"><FaInstagram /></a></li>
-            <li><a className="mr-8 p-6" href="/"><FaPinterest /></a></li>
+            <li><a className="mr-8 p-6" href="/#"><FaFacebookF /></a></li>
+            <li><a className="mr-8 p-6" href="/#"><FaTwitter /></a></li>
+            <li><a className="mr-8 p-6" href="/#"><FaInstagram /></a></li>
+            <li><a className="mr-8 p-6" href="/#"><FaPinterest /></a></li>
             <li className="cursor-pointer" ><a onClick={() => setShowSearch(!showSearch)} className="mr-8 p-4"><VscSearch /></a>
             </li>
           </ul>
           <div className={showSearch ? `block relative ${styles.showSearch}` : 'hidden'} >
-              <Search></Search>
-             </div>        
+            <Search></Search>
+          </div>
         </div>
       </nav>
     </div>
