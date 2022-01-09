@@ -10,7 +10,7 @@ import { getPosts } from '../../lib/posts';
 const TagName = ({ tagname, posts }) => {
 
   // filter blogs by tagname
-  const blogsByTag = posts.filter(a => a.frontmatter.tags === tagname || a.frontmatter.tags2 == tagname);
+  const blogsByTag = posts.filter(a => a.frontmatter.tags == tagname || a.frontmatter.tags2 == tagname);
 
 
   return (
@@ -26,7 +26,7 @@ const TagName = ({ tagname, posts }) => {
         {
           blogsByTag.map((r, i) => {
             return (
-              <div key={i} className="p-4 bg-white sm:w-1 lg:w-1/3 md:w-1/2  overflow-hidden">
+              <div key={i} className="p-4 bg-white md:w-1/2 lg:w-1/3  overflow-hidden">
                 <div >
                   <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image>
                   <div className="mt-4">

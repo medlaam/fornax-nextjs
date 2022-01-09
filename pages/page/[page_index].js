@@ -3,14 +3,14 @@ import path from 'path'
 import Pagination from '../../components/pagination';
 import Head from 'next/head';
 import { useContext, useEffect, useState } from 'react';
-import dynamic from 'next/dynamic';
 import { AppContext } from '../../components/context';
 import { getPosts } from '../../lib/posts';
-import { postPerPage } from '../../config/postPerPage'
+import { postPerPage } from '../../config/pagination'
+import Blogs from '../../components/blogs'
 
-const Blogs = dynamic(() => import('../../components/blogs'),
-  { loading: () => <p>Loading...</p> }
-)
+// const Blogs = dynamic(() => import('../../components/blogs'),
+//   { loading: () => <p>Loading...</p> }
+// )
 
 function Home({ page, postsBlog }) {
   const { value2 } = useContext(AppContext);

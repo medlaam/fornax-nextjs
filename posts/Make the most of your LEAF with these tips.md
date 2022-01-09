@@ -1,6 +1,6 @@
 ---
 title: 'Make the most of your LEAF with these tips'
-name: 'Melissa Hunter'
+name: 'Melissa'
 date: 'AUGUST 28, 2018'
 tags: 'Inspiration'
 tags2: 'tech'

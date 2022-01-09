@@ -1,6 +1,6 @@
 ---
 title: 'The quote for this week!'
-name: 'Melissa Hunter'
+name: 'Melissa'
 date: 'AUGUST 28, 2017'
 tags: 'Inspiration'
 tags2: 'tech'

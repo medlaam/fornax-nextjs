@@ -1,6 +1,6 @@
 ---
 title: 'FrontEnd vs BackEnd! which one is your favorite'
-name: 'Melissa Hunter'
+name: 'Melissa'
 date: 'AUGUST 29, 2019'
 tags: 'Creative'
 tags2: 'tech'
