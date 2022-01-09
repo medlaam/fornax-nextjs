@@ -36,7 +36,7 @@ const Contact = () => {
       </Head>
       <div className= {`mt-10 ${styles.contact}`}>
         <h2 className="text-center text-4xl">Contact Me</h2>
-      <div className={`py-16 px-4 sm:px-6 h-screen flex justify-center items-center `}>
+      <div className={`py-16 px-4 sm:px-6 flex justify-center items-center `}>
         <div className="mx-auto w-full max-w-2xl rounded-xl p-8">
           {
             contactType.type === 'nodemailer' &&
