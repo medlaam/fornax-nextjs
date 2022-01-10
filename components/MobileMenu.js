@@ -13,7 +13,7 @@ const MobileMenu = ({ isOpen, toggle }) => {
             NavLinks.map(n => {
               return (
                 <li onClick={toggle} key={n.title} className="p-2">
-                  <Link href={{ href: n.href }}><a className="">{n.title}</a></Link>
+                  <Link href={n.href}><a className="">{n.title}</a></Link>
                 </li>
               )
             })
@@ -25,7 +25,7 @@ const MobileMenu = ({ isOpen, toggle }) => {
             SocialIcons.map(s => {
               return (
                 <li key={s.name} className="p-4">
-                  <Link href={{ href: s.href }}><a>{s.icons}</a></Link>
+                  <Link href={s.href}><a>{s.icons}</a></Link>
                 </li>
               )
             })

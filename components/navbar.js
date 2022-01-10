@@ -48,7 +48,7 @@ const Navbar = ({ toggle, isOpen }) => {
             <li><Link href="/about"><a className={router.pathname == '/about' ? `${styles.active} p-6` : "p-6"}>About</a></Link>
             </li>
             <li>
-              <Link href="/authors"><a className={router.pathname == '/authors' ? `${styles.active} p-6` : "p-6"}>Author</a></Link>
+              <Link href="/authors"><a className={router.pathname == '/authors' ? `${styles.active} p-6` : "p-6"}>Authors</a></Link>
             </li>
             <li>
               <Link href="/contact"><a className={router.pathname == '/contact' ? `${styles.active} p-6` : "p-6"}>Contact</a></Link>
