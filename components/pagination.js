@@ -20,8 +20,8 @@ const Pagination = ({ postPerPage, totalPost, page, paginate, hasNextPage, hasPr
             <li onClick={() => router.push(`/page/${page - 1}`)} className={`px-5 h-10 ${styles.page}`}>
               <a className={styles.arrow}><FaAngleLeft /></a>
             </li> :
-            <button disabled onClick={() => router.push(`/page/${page - 1}`)} className={`px-5 h-10 ${styles.page}`}>
-              <a className={styles.arrow}><FaAngleLeft /></a>
+            <button disabled className={`px-5 h-10 ${styles.disablePage}`}>
+              <a className={styles.disabled}><FaAngleLeft /></a>
             </button>
         }
         <li>

@@ -11,7 +11,7 @@ import styles from '../../styles/singleblog.module.css';
 import { sortByDate } from '../../utils';
 
 
-export default function PostPage({ frontmatter: { title, date, tags, name, images, tags2 }, content, slug, suggestedBlog }) {
+export default function PostPage({ frontmatter: { title, date, tags, name, images, tags2, authorImage }, content, slug, suggestedBlog }) {
 
   const remainingBlogs = suggestedBlog.filter(b => b.slug !== slug);
   const blogByAuthor = remainingBlogs.filter(r => r.frontmatter.name === name);
@@ -29,7 +29,7 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
             <p className="lg:text-5xl text-4xl">{title}</p>
             <div className="flex items-center sm:justify-between mt-5">
               <div className={`flex ${styles.author}`}>
-                <img loading="lazy" src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
+                <img loading="lazy" src={authorImage} />
                 <span className="text-gray-500"><Link href={`/about/${name}`}><a className="text-gray-500">{name}</a></Link></span>
                 <div className="flex-auto ml-5"><small className="text-gray-500">&#x25C8; {date}</small>
                 </div>
@@ -54,16 +54,16 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
           </div>
         </div>
 
-        <div className="md:flex md:justify-between block my-5 sm:py-10 m-20">
-          <div className={`justify-evenly ${styles.postTag}`}>
-            <ul className="flex items-center">
-              <li><Link href={`/tags/${tags}`}><a className="ml-5">{tags}</a></Link>
+        <div className="md:flex md:justify-around block my-5 sm:py-10 m-20">
+          <div className={`text-center md:text-right md:justify-between ${styles.postTag}`}>
+            <ul className="flex justify-center my-5 md:my-0">
+              <li><Link href={`/tags/${tags}`}><a className="md:mr-5 ml-3">{tags}</a></Link>
               </li>
-              <li><Link href={`/tags/${tags2}`}><a className="ml-5">{tags2}</a></Link></li>
+              <li><Link href={`/tags/${tags2}`}><a className="md:mr-5 ml-3">{tags2}</a></Link></li>
             </ul>
           </div>
           <div className="text-center md:text-right md:justify-between">
-            <ul className={`${styles.socialLink} my-5 md:my-0 flex `}>
+            <ul className={`${styles.socialLink} my-5 md:my-0 flex justify-center`}>
               <li style={{ backgroundColor: '#395693' }} className="ml-5"><a href={`https://www.facebook.com/sharer/sharer.php?u=+https://liberte-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a></li>
               <li style={{ backgroundColor: '#1C9CEA' }} className="ml-5"><a href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://liberte-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a></li>
               <li style={{ backgroundColor: '#894DB8' }} className="ml-5"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a></li>
@@ -110,7 +110,7 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
         </div>
         <div className={`${styles.writer} my-14 flex flex-col	justify-center`}>
           <div>
-            <img src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=135&d=mm&r=g" alt="" />
+            <img src={authorImage} alt="" />
           </div>
           <div className="text-center mt-5 w-2/3">
             <p>Written By</p>
@@ -120,7 +120,7 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
           <ul className={`flex mt-5 ${styles.writersLink}`}>
             <li className="ml-5"><a href={`https://www.facebook.com/`}><FaFacebookF /></a></li>
             <li className="ml-5"><a href={`https://twitter.com/`}><FaTwitter /></a></li>
-            <li className="ml-5"><a href="#"><FaInstagram /></a></li>
+            <li className="ml-5"><a href={`https://instagram.com/`}><FaInstagram /></a></li>
             <li className="ml-5"><a href="#"><FaDribbble /></a></li>
           </ul>
         </div>

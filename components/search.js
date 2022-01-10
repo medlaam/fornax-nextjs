@@ -31,7 +31,7 @@ const Search = () => {
 
   return (
     <>
-      <div className={`${styles.searchContainer} container relative`}>
+      <div className={`${styles.searchContainer} relative`}>
         <div className={`${styles.search} overflow-auto fixed right-0 left-0 top-0 sm:top-20 z-50 justify-center items-center md:inset-0 h-modal sm:h-full`} id="large-modal">
           <div className={`relative px-4 w-full md:w-2/3 max-w-4xl h-full md:h-auto ${styles.searchModal}`}>
             <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -44,7 +44,7 @@ const Search = () => {
               </div>
               {
                 searchAllBlogs.length ?
-                  <div className="my-7 w-full justify-center container inline-block">
+                  <div className="w-full border-t-2 border-dotted justify-center inline-block">
                     {
                       searchAllBlogs.map((b, i) => {
                         return (
@@ -56,7 +56,7 @@ const Search = () => {
                             <div className="flex mt-6">
                               <div className="sm:mr-4 mr-1">
                                 <div className={`flex ${styles.author}`}>
-                                  <img className="mr-2" src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
+                                  <img className="mr-2" src={b.frontmatter.authorImage} />
                                   <span>
                                     <a className="text-gray-500">{b.frontmatter.name}</a></span>
                                 </div>

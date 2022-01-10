@@ -1,4 +1,4 @@
-import Link from 'next/dist/client/link'
+import Link from 'next/link'
 import styles from '../styles/navbar.module.css';
 import NavLinks from '../data/NavLinks';
 import SocialIcons from '../data/SocialIcons';
@@ -13,7 +13,7 @@ const MobileMenu = ({ isOpen, toggle }) => {
             NavLinks.map(n => {
               return (
                 <li onClick={toggle} key={n.title} className="p-2">
-                  <Link href={n.href}><a className="">{n.title}</a></Link>
+                  <Link href={{ href: n.href }}><a className="">{n.title}</a></Link>
                 </li>
               )
             })
@@ -25,7 +25,7 @@ const MobileMenu = ({ isOpen, toggle }) => {
             SocialIcons.map(s => {
               return (
                 <li key={s.name} className="p-4">
-                  <Link href={s.href}><a>{s.icons}</a></Link>
+                  <Link href={{ href: s.href }}><a>{s.icons}</a></Link>
                 </li>
               )
             })

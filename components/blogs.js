@@ -23,7 +23,7 @@ const Blogs = ({ postsBlog }) => {
                 <div className="flex mt-6">
                   <div className="sm:mr-4 mr-1">
                     <div className={`flex ${styles.author}`}>
-                      <img src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
+                      <img src={b.frontmatter.authorImage} />
                       <span><Link href={`/about/${b.frontmatter.name}`}><a className="text-gray-500">{b.frontmatter.name}</a></Link></span>
                     </div>
 

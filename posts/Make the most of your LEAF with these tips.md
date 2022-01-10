@@ -5,6 +5,7 @@ date: 'AUGUST 28, 2018'
 tags: 'Inspiration'
 tags2: 'tech'
 images: '/03.jpg'
+authorImage: '/author.jpg'
 ---
 
 Jadedly swankily overcast yikes to put since conscientiously goldfinch avariciously and dear less majestically across far some powerlessly mowed ironically well this since tangibly lobster less floated one some stolid slick hound.

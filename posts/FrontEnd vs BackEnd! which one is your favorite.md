@@ -5,6 +5,7 @@ date: 'AUGUST 29, 2019'
 tags: 'Creative'
 tags2: 'tech'
 images: '/02.jpg'
+authorImage: '/author.jpg'
 ---
 
 Front end development is programming which focuses on the visual elements of a website or app that a user will interact with (the client side). Back end development focuses on the side of a website users can't see (the server side).
