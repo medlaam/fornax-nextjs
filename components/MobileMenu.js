@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styles from '../styles/navbar.module.css';
-import NavLinks from '../data/NavLinks';
-import SocialIcons from '../data/SocialIcons';
+import Menu from '../config/menu.json'
+import socialIcons from '../config/config.json'
 
 
 const MobileMenu = ({ isOpen, toggle }) => {
@@ -10,10 +10,10 @@ const MobileMenu = ({ isOpen, toggle }) => {
       <div className={isOpen ? "text-center block shadow-sm" : 'hidden top-0 h-0'}>
         <ul className={`inline-block ${styles.navLink}`}>
           {
-            NavLinks.map(n => {
+            Menu.header.map(n => {
               return (
-                <li onClick={toggle} key={n.title} className="p-2">
-                  <Link href={n.href}><a className="">{n.title}</a></Link>
+                <li onClick={toggle} key={n.menu} className="p-2">
+                  <Link href={n.link}><a className="">{n.menu}</a></Link>
                 </li>
               )
             })
@@ -22,10 +22,10 @@ const MobileMenu = ({ isOpen, toggle }) => {
         </ul>
         <ul className={`${styles.socialLinks} flex items-center justify-center p-2`}>
           {
-            SocialIcons.map(s => {
+            socialIcons.socialMedia.map(s => {
               return (
                 <li key={s.name} className="p-4">
-                  <Link href={s.href}><a>{s.icons}</a></Link>
+                  <Link href={s.link}><a><i className={`${s.icon} not-italic`}></i></a></Link>
                 </li>
               )
             })

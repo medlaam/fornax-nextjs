@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Img1 from '../public/logo-dark.png';
-import { FaFacebookF, FaTwitter, FaInstagram, FaPinterest, FaBuromobelexperte, FaTimes } from 'react-icons/fa';
+import { FaBuromobelexperte, FaTimes } from 'react-icons/fa';
 import { VscSearch } from 'react-icons/vsc'
 import styles from '../styles/navbar.module.css';
 import Link from 'next/link';
@@ -8,6 +8,8 @@ import { useContext, useEffect } from 'react';
 import { AppContext } from './context';
 import { useRouter } from 'next/router';
 import Search from './search';
+import Menu from '../config/menu.json'
+import socialIcons from '../config/config.json'
 
 
 const Navbar = ({ toggle, isOpen }) => {
@@ -42,22 +44,21 @@ const Navbar = ({ toggle, isOpen }) => {
 
         <div className={`${styles.navLink} pr-8 lg:block hidden`}>
           <ul className="flex items-center justify-center">
-            <li>
-              <Link href="/"><a className={router.pathname == '/' ? `${styles.active} p-6` : "p-6"}>Home</a></Link>
-            </li>
-            <li><Link href="/about"><a className={router.pathname == '/about' ? `${styles.active} p-6` : "p-6"}>About</a></Link>
-            </li>
-            <li>
-              <Link href="/authors"><a className={router.pathname == '/authors' ? `${styles.active} p-6` : "p-6"}>Authors</a></Link>
-            </li>
-            <li>
-              <Link href="/contact"><a className={router.pathname == '/contact' ? `${styles.active} p-6` : "p-6"}>Contact</a></Link>
-            </li>
+            {
+              Menu.header.map(h => (
+                <li key={h.menu}>
+                  <Link href={h.link}><a className={router.pathname == `${h.link}` ? `${styles.active} p-6` : "p-6"}>{h.menu}</a></Link>
+                </li>
+              ))
+            }
             <li className=" flex items-center justify-center border-l-2 p-4 ml-4"></li>
-            <li><a className="mr-8 p-6" href="/#"><FaFacebookF /></a></li>
-            <li><a className="mr-8 p-6" href="/#"><FaTwitter /></a></li>
-            <li><a className="mr-8 p-6" href="/#"><FaInstagram /></a></li>
-            <li><a className="mr-8 p-6" href="/#"><FaPinterest /></a></li>
+            {
+              socialIcons.socialMedia.map(s => (
+                <li key={s.name}>
+                  <a className="mr-8 p-2" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
+                  </li>
+              ))
+            }
             <li className="cursor-pointer" ><a onClick={() => setShowSearch(!showSearch)} className="mr-8 p-4"><VscSearch /></a>
             </li>
           </ul>

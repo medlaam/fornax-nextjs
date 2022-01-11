@@ -1,0 +1,24 @@
+{
+  "socialMedia": [
+    {
+      "icon": "fab fa-facebook-f",
+      "name": "facebook",
+      "link": "https://www.facebook.com/#"
+    },
+    {
+      "icon": "fab fa-twitter",
+      "name": "twitter",
+      "link": "https://twitter.com/#"
+    },
+    {
+      "icon": "fab fa-instagram",
+      "name": "instgram",
+      "link": "https://www.instagram.com/#"
+    },
+    {
+      "icon": "fab fa-pinterest",
+      "name": "pinterest",
+      "link": "https://www.pinterest.com/#"
+    }
+  ]
+}

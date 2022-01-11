@@ -1,0 +1,39 @@
+{
+  "header": [
+    {
+      "menu": "Home",
+      "link": "/"    
+    },
+    {
+      "menu": "About",
+      "link": "/about",
+      "submenu": [
+        {
+          "page": "",
+          "pagelink": ""
+        }
+      ]
+    },
+
+    {
+      "menu": "Authors",
+      "link": "/authors",
+      "submenu": [
+        {
+          "page": "",
+          "pagelink": ""
+        }
+      ]
+    },
+    {
+      "menu": "Contact",
+      "link": "/contact",
+      "submenu": [
+        {
+          "page": "",
+          "pagelink": ""
+        }
+      ]
+    }   
+  ]
+}
