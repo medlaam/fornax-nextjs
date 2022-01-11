@@ -8,12 +8,12 @@ const Footer = () => {
         <p className={`${styles.heading} mt-5`}>Our Instagram</p>
       </div>
         <ul className={`${styles.icons} mt-10 flex items-center justify-center`}>
-          <li className="m-4"><a href="#"><FaFacebookF /></a></li>
-          <li className="m-4"><a href="#"><FaTwitter /></a></li>
-          <li className="m-4"><a href="#"><FaInstagram /></a></li>
-          <li className="m-4"><a href="#"><FaDribbble /></a></li>
-          <li className="m-4"><a href="#"><FaLinkedinIn /></a></li>
-          <li className="m-4"><a href="#"><FaPinterest /></a></li>
+          <li className="m-4"><a href="/#"><FaFacebookF /></a></li>
+          <li className="m-4"><a href="/#"><FaTwitter /></a></li>
+          <li className="m-4"><a href="/#"><FaInstagram /></a></li>
+          <li className="m-4"><a href="/#"><FaDribbble /></a></li>
+          <li className="m-4"><a href="/#"><FaLinkedinIn /></a></li>
+          <li className="m-4"><a href="/#"><FaPinterest /></a></li>
         </ul>
       <div className="mt-5 text-center">
         <p>© {new Date().getFullYear()}, All rights reserved. <br /> Develop by  <a className={styles.titles} href="">GetHugoThemes</a></p>

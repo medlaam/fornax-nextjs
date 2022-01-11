@@ -67,7 +67,7 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
               <li style={{ backgroundColor: '#395693' }} className="ml-5"><a href={`https://www.facebook.com/sharer/sharer.php?u=+https://liberte-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a></li>
               <li style={{ backgroundColor: '#1C9CEA' }} className="ml-5"><a href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://liberte-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a></li>
               <li style={{ backgroundColor: '#894DB8' }} className="ml-5"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a></li>
-              <li style={{ backgroundColor: '#E34A85' }} className="ml-5"><a href=""><FaDribbble /></a> </li>
+              <li style={{ backgroundColor: '#E34A85' }} className="ml-5"><a href="/#"><FaDribbble /></a> </li>
             </ul>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
                   <div className="flex mt-6">
                     <div className="sm:mr-4 mr-1">
                       <div className={`flex ${styles.author}`}>
-                        <img src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
+                        <img src={authorImage} />
                         <span><Link href={`/about/${r.frontmatter.name}`}><a className="text-gray-500">{r.frontmatter.name}</a></Link></span>
                       </div>
 
@@ -121,7 +121,7 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
             <li className="ml-5"><a href={`https://www.facebook.com/`}><FaFacebookF /></a></li>
             <li className="ml-5"><a href={`https://twitter.com/`}><FaTwitter /></a></li>
             <li className="ml-5"><a href={`https://instagram.com/`}><FaInstagram /></a></li>
-            <li className="ml-5"><a href="#"><FaDribbble /></a></li>
+            <li className="ml-5"><a href="/#"><FaDribbble /></a></li>
           </ul>
         </div>
       </div>
