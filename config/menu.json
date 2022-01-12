@@ -6,34 +6,17 @@
     },
     {
       "menu": "About",
-      "link": "/about",
-      "submenu": [
-        {
-          "page": "",
-          "pagelink": ""
-        }
-      ]
+      "link": "/about"    
     },
 
     {
       "menu": "Authors",
-      "link": "/authors",
-      "submenu": [
-        {
-          "page": "",
-          "pagelink": ""
-        }
-      ]
+      "link": "/authors"    
     },
     {
       "menu": "Contact",
-      "link": "/contact",
-      "submenu": [
-        {
-          "page": "",
-          "pagelink": ""
-        }
-      ]
+      "link": "/contact"
+      
     }   
   ]
 }
