@@ -24,7 +24,7 @@ const Blogs = ({ postsBlog }) => {
                   <div className="sm:mr-4 mr-1">
                     <div className={`flex ${styles.author}`}>
                       <img src={b.frontmatter.authorImage} />
-                      <span><Link href={`/about/${b.frontmatter.name}`}><a className="text-gray-500">{b.frontmatter.name}</a></Link></span>
+                      <span><Link href={`/authors/${b.frontmatter.name}`}><a className="text-gray-500">{b.frontmatter.name}</a></Link></span>
                     </div>
 
                   </div>

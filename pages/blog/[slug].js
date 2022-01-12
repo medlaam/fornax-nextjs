@@ -30,7 +30,7 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
             <div className="flex items-center sm:justify-between mt-5">
               <div className={`flex ${styles.author}`}>
                 <img loading="lazy" src={authorImage} />
-                <span className="text-gray-500"><Link href={`/about/${name}`}><a className="text-gray-500">{name}</a></Link></span>
+                <span className="text-gray-500"><Link href={`/authors/${name}`}><a className="text-gray-500">{name}</a></Link></span>
                 <div className="flex-auto ml-5"><small className="text-gray-500">&#x25C8; {date}</small>
                 </div>
                 <div className="flex-auto ml-5 text-gray-500">
@@ -114,7 +114,7 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
           </div>
           <div className="text-center mt-5 w-2/3">
             <p>Written By</p>
-            <h5 className="mt-3"><Link href={`/about/${name}`}>{name}</Link></h5>
+            <h5 className="mt-3"><Link href={`/authors/${name}`}>{name}</Link></h5>
             <p className="mt-4">Maecenas sit amet purus eget ipsum elementum venenatis. Aenean maximus urna magna elementum venenatis, quis rutrum mi semper non purus eget ipsum elementum venenatis.</p>
           </div>
           <ul className={`flex mt-5 ${styles.writersLink}`}>

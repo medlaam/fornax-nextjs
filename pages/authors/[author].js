@@ -8,7 +8,7 @@ const SingleAuthor = ({ author }) => {
   return (
     <>
       <Head>
-        <title>About</title>
+        <title>Author | {author}</title>
       </Head>
       <div className={`mt-10 ${styles.about}`}>
         <div className="text-center">
