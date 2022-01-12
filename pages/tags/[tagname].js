@@ -36,7 +36,7 @@ const TagName = ({ tagname, posts }) => {
                 <div className="flex mt-6">
                   <div className="sm:mr-4 mr-1">
                     <div className={`flex ${styles.author}`}>
-                      <img loading="lazy" src="https://1.gravatar.com/avatar/d278a48fabb0e7ccd38b69e2920c5f99?s=30&d=mm&r=g" />
+                      <img loading="lazy" src={r.frontmatter.authorImage} />
                       <span><Link href={`/about/${r.frontmatter.name}`}><a className="text-gray-500">{r.frontmatter.name}</a></Link></span>
                     </div>
 

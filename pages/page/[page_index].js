@@ -45,7 +45,7 @@ function Home({ page, postsBlog }) {
 }
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join('posts'))
+  const files = fs.readdirSync(path.join('content/posts'))
 
   const numPages = Math.ceil(files.length / postPerPage)
 
@@ -74,17 +74,6 @@ export async function getStaticProps({ params }) {
     },
   }
 }
-
-// export const getServerSideProps = async ({ query: { page = 1 } }) => {
-//   const posts = getPosts()
-
-//   return {
-//     props: {
-//       page: +page,
-//       postsBlog: posts
-//     }
-//   }
-// }
 
 export default Home;
 

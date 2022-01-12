@@ -131,11 +131,11 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
 }
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join('posts'))
+  const files = fs.readdirSync(path.join('content/posts'))
 
   const paths = files.map(filename => ({
     params: {
-      slug: filename.replace('.md', '').replace(/ /g,"-")
+      slug: filename.replace('.md', '')
     }
   }))
 
@@ -146,17 +146,17 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const markedDownMeta = fs.readFileSync(path.join('posts',
-  slug.replace(/-/g, " ") + ".md"), 'utf8')
+  const markedDownMeta = fs.readFileSync(path.join('content/posts',
+  slug.replace(/ /g, " ") + ".md"), 'utf8')
   const { data: frontmatter, content } = matter(markedDownMeta)
 
   // Read suggested blog from markdown
-  const files = fs.readdirSync(path.join('posts'))
+  const files = fs.readdirSync(path.join('content/posts'))
   const suggestedBlog = files.map(filename => {
     const slug = filename.replace('.md', '').replace(/ /g,"-")
 
     // get frontmatter
-    const markedDownMeta = fs.readFileSync(path.join('posts', filename),
+    const markedDownMeta = fs.readFileSync(path.join('content/posts', filename),
       'utf8')
 
     const { data: frontmatter, content } = matter(markedDownMeta)
