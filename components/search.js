@@ -73,9 +73,9 @@ const Search = () => {
                       })
                     }
                   </div> :
-                  <div className='my-3'>
+                  <div className=''>
                     {searchTerm === "" ? <p className='text-center'></p>
-                      : <p className='text-center text-2xl'>Not found!</p>}
+                      : <p className='text-center text-2xl p-4  border-t-2 border-dotted'>Not found!</p>}
                   </div>
               }
 

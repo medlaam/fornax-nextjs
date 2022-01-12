@@ -4,13 +4,13 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.writersLink li{
-  font-size: 14px;
-  padding: 7px;
+.writersLink a{
+  font-size: 16px;
+  padding-right:  7px;
   color: rgba(0, 0, 0, 0.8);
 }
 
-.writersLink li:hover {
+.writersLink a:hover {
   cursor: pointer;
   color: #e1677b;
 }
