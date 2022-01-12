@@ -26,7 +26,7 @@ const Authors = ({ authorsData }) => {
             </div>
             <p className="mt-3 font-bold text-center"><Link href={`/authors/${a.frontmatter.name}`}>{a.frontmatter.name}</Link></p>
  
-              <div className="mt-4 text-center" dangerouslySetInnerHTML={{ __html: marked.parse(a.content) }}>                
+              <div className="mt-4 text-center" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}>                
               </div>
             <ul className={`flex items-center justify-center mt-10 ${styles.writersLink}`}>
               <li className="ml-5"><a href={`https://www.facebook.com/`}><FaFacebookF /></a></li>
