@@ -49,6 +49,7 @@ function Home({ page, postsBlog }) {
 export async function getStaticPaths() {
   const files = fs.readdirSync(path.join('content/posts'))
 
+  const postPerPage = posts.parameter.pagination
   const numPages = Math.ceil(files.length / postPerPage)
 
   let paths = []
