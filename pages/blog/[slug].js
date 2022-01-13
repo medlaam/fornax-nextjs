@@ -56,7 +56,7 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
           </div>
         </div>
 
-        <div className="md:flex md:justify-around block my-5 sm:py-10 m-20">
+        <div className="md:flex md:justify-between md:w-2/3 block my-5 sm:py-10 m-auto">
           <div className={`text-center md:text-right md:justify-between ${styles.postTag}`}>
             <ul className="flex justify-center my-5 md:my-0">
               <li><Link href={`/tags/${tags}`}><a className="md:mr-5 ml-3">{tags}</a></Link>
