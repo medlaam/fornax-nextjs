@@ -9,14 +9,16 @@ import Image from 'next/image';
 import { FaFacebookF, FaTwitter, FaInstagram, FaDribbble } from 'react-icons/fa';
 import styles from '../../styles/singleblog.module.css';
 import { sortByDate } from '../../utils';
+import { getAuthor } from '../../lib/author';
 
 
-export default function PostPage({ frontmatter: { title, date, tags, name, images, tags2, authorImage }, content, slug, suggestedBlog }) {
+export default function PostPage({ frontmatter: { title, date, tags, name, images, tags2, authorImage }, content, slug, suggestedBlog, authors }) {
 
   const remainingBlogs = suggestedBlog.filter(b => b.slug !== slug);
   const blogByAuthor = remainingBlogs.filter(r => r.frontmatter.name === name);
   const sortedBlogByAuthor = blogByAuthor.sort(sortByDate)
   const recentBlogByAuthor = sortedBlogByAuthor.slice(0, 2)
+  const authorDetails = authors.filter(a => a.frontmatter.name === name)
 
   return (
     <>
@@ -115,7 +117,11 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
           <div className="text-center mt-5 w-2/3">
             <p>Written By</p>
             <h5 className="mt-3"><Link href={`/authors/${name}`}>{name}</Link></h5>
-            <p className="mt-4">Maecenas sit amet purus eget ipsum elementum venenatis. Aenean maximus urna magna elementum venenatis, quis rutrum mi semper non purus eget ipsum elementum venenatis.</p>
+            {
+              authorDetails.map((a,i) => (
+                <p key={i} className="mt-4" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}></p>
+              ))
+            }
           </div>
           <ul className={`flex mt-5 ${styles.writersLink}`}>
             <li className="ml-5"><a href={`https://www.facebook.com/`}><FaFacebookF /></a></li>
@@ -167,12 +173,16 @@ export async function getStaticProps({ params: { slug } }) {
       content
     }
   })
+
+  const authors = getAuthor()
+
   return {
     props: {
       frontmatter: frontmatter,
       content,
       slug,
-      suggestedBlog
+      suggestedBlog,
+      authors
     }
   }
 }
