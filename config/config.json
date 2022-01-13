@@ -1,4 +1,10 @@
 {
+  "parameter": {
+    "title": "Leberte blog",
+    "pagination": "5",
+    "sharePost": true,
+    "contactFormAction": "https://airform.io/rakib.themefisher@gmail.com"
+  },
   "socialMedia": [
     {
       "icon": "fab fa-facebook-f",

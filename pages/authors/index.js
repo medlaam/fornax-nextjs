@@ -4,20 +4,22 @@ import styles from '../../styles/about.module.css';
 import Head from 'next/head';
 import Link from 'next/link';
 import { FaFacebookF, FaTwitter, FaInstagram, FaDribbble } from 'react-icons/fa';
-import { getAuthor } from '../../lib/author';
+import { getAuthor, getAuthorDefault } from '../../lib/author';
 import { marked } from 'marked';
 
 
 
-const Authors = ({ authorsData }) => {
+const Authors = ({ authorsData, authorDefaultPage }) => {
+  const title = authorDefaultPage.map(a => a.frontmatter.title)
 
   return (
     <>
       <Head>
-        <title>Our Authors</title>
+        <title>{title}</title>
       </Head>
       <div className={`mt-10 ${styles.about}`}>
-        <div className="flex gap-4 flex-wrap my-7 justify-center m-auto">
+      <h2 className="text-center text-3xl">{title}</h2>
+        <div className="flex gap-4 flex-wrap my-10 justify-center m-auto">
           {
             authorsData.map((a,i) => (
               <div key={i} className="p-4 shadow md:w-1/2 lg:w-1/3">
@@ -45,10 +47,12 @@ const Authors = ({ authorsData }) => {
 
 export async function getStaticProps() {
   const authorsData = getAuthor()
+  const authorDefaultPage = getAuthorDefault()
 
   return {
     props: {
-      authorsData
+      authorsData,
+      authorDefaultPage
     }
   }
 }

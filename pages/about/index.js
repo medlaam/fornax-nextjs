@@ -18,8 +18,8 @@ const About = ({ about }) => {
         about.map((a, i) => (
           <div key={i} className={`mt-10 w-2/3 m-auto  ${styles.about}`}>
             <div>
-              <div className="text-center">
-                <Image width={950} height={350} objectFit="cover" src={a.frontmatter.image}></Image>
+              <div className="relative w-full h-60">
+                <Image layout='fill' objectFit="cover" src={a.frontmatter.image}></Image>
               </div>
               <p className="mt-3 font-bold text-3xl">{a.frontmatter.name}</p>
               <ul className={`flex mt-5 ${styles.writersLink}`}>

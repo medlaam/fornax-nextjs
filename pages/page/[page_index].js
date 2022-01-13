@@ -5,9 +5,9 @@ import Head from 'next/head';
 import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../../components/context';
 import { getPosts } from '../../lib/posts';
-import { postPerPage } from '../../config/pagination'
 import dynamic from 'next/dynamic';
-// import Blogs from '../../components/blogs'
+import  posts  from '../../config/config.json'
+import  title  from '../../config/config.json'
 
 const Blogs = dynamic(() => import('../../components/blogs'),
   { loading: () => <p>Loading...</p> }
@@ -23,6 +23,8 @@ function Home({ page, postsBlog }) {
     setShowSearchPosts(postsBlog)
   })
 
+  const titleBlog = title.parameter.title
+  const postPerPage = posts.parameter.pagination
   const indexOfLastPost = page * postPerPage
   const indexOfFirstPost = indexOfLastPost - postPerPage
   const currentPosts = postsBlog.slice(indexOfFirstPost, indexOfLastPost);
@@ -36,7 +38,7 @@ function Home({ page, postsBlog }) {
   return (
     <div>
       <Head>
-        <title>Leberte blog</title>
+        <title>{titleBlog}</title>
       </Head>
       <Blogs postsBlog={currentPosts} />
       <Pagination page={page} hasNextPage={hasNextPage} hasPreviousPage={hasPreviousPage} postPerPage={postPerPage} totalPost={postsBlog.length} paginate={paginate} />

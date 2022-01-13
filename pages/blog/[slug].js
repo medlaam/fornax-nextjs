@@ -10,6 +10,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaDribbble } from 'react-icons/fa'
 import styles from '../../styles/singleblog.module.css';
 import { sortByDate } from '../../utils';
 import { getAuthor } from '../../lib/author';
+import shareOption from '../../config/config.json'
 
 
 export default function PostPage({ frontmatter: { title, date, tags, name, images, tags2, authorImage }, content, slug, suggestedBlog, authors }) {
@@ -19,6 +20,8 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
   const sortedBlogByAuthor = blogByAuthor.sort(sortByDate)
   const recentBlogByAuthor = sortedBlogByAuthor.slice(0, 2)
   const authorDetails = authors.filter(a => a.frontmatter.name === name)
+
+  const postShare = shareOption.parameter.sharePost
 
   return (
     <>
@@ -65,12 +68,15 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
             </ul>
           </div>
           <div className="text-center md:text-right md:justify-between">
-            <ul className={`${styles.socialLink} my-5 md:my-0 flex justify-center`}>
-              <li style={{ backgroundColor: '#395693' }} className="ml-5"><a href={`https://www.facebook.com/sharer/sharer.php?u=+https://liberte-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a></li>
-              <li style={{ backgroundColor: '#1C9CEA' }} className="ml-5"><a href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://liberte-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a></li>
-              <li style={{ backgroundColor: '#894DB8' }} className="ml-5"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a></li>
-              <li style={{ backgroundColor: '#E34A85' }} className="ml-5"><a href="/#"><FaDribbble /></a> </li>
-            </ul>
+            {
+              postShare &&
+              <ul className={`${styles.socialLink} my-5 md:my-0 flex justify-center`}>
+                <li style={{ backgroundColor: '#395693' }} className="ml-5"><a href={`https://www.facebook.com/sharer/sharer.php?u=+https://liberte-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a></li>
+                <li style={{ backgroundColor: '#1C9CEA' }} className="ml-5"><a href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://liberte-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a></li>
+                <li style={{ backgroundColor: '#894DB8' }} className="ml-5"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a></li>
+                <li style={{ backgroundColor: '#E34A85' }} className="ml-5"><a href="/#"><FaDribbble /></a> </li>
+              </ul>
+            }
           </div>
         </div>
         <h4 className={styles.secondHeader}>You may also Like</h4>
@@ -118,7 +124,7 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
             <p>Written By</p>
             <h5 className="mt-3"><Link href={`/authors/${name}`}>{name}</Link></h5>
             {
-              authorDetails.map((a,i) => (
+              authorDetails.map((a, i) => (
                 <p key={i} className="mt-4" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}></p>
               ))
             }
@@ -153,13 +159,13 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
   const markedDownMeta = fs.readFileSync(path.join('content/posts',
-  slug.replace(/ /g, " ") + ".md"), 'utf8')
+    slug.replace(/ /g, " ") + ".md"), 'utf8')
   const { data: frontmatter, content } = matter(markedDownMeta)
 
   // Read suggested blog from markdown
   const files = fs.readdirSync(path.join('content/posts'))
   const suggestedBlog = files.map(filename => {
-    const slug = filename.replace('.md', '').replace(/ /g,"-")
+    const slug = filename.replace('.md', '').replace(/ /g, "-")
 
     // get frontmatter
     const markedDownMeta = fs.readFileSync(path.join('content/posts', filename),

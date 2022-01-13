@@ -8,15 +8,13 @@
       "menu": "About",
       "link": "/about"    
     },
-
     {
       "menu": "Authors",
       "link": "/authors"    
     },
     {
       "menu": "Contact",
-      "link": "/contact"
-      
+      "link": "/contact"      
     }   
   ]
 }
