@@ -34,7 +34,9 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
             <p className="lg:text-5xl text-4xl">{title}</p>
             <div className="flex items-center sm:justify-between mt-5">
               <div className={`flex ${styles.author}`}>
-                <img loading="lazy" src={authorImage} />
+                {
+                  authors.map((a, i) => a.frontmatter.name === name && <div key={i}><img src={a.frontmatter.image} /></div>)
+                }
                 <span className="text-gray-500"><Link href={`/authors/${name}`}><a className="text-gray-500">{name}</a></Link></span>
                 <div className="flex-auto ml-5"><small className="text-gray-500">&#x25C8; {date}</small>
                 </div>
@@ -95,7 +97,9 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
                   <div className="flex mt-6">
                     <div className="sm:mr-4 mr-1">
                       <div className={`flex ${styles.author}`}>
-                        <img src={authorImage} />
+                        {
+                          authors.map((a, i) => a.frontmatter.name === r.frontmatter.name && <div key={i}><img src={a.frontmatter.image} /></div>)
+                        }
                         <span><Link href={`/about/${r.frontmatter.name}`}><a className="text-gray-500">{r.frontmatter.name}</a></Link></span>
                       </div>
 
@@ -118,7 +122,9 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
         </div>
         <div className={`${styles.writer} my-14 flex flex-col	justify-center`}>
           <div>
-            <img src={authorImage} alt="" />
+            {
+              authors.map((a, i) => a.frontmatter.name === name && <div key={i}><img src={a.frontmatter.image} /></div>)
+            }
           </div>
           <div className="text-center mt-5 w-2/3">
             <p>Written By</p>

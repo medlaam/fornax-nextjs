@@ -5,9 +5,10 @@ import styles from '../../styles/tagname.module.css';
 import Head from 'next/head';
 import { marked } from 'marked';
 import { getPosts } from '../../lib/posts';
+import { getAuthor } from '../../lib/author';
 
 
-const TagName = ({ tagname, posts }) => {
+const TagName = ({ tagname, posts, authors }) => {
 
   // filter blogs by tagname
   const blogsByTag = posts.filter(a => a.frontmatter.tags == tagname || a.frontmatter.tags2 == tagname);
@@ -30,13 +31,15 @@ const TagName = ({ tagname, posts }) => {
                 <div >
                   <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image>
                   <div className="mt-4">
-                    <Link href={`/blog/${r.frontmatter.title.replace(/ /g, "-")}`} >{r.frontmatter.title}</Link>
+                    <Link href={`/blog/${r.slug}`} >{r.frontmatter.title}</Link>
                   </div>
                 </div>
                 <div className="flex mt-6">
                   <div className="sm:mr-4 mr-1">
                     <div className={`flex ${styles.author}`}>
-                      <img loading="lazy" src={r.frontmatter.authorImage} />
+                      {
+                        authors.map((a, i) => a.frontmatter.name === r.frontmatter.name && <div key={i}><img src={a.frontmatter.image} /></div>)
+                      }
                       <span><Link href={`/authors/${r.frontmatter.name}`}><a className="text-gray-500">{r.frontmatter.name}</a></Link></span>
                     </div>
 
@@ -66,7 +69,7 @@ export async function getStaticPaths() {
   const posts = getPosts();
   const paths = posts.map((tags) => ({
     params: {
-      tagname: tags.frontmatter.tags 
+      tagname: tags.frontmatter.tags
     },
   }));
 
@@ -80,10 +83,12 @@ export async function getStaticProps({ params }) {
   const { tagname } = params;
 
   const posts = getPosts();
+  const authors = getAuthor()
   return {
     props: {
       tagname: tagname,
       posts: posts,
+      authors
     },
   };
 };
