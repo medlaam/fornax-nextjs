@@ -8,12 +8,13 @@ import { getPosts } from '../../lib/posts';
 import dynamic from 'next/dynamic';
 import  posts  from '../../config/config.json'
 import  title  from '../../config/config.json'
+import { getAuthor } from '../../lib/author';
 
 const Blogs = dynamic(() => import('../../components/blogs'),
   { loading: () => <p>Loading...</p> }
 )
 
-function Home({ page, postsBlog }) {
+function Home({ page, postsBlog, authors }) {
   const { value2 } = useContext(AppContext);
   const [showSearchPosts, setShowSearchPosts] = value2
 
@@ -40,7 +41,7 @@ function Home({ page, postsBlog }) {
       <Head>
         <title>{titleBlog}</title>
       </Head>
-      <Blogs postsBlog={currentPosts} />
+      <Blogs postsBlog={currentPosts} authors={authors} />
       <Pagination page={page} hasNextPage={hasNextPage} hasPreviousPage={hasPreviousPage} postPerPage={postPerPage} totalPost={postsBlog.length} paginate={paginate} />
     </div>
   )
@@ -69,11 +70,13 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const page = parseInt((params && params.page_index) || 1)
   const posts = getPosts()
+  const authors = getAuthor()
 
   return {
     props: {
       postsBlog: posts,
       page: page,
+      authors
     },
   }
 }

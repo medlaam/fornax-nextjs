@@ -5,7 +5,6 @@ date: 'AUGUST 28, 2017'
 tags: 'Inspiration'
 tags2: 'tech'
 images: '/01.jpg'
-authorImage: '/author.jpg'
 ---
 
 Try to make at least one person happy every day. If you cannot do a kind deed, speak a kind word. If you cannot speak a kind word, think a kind thought. Count up, if you can, the treasure of happiness that you would dispense in a week, in a year, in a lifetime!

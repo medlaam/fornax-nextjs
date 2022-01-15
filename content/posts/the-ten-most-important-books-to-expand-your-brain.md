@@ -5,7 +5,6 @@ date: 'November 26 2021'
 tags: 'Inspiration'
 tags2: 'tech'
 images: '/01.jpg'
-authorImage: '/author.jpg'
 ---
 
 Books suck. No question about it, almost everyone who writes a book is a crappy writer.

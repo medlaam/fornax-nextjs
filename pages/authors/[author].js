@@ -36,19 +36,7 @@ const SingleAuthor = ({ authorName, author }) => {
   );
 };
 
-// export const getServerSideProps = async ({ query }) => {
-//   const { author } = query
-
-//   return {
-//     props: {
-//       author
-//     }
-//   }
-
-// }
-
 export async function getStaticPaths() {
-
   const authors = getAuthor()
   const paths = authors.map(n => ({
     params: {

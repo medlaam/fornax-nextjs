@@ -5,7 +5,7 @@ import styles from '../styles/blogs.module.css';
 import { marked } from 'marked';
 
 
-const Blogs = ({ postsBlog }) => {
+const Blogs = ({ postsBlog, authors }) => {
   return (
     <div className={styles.container}>
       <div className="flex flex-wrap my-7 justify-center container m-auto">
@@ -23,7 +23,9 @@ const Blogs = ({ postsBlog }) => {
                 <div className="flex mt-6">
                   <div className="sm:mr-4 mr-1">
                     <div className={`flex ${styles.author}`}>
-                      <img src={b.frontmatter.authorImage} />
+                      {
+                        authors.map((a, i) => a.frontmatter.name === b.frontmatter.name && <div key={i}><img src={a.frontmatter.image} /></div>)
+                      }
                       <span><Link href={`/authors/${b.frontmatter.name}`}><a className="text-gray-500">{b.frontmatter.name}</a></Link></span>
                     </div>
 

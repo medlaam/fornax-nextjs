@@ -5,7 +5,6 @@ date: 'AUGUST 28, 2018'
 tags: 'Inspiration'
 tags2: 'tech'
 images: '/01.jpg'
-authorImage: '/author.jpg'
 ---
 
 Believe it or not, coffee and beer can form a great team if you're trying to get through a project. Beer improves your creativity, while coffee keeps you alert and ready to carry out the ideas you had while drinking. Just be careful not to consume them at the same time—or drink too much of either—or else you'll get nothing done. I Love Coffee created this infographic that looks at the difference between how drinking coffee and drinking beer affect your overall productivity.
