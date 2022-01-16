@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/dist/client/image';
-import aboutMe from '../../public/about.jpg';
 import styles from '../../styles/about.module.css';
 import { FaFacebookF, FaTwitter, FaInstagram, FaDribbble } from 'react-icons/fa';
 import Head from 'next/head';
@@ -16,7 +15,7 @@ const About = ({ about }) => {
       </Head>
       {
         about.map((a, i) => (
-          <div key={i} className={`mt-10 w-2/3 m-auto  ${styles.about}`}>
+          <div key={i} className={`mt-10 w-full p-4 md:w-1/3 md:p-0 m-auto  ${styles.about}`}>
             <div>
               <div className="relative w-full h-60">
                 <Image layout='fill' objectFit="cover" src={a.frontmatter.image}></Image>
