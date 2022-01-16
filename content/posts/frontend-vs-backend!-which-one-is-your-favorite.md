@@ -1,9 +1,8 @@
 ---
 title: 'FrontEnd vs BackEnd! which one is your favorite'
-name: 'Melissa'
+author: 'Melissa'
 date: 'AUGUST 29, 2019'
-tags: 'Creative'
-tags2: 'tech'
+tag: ['tech','Creative', 'technology']
 images: '/02.jpg'
 ---
 

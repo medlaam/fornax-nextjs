@@ -11,15 +11,16 @@ import styles from '../../styles/singleblog.module.css';
 import { sortByDate } from '../../utils';
 import { getAuthor } from '../../lib/author';
 import shareOption from '../../config/config.json'
+import { kebabCase } from '../../utils/kebabcase';
 
 
-export default function PostPage({ frontmatter: { title, date, tags, name, images, tags2, authorImage }, content, slug, suggestedBlog, authors }) {
+export default function PostPage({ frontmatter: { title, date, author, images,  tag }, content, slug, suggestedBlog, authors }) {
 
   const remainingBlogs = suggestedBlog.filter(b => b.slug !== slug);
-  const blogByAuthor = remainingBlogs.filter(r => r.frontmatter.name === name);
+  const blogByAuthor = remainingBlogs.filter(r => r.frontmatter.author === author);
   const sortedBlogByAuthor = blogByAuthor.sort(sortByDate)
   const recentBlogByAuthor = sortedBlogByAuthor.slice(0, 2)
-  const authorDetails = authors.filter(a => a.frontmatter.name === name)
+  const authorDetails = authors.filter(a => a.frontmatter.name === author)
 
   const postShare = shareOption.parameter.sharePost
 
@@ -35,14 +36,14 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
             <div className="flex items-center sm:justify-between mt-5">
               <div className={`flex ${styles.author}`}>
                 {
-                  authors.map((a, i) => a.frontmatter.name === name && <div key={i}><img src={a.frontmatter.image} /></div>)
+                  authors.map((a, i) => a.frontmatter.name === author && <div key={i}><img src={a.frontmatter.image} /></div>)
                 }
-                <span className="text-gray-500"><Link href={`/authors/${name}`}><a className="text-gray-500">{name}</a></Link></span>
+                <span className="text-gray-500"><Link href={`/authors/${author}`}><a className="text-gray-500">{author}</a></Link></span>
                 <div className="flex-auto ml-5"><small className="text-gray-500">&#x25C8; {date}</small>
                 </div>
                 <div className="flex-auto ml-5 text-gray-500">
-                  <Link href={`/tags/${tags}`}>
-                    <a>&#x25C8; {tags}</a>
+                  <Link href={`/tags/${kebabCase(tag[0])}`}>
+                    <a>&#x25C8; {tag[0]}</a>
                   </Link>
                 </div>
 
@@ -64,9 +65,13 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
         <div className="md:flex md:justify-between md:w-2/3 block my-5 sm:py-10 m-auto">
           <div className={`text-center md:text-right md:justify-between ${styles.postTag}`}>
             <ul className="flex justify-center my-5 md:my-0">
-              <li><Link href={`/tags/${tags}`}><a className="md:mr-5 ml-3">{tags}</a></Link>
-              </li>
-              <li><Link href={`/tags/${tags2}`}><a className="md:mr-5 ml-3">{tags2}</a></Link></li>
+              {
+                tag.map((t, i) => (
+                  <li key={i}>
+                    <Link href={`/tags/${kebabCase(t)}`}><a className="md:mr-5 ml-3">{t}</a></Link>
+                  </li>
+                ))
+              }
             </ul>
           </div>
           <div className="text-center md:text-right md:justify-between">
@@ -98,9 +103,9 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
                     <div className="sm:mr-4 mr-1">
                       <div className={`flex ${styles.author}`}>
                         {
-                          authors.map((a, i) => a.frontmatter.name === r.frontmatter.name && <div key={i}><img src={a.frontmatter.image} /></div>)
+                          authors.map((a, i) => a.frontmatter.author === r.frontmatter.author && <div key={i}><img src={a.frontmatter.image} /></div>)
                         }
-                        <span><Link href={`/about/${r.frontmatter.name}`}><a className="text-gray-500">{r.frontmatter.name}</a></Link></span>
+                        <span><Link href={`/about/${r.frontmatter.author}`}><a className="text-gray-500">{r.frontmatter.author}</a></Link></span>
                       </div>
 
                     </div>
@@ -123,12 +128,12 @@ export default function PostPage({ frontmatter: { title, date, tags, name, image
         <div className={`${styles.writer} my-14 flex flex-col	justify-center`}>
           <div>
             {
-              authors.map((a, i) => a.frontmatter.name === name && <div key={i}><img src={a.frontmatter.image} /></div>)
+              authors.map((a, i) => a.frontmatter.author === author && <div key={i}><img src={a.frontmatter.image} /></div>)
             }
           </div>
           <div className="text-center mt-5 w-2/3">
             <p>Written By</p>
-            <h5 className="mt-3"><Link href={`/authors/${name}`}>{name}</Link></h5>
+            <h5 className="mt-3"><Link href={`/authors/${author}`}>{author}</Link></h5>
             {
               authorDetails.map((a, i) => (
                 <p key={i} className="mt-4" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}></p>

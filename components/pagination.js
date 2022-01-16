@@ -13,7 +13,7 @@ const Pagination = ({ postPerPage, totalPost, page, paginate, hasNextPage, hasPr
 
 
   return (
-    <div className="p-4 mb-5">
+    <div className="p-4 mb-5 container m-auto">
       <ul className={`flex justify-between ${styles.pagination}`}>
         {
           hasPreviousPage ?

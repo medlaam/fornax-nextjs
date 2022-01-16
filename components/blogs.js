@@ -3,6 +3,7 @@ import Image from 'next/dist/client/image';
 import Link from 'next/link';
 import styles from '../styles/blogs.module.css';
 import { marked } from 'marked';
+import { kebabCase } from '../utils/kebabcase';
 
 
 const Blogs = ({ postsBlog, authors }) => {
@@ -24,18 +25,25 @@ const Blogs = ({ postsBlog, authors }) => {
                   <div className="sm:mr-4 mr-1">
                     <div className={`flex ${styles.author}`}>
                       {
-                        authors.map((a, i) => a.frontmatter.name === b.frontmatter.name && <div key={i}><img src={a.frontmatter.image} /></div>)
+                        authors.map((a, i) => a.frontmatter.name === b.frontmatter.author && <div key={i}><img src={a.frontmatter.image} /></div>)
                       }
-                      <span><Link href={`/authors/${b.frontmatter.name}`}><a className="text-gray-500">{b.frontmatter.name}</a></Link></span>
+                      <span><Link href={`/authors/${b.frontmatter.author}`}><a className="text-gray-500">{b.frontmatter.author}</a></Link></span>
                     </div>
 
                   </div>
                   <div className="sm:mr-4 mr-1"><small className="text-gray-700">&#x25C8; {b.frontmatter.date}</small>
                   </div>
                   <div className="sm:mr-4 mr-1">
-                    <Link href={`/tags/${b.frontmatter.tags}`} >
-                      <a className={`text-gray-500 ${styles.tags}`}>&#x25C8; {b.frontmatter.tags}</a>
+                    <Link href={`/tags/${kebabCase(b.frontmatter.tag[0])}`} >
+                      <a className={`text-gray-500 ${styles.tags}`}>&#x25C8; {b.frontmatter.tag[0]}</a>
                     </Link>
+                    {/* {
+                      b.frontmatter.tag.map((t,i) => <div key={i}>
+                        <Link href={`/tags/${kebabCase(t)}`}>
+                          <a className={`text-gray-500 ${styles.tags}`}>&#x25C8; {t[0]}</a>
+                        </Link>
+                      </div>)
+                    } */}
                   </div>
 
                 </div>

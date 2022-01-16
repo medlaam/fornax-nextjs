@@ -3,6 +3,7 @@ import styles from '../styles/search.module.css';
 import { useContext } from 'react';
 import Link from 'next/link';
 import { AppContext } from './context';
+import { kebabCase } from '../utils/kebabcase';
 
 
 const Search = () => {
@@ -15,7 +16,7 @@ const Search = () => {
     if (searchTerm === "") {
       return ""
     }
-    else if (val.frontmatter.tags.toLowerCase().includes(searchTerm.toLowerCase())) {
+    else if (val.frontmatter.tag[0].toLowerCase().includes(searchTerm.toLowerCase())) {
       return val
     }
     else if (val.frontmatter.title.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -56,15 +57,14 @@ const Search = () => {
                             <div className="flex mt-6">
                               <div className="sm:mr-4 mr-1">
                                 <div className={`flex ${styles.author}`}>
-                                  <img className="mr-2" src={b.frontmatter.authorImage} />
                                   <span>
-                                    <a className="text-gray-500">{b.frontmatter.name}</a></span>
+                                    <a className="text-gray-500">{b.frontmatter.author}</a></span>
                                 </div>
                               </div>
                               <div className="sm:mr-4 mr-1"><small className="text-gray-700">&#x25C8; {b.frontmatter.date}</small>
                               </div>
                               <div className="sm:mr-4 mr-1">
-                                <a className="text-gray-500">&#x25C8; {b.frontmatter.tags}</a>
+                                <a className="text-gray-500">&#x25C8; {kebabCase(b.frontmatter.tag[0])}</a>
                               </div>
                             </div>
 

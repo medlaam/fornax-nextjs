@@ -1,9 +1,8 @@
 ---
 title: 'Coffee vs Bear! which one is your favorite'
-name: 'AZUMI'
+author: 'AZUMI'
 date: 'AUGUST 28, 2018'
-tags: 'Inspiration'
-tags2: 'tech'
+tag: ['Creative','tech']
 images: '/01.jpg'
 ---
 
