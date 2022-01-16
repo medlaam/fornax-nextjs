@@ -103,7 +103,7 @@ export default function PostPage({ frontmatter: { title, date, author, images,  
                     <div className="sm:mr-4 mr-1">
                       <div className={`flex ${styles.author}`}>
                         {
-                          authors.map((a, i) => a.frontmatter.author === r.frontmatter.author && <div key={i}><img src={a.frontmatter.image} /></div>)
+                          authors.map((a, i) => a.frontmatter.name === r.frontmatter.author && <div key={i}><img src={a.frontmatter.image} /></div>)
                         }
                         <span><Link href={`/about/${r.frontmatter.author}`}><a className="text-gray-500">{r.frontmatter.author}</a></Link></span>
                       </div>
@@ -128,7 +128,7 @@ export default function PostPage({ frontmatter: { title, date, author, images,  
         <div className={`${styles.writer} my-14 flex flex-col	justify-center`}>
           <div>
             {
-              authors.map((a, i) => a.frontmatter.author === author && <div key={i}><img src={a.frontmatter.image} /></div>)
+              authors.map((a, i) => a.frontmatter.name === author && <div key={i}><img src={a.frontmatter.image} /></div>)
             }
           </div>
           <div className="text-center mt-5 w-2/3">
