@@ -1,6 +1,5 @@
 import { useForm } from 'react-hook-form';
 import Head from 'next/head';
-import styles from '../../styles/contact.module.css';
 import airForm from '../../config/config.json'
 import { getContactData } from '../../lib/contact';
 
@@ -14,7 +13,7 @@ const Contact = ({ contact }) => {
       <Head>
         <title>{contact.frontmatter.title}</title>
       </Head>
-      <div className={`mt-10 ${styles.contact}`}>
+      <div className={`mt-10`}>
         <h2 className="text-center text-4xl">Contact Me</h2>
         <div className={`py-16 px-4 sm:px-6 flex justify-center items-center `}>
           <div className="mx-auto w-full max-w-2xl rounded-xl p-8">

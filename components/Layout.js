@@ -3,9 +3,10 @@ import Head from 'next/head'
 import MobileMenu from './MobileMenu';
 import Footer from './footer';
 import Navbar from './navbar';
+import config from "../config/style.json";
 
 const Layout = ({ children }) => {
-
+  const { fontFamily } = config.font;
   const [isOpen, setIsOpen] = useState(false)
   const toggle = () => {
     setIsOpen(!isOpen)
@@ -27,10 +28,22 @@ const Layout = ({ children }) => {
   return (
     <>
       <Head>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href={`https://fonts.googleapis.com/css2?family=${fontFamily.primary}&display=swap`}
+          rel="stylesheet"
+        />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/brands.min.css" crossOrigin="anonymous"
-        referrerPolicy="no-referrer"/>
+          referrerPolicy="no-referrer" />
       </Head>
-      <div>
+      <div className="font-primary">
         <Navbar toggle={toggle} isOpen={isOpen} />
         <MobileMenu toggle={toggle} isOpen={isOpen} />
         <main>{children}</main>

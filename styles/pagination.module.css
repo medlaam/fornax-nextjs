@@ -1,9 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-
-.pagination {
-  font-family: 'Poppins', sans-serif;
-}
 .pagination .page {
   padding: 0;
   margin-left: 0;

@@ -1,10 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-.container {
-  font-family: 'Poppins', sans-serif;
-}
-
-.author img{
+.author img {
   border-radius: 50%;
   height: 26px;
   margin-right: 8px;
@@ -28,18 +22,19 @@
   color: #152035;
   line-height: 1.4;
 }
+
 .heading span {
   color: #dd5269;
 }
 
 .tags {
-  font-size:13px !important;
-  color:#788193 !important;
+  font-size: 13px !important;
+  color: #788193 !important;
   font-weight: 500 !important;
 }
 
 .author a {
-  font-size:13px !important;
-  color:#788193 !important;
+  font-size: 13px !important;
+  color: #788193 !important;
   font-weight: 500 !important;
 }

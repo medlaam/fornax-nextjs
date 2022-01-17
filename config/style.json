@@ -1,0 +1,38 @@
+{
+  "color": {
+    "themeColor": {
+      "primary": "#c8ab77",
+      "body": "#ffff",
+      "border": "#ddd"
+    },
+    "textColor": {
+      "default": "#333",
+      "dark": "#333",
+      "light": "#bababa"
+    },
+    "basicColor": {
+      "black": "#000",
+      "white": "#ffff",
+      "dark": "#333",
+      "light": "#ddd"
+    },
+    "socialColor": {
+      "facebook": "#3b5999",
+      "twitter": "#55acee",
+      "pinterest": "#bd081c"
+    }
+  },
+  "font": {
+    "fontFamily": {
+      "primary": "Poppins",
+      "primaryType": "sans-serif",
+      "secondary": "Lora:ital@0;1",
+      "secondaryType": "serif",
+      "icon": "Font Awesome 5 Free"
+    },
+    "fontSize": {
+      "base": "16px",
+      "font_scale": 1.25
+    }
+  }
+}
