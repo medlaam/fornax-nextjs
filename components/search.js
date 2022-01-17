@@ -29,6 +29,7 @@ const Search = () => {
     setSearchTerm("");
   }
 
+  let options = { year: "numeric", month: "long", day: "numeric" };
 
   return (
     <>
@@ -61,7 +62,7 @@ const Search = () => {
                                     <a className="text-gray-500">{b.frontmatter.author}</a></span>
                                 </div>
                               </div>
-                              <div className="sm:mr-4 mr-1"><small className="text-gray-700">&#x25C8; {b.frontmatter.date}</small>
+                              <div className="sm:mr-4 mr-1"><small className="text-gray-700">&#x25C8; {new Date(b.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                               </div>
                               <div className="sm:mr-4 mr-1">
                                 <a className="text-gray-500">&#x25C8; {kebabCase(b.frontmatter.tag[0])}</a>

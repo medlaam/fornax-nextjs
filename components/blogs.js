@@ -7,6 +7,7 @@ import { kebabCase } from '../utils/kebabcase';
 
 
 const Blogs = ({ postsBlog, authors }) => {
+  let options = { year: "numeric", month: "long", day: "numeric" };
   return (
     <div className={styles.container}>
       <div className="flex flex-wrap my-7 justify-center container m-auto">
@@ -31,7 +32,7 @@ const Blogs = ({ postsBlog, authors }) => {
                     </div>
 
                   </div>
-                  <div className="sm:mr-4 mr-1"><small className="text-gray-700">&#x25C8; {b.frontmatter.date}</small>
+                  <div className="sm:mr-4 mr-1"><small className="text-gray-700">&#x25C8; {new Date(b.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                   </div>
                   <div className="sm:mr-4 mr-1">
                     <Link href={`/tags/${kebabCase(b.frontmatter.tag[0])}`} >

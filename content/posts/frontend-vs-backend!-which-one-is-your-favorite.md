@@ -1,7 +1,7 @@
 ---
 title: 'FrontEnd vs BackEnd! which one is your favorite'
 author: 'Melissa'
-date: 'AUGUST 29, 2019'
+date: 'Sat Jan 15 2022 10:04:21 GMT+0600'
 tag: ['tech','Creative', 'technology']
 images: '/02.jpg'
 ---

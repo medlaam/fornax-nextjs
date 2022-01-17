@@ -1,7 +1,7 @@
 ---
 title: 'Scientists Are Working on a Pill for Loneliness'
 author: 'AZUMI'
-date: 'AUGUST 28, 2018'
+date: 'Thu Dec 30 2021 12:04:21 GMT+0600'
 tag: ['technology', 'Creative']
 images: '/02.jpg'
 ---

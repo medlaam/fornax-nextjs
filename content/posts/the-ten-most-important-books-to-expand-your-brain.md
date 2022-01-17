@@ -1,7 +1,7 @@
 ---
 title: 'The ten most important books to expand your brain'
 author: 'AZUMI'
-date: 'November 26 2021'
+date: 'Mon Dec 15 2021 12:04:21 GMT+0600'
 tag: ['Inspiration','tech']
 images: '/01.jpg'
 ---

@@ -23,6 +23,7 @@ export default function PostPage({ frontmatter: { title, date, author, images,  
   const authorDetails = authors.filter(a => a.frontmatter.name === author)
 
   const postShare = shareOption.parameter.sharePost
+  let options = { year: "numeric", month: "long", day: "numeric" };
 
   return (
     <>
@@ -39,7 +40,7 @@ export default function PostPage({ frontmatter: { title, date, author, images,  
                   authors.map((a, i) => a.frontmatter.name === author && <div key={i}><img src={a.frontmatter.image} /></div>)
                 }
                 <span className="text-gray-500"><Link href={`/authors/${author}`}><a className="text-gray-500">{author}</a></Link></span>
-                <div className="flex-auto ml-5"><small className="text-gray-500">&#x25C8; {date}</small>
+                <div className="flex-auto ml-5"><small className="text-gray-500">&#x25C8; {new Date(date).toLocaleDateString("en-US", options)}</small>
                 </div>
                 <div className="flex-auto ml-5 text-gray-500">
                   <Link href={`/tags/${kebabCase(tag[0])}`}>

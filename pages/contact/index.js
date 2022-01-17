@@ -2,16 +2,17 @@ import { useForm } from 'react-hook-form';
 import Head from 'next/head';
 import styles from '../../styles/contact.module.css';
 import airForm from '../../config/config.json'
+import { getContactData } from '../../lib/contact';
 
 
-const Contact = () => {
+const Contact = ({ contact }) => {
   const { register, errors } = useForm();
   const email = airForm.parameter.contactFormAction
 
   return (
     <>
       <Head>
-        <title>Contact</title>
+        <title>{contact.frontmatter.title}</title>
       </Head>
       <div className={`mt-10 ${styles.contact}`}>
         <h2 className="text-center text-4xl">Contact Me</h2>
@@ -124,5 +125,14 @@ const Contact = () => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  const contact = getContactData();
+  return {
+    props: {
+      contact
+    }
+  }
+}
 
 export default Contact;

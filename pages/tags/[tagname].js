@@ -15,6 +15,7 @@ import matter from "gray-matter";
 
 const TagName = ({ post, tags, authors }) => {
   const blogsByTag = post.filter((p) => p.length > 0);
+  let options = { year: "numeric", month: "long", day: "numeric" };
 
   return (
     <>
@@ -46,7 +47,7 @@ const TagName = ({ post, tags, authors }) => {
                     </div>
 
                   </div>
-                  <div className="sm:mr-4 mr-1"><small>&#x25C8; {r.frontmatter.date}</small>
+                  <div className="sm:mr-4 mr-1"><small>&#x25C8; {new Date(r.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                   </div>
                   <div className="sm:mr-4 mr-1">
                     <Link href={`/tags/${kebabCase(r.frontmatter.tag[0])}`} >
