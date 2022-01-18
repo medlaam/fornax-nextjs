@@ -14,7 +14,7 @@ const Contact = ({ contact }) => {
         <title>{contact.frontmatter.title}</title>
       </Head>
       <div className={`mt-10`}>
-        <h2 className="text-center text-4xl">Contact Me</h2>
+        <h2 className="text-center text-h2_sm md:text-h2 text-textDark">Contact Me</h2>
         <div className={`py-16 px-4 sm:px-6 flex justify-center items-center `}>
           <div className="mx-auto w-full max-w-2xl rounded-xl p-8">
             <form
@@ -32,7 +32,7 @@ const Contact = ({ contact }) => {
                       message: 'You must enter your name',
                     },
                   })}
-                  className={`block w-full border-2 py-3 px-4 placeholder-gray-500 ${errors ? 'ring-2 ring-red-500' : null
+                  className={`block w-full border-2 py-3 px-4 placeholder-textLight ${errors ? 'ring-2 ring-red-500' : null
                     }`}
                   placeholder="Full name"
                 />
@@ -64,7 +64,7 @@ const Contact = ({ contact }) => {
                       message: 'This needs to be a valid email address',
                     },
                   })}
-                  className={`block w-full py-3 border-2 px-4 placeholder-gray-500 ${errors ? 'ring-2 ring-red-500' : null
+                  className={`block w-full py-3 border-2 px-4 placeholder-textLight ${errors ? 'ring-2 ring-red-500' : null
                     }`}
                   placeholder="Email"
                 />
@@ -79,7 +79,7 @@ const Contact = ({ contact }) => {
                 <input
                   type="text"
                   {...register('phone')}
-                  className="block w-full py-3 px-4 border-2 placeholder-gray-500"
+                  className="block w-full py-3 px-4 border-2 placeholder-textLight"
                   placeholder="Phone"
                 />
               </div>
@@ -103,7 +103,7 @@ const Contact = ({ contact }) => {
                       message: 'Your message must be longer than this!',
                     },
                   })}
-                  className={`block w-full py-3 px-4 border-2 placeholder-gray-500 ${errors ? 'ring-2 ring-red-500' : null
+                  className={`block w-full py-3 px-4 border-2 placeholder-textLight ${errors ? 'ring-2 ring-red-500' : null
                     }`}
                   placeholder="Message"></textarea>
                 <span className="text-red-400 text-sm py-2">
@@ -113,7 +113,7 @@ const Contact = ({ contact }) => {
               <div>
                 <button
                   type="submit"
-                  className="primary-button">
+                  className="primary-button bg-primaryColor">
                   Submit
                 </button>
               </div>

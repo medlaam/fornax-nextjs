@@ -23,7 +23,7 @@ const TagName = ({ post, tags, authors }) => {
         <title>tagname | {tags}</title>
       </Head>
       <div className="my-7 text-center m-auto">
-        <h1 className={styles.heading}>All <span> {tags}</span> blogs are here</h1>
+        <h3 className="text-h3_sm md:text-h3 text-bold">All <span className="text-primaryColor"> {tags}</span> blogs are here</h3>
       </div>
 
       <div className={`my-14 flex flex-wrap justify-center container m-auto ${styles.container}`}>
@@ -34,7 +34,7 @@ const TagName = ({ post, tags, authors }) => {
                 <div >
                   <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image>
                   <div className="mt-4">
-                    <Link href={`/blog/${r.slug}`} >{r.frontmatter.title}</Link>
+                    <Link href={`/blog/${r.slug}`} ><a className="text-textDark hover:text-primaryColor">{r.frontmatter.title}</a></Link>
                   </div>
                 </div>
                 <div className="flex mt-6">
@@ -43,15 +43,15 @@ const TagName = ({ post, tags, authors }) => {
                       {
                         authors.map((a, i) => a.frontmatter.name === r.frontmatter.author && <div key={i}><img src={a.frontmatter.image} /></div>)
                       }
-                      <span><Link href={`/authors/${r.frontmatter.author}`}><a className="text-gray-500">{r.frontmatter.author}</a></Link></span>
+                      <span><Link href={`/authors/${r.frontmatter.author}`}><a className="text-textLight">{r.frontmatter.author}</a></Link></span>
                     </div>
 
                   </div>
-                  <div className="sm:mr-4 mr-1"><small>&#x25C8; {new Date(r.frontmatter.date).toLocaleDateString("en-US", options)}</small>
+                  <div className="sm:mr-4 mr-1"><small className="text-textColor">&#x25C8; {new Date(r.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                   </div>
                   <div className="sm:mr-4 mr-1">
                     <Link href={`/tags/${kebabCase(r.frontmatter.tag[0])}`} >
-                      <a className={`text-gray-500 ${styles.tags}`}>&#x25C8; {r.frontmatter.tag[0]}</a>
+                      <a className={`text-textLight ${styles.tags}`}>&#x25C8; {r.frontmatter.tag[0]}</a>
                     </Link>
                   </div>
 

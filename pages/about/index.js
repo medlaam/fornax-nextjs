@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'next/dist/client/image';
 import styles from '../../styles/about.module.css';
-import { FaFacebookF, FaTwitter, FaInstagram, FaDribbble } from 'react-icons/fa';
 import Head from 'next/head';
 import { getAbout } from '../../lib/about';
 import { marked } from 'marked';
+import socialIcons from '../../config/config.json'
 
 
 const About = ({ about }) => {
@@ -20,15 +20,18 @@ const About = ({ about }) => {
               <div className="relative w-full h-60">
                 <Image layout='fill' objectFit="cover" src={a.frontmatter.image}></Image>
               </div>
-              <p className="mt-3 font-bold text-3xl">{a.frontmatter.name}</p>
-              <ul className={`flex mt-5 ${styles.writersLink}`}>
-                <li className="mr-5"><a href={`https://www.facebook.com/`}><FaFacebookF /></a></li>
-                <li className="mr-5"><a href={`https://twitter.com/`}><FaTwitter /></a></li>
-                <li className="mr-5"><a href="/#"><FaInstagram /></a></li>
-                <li className="mr-5"><a href="/#"><FaDribbble /></a></li>
+              <h3 className="mt-3 font-bold text-h3_sm md:text-h3">{a.frontmatter.name}</h3>
+              <ul className={`flex my-5 ${styles.writersLink}`}>
+              {
+              socialIcons.socialMedia.map(s => (
+                <li key={s.name} className="hover:text-primaryColor">
+                  <a className="mr-5" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
+                  </li>
+              ))
+            }
               </ul>
-              <span dangerouslySetInnerHTML={{ __html: marked.parse(a.content) }}>
-              </span>
+              <div className="text-textDark" dangerouslySetInnerHTML={{ __html: marked.parse(a.content) }}>
+              </div>
             </div>
           </div>
         ))

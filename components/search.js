@@ -53,19 +53,19 @@ const Search = () => {
                           <div key={i} className="p-4 block border-b-2  overflow-hidden">
 
                             <div onClick={() => setShowSearch(!showSearch)} className={`text-2xl ${styles.heading}`}>
-                              <Link href={`/blog/${b.slug}`} >{b.frontmatter.title}</Link>
+                              <Link href={`/blog/${b.slug}`} ><a className="md:text-textDark hover:text-primaryColor">{b.frontmatter.title}</a></Link>
                             </div>
                             <div className="flex mt-6">
                               <div className="sm:mr-4 mr-1">
                                 <div className={`flex ${styles.author}`}>
                                   <span>
-                                    <a className="text-gray-500">{b.frontmatter.author}</a></span>
+                                    <a className="text-textLight">{b.frontmatter.author}</a></span>
                                 </div>
                               </div>
                               <div className="sm:mr-4 mr-1"><small className="text-gray-700">&#x25C8; {new Date(b.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                               </div>
                               <div className="sm:mr-4 mr-1">
-                                <a className="text-gray-500">&#x25C8; {kebabCase(b.frontmatter.tag[0])}</a>
+                                <a className="text-textLight">&#x25C8; {kebabCase(b.frontmatter.tag[0])}</a>
                               </div>
                             </div>
 
