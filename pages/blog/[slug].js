@@ -33,16 +33,16 @@ export default function PostPage({ frontmatter: { title, date, author, images,  
       <div className={`${styles.singleBlog} container md:m-auto`}>
         <div className="w-full xl:w-2/3 items-center md:m-auto ">
           <div className={`${styles.blogContainer} p-4  py-16 `}>
-            <p className="lg:text-5xl text-4xl">{title}</p>
+            <h1 className="text-h1_sm lg:text-h1 text-textDark">{title}</h1>
             <div className="flex items-center sm:justify-between mt-5">
               <div className={`flex ${styles.author}`}>
                 {
                   authors.map((a, i) => a.frontmatter.name === author && <div key={i}><img src={a.frontmatter.image} /></div>)
                 }
-                <span className="text-gray-500"><Link href={`/authors/${author}`}><a className="text-gray-500">{author}</a></Link></span>
-                <div className="flex-auto ml-5"><small className="text-gray-500">&#x25C8; {new Date(date).toLocaleDateString("en-US", options)}</small>
+                <span className="text-textLight"><Link href={`/authors/${author}`}><a>{author}</a></Link></span>
+                <div className="flex-auto ml-5"><small className="text-textLight">&#x25C8; {new Date(date).toLocaleDateString("en-US", options)}</small>
                 </div>
-                <div className="flex-auto ml-5 text-gray-500">
+                <div className="flex-auto ml-5 text-textLight">
                   <Link href={`/tags/${kebabCase(tag[0])}`}>
                     <a>&#x25C8; {tag[0]}</a>
                   </Link>
@@ -69,7 +69,7 @@ export default function PostPage({ frontmatter: { title, date, author, images,  
               {
                 tag.map((t, i) => (
                   <li key={i}>
-                    <Link href={`/tags/${kebabCase(t)}`}><a className="md:mr-5 ml-3">{t}</a></Link>
+                    <Link href={`/tags/${kebabCase(t)}`}><a className="md:mr-5 ml-3 text-textDark hover:text-primaryColor">{t}</a></Link>
                   </li>
                 ))
               }
@@ -87,7 +87,7 @@ export default function PostPage({ frontmatter: { title, date, author, images,  
             }
           </div>
         </div>
-        <h4 className={styles.secondHeader}>You may also Like</h4>
+        <h3 className={`text-textDark text-h3_sm md:text-h3   ${styles.secondHeader}`}>You may also Like</h3>
         <div className="my-5 flex flex-wrap justify-center">
 
           {
@@ -97,7 +97,7 @@ export default function PostPage({ frontmatter: { title, date, author, images,  
                   <div className={styles.cardHeader}>
                     <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image>
                     <div className="mt-4">
-                      <Link href={`/blog/${r.slug}`} >{r.frontmatter.title}</Link>
+                      <Link href={`/blog/${r.slug}`} ><a className="text-textDark hover:text-primaryColor">{r.frontmatter.title}</a></Link>
                     </div>
                   </div>
                   <div className="flex mt-6">
@@ -106,20 +106,20 @@ export default function PostPage({ frontmatter: { title, date, author, images,  
                         {
                           authors.map((a, i) => a.frontmatter.name === r.frontmatter.author && <div key={i}><img src={a.frontmatter.image} /></div>)
                         }
-                        <span><Link href={`/about/${r.frontmatter.author}`}><a className="text-gray-500">{r.frontmatter.author}</a></Link></span>
+                        <span><Link href={`/about/${r.frontmatter.author}`}><a className="text-textLight">{r.frontmatter.author}</a></Link></span>
                       </div>
 
                     </div>
-                    <div className="sm:mr-4 mr-1"><small className="text-gray-700">&#x25C8; {r.frontmatter.date}</small>
+                    <div className="sm:mr-4 mr-1"><small className="text-textColor">&#x25C8; {new Date(r.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                     </div>
-                    <div className="sm:mr-4 mr-1"> <Link href={`/tags/${r.frontmatter.tags}`}>
-                      <a className={`text-gray-500 ${styles.tags}`}>&#x25C8; {r.frontmatter.tags}</a>
+                    <div className="sm:mr-4 mr-1"> <Link href={`/tags/${r.frontmatter.tag[0]}`}>
+                      <a className={`text-textLight ${styles.tags}`}>&#x25C8; {r.frontmatter.tag[0]}</a>
                     </Link>
                     </div>
 
                   </div>
                   <div className="mt-4 mb-3">
-                    <span dangerouslySetInnerHTML={{ __html: marked.parse(r.content).slice(0, 130) + ' ...' }} className="text-gray-500"></span>
+                    <span dangerouslySetInnerHTML={{ __html: marked.parse(r.content).slice(0, 130) + ' ...' }} className="text-textLight"></span>
                   </div>
                 </div>
               )
@@ -133,8 +133,8 @@ export default function PostPage({ frontmatter: { title, date, author, images,  
             }
           </div>
           <div className="text-center mt-5 w-2/3">
-            <p>Written By</p>
-            <h5 className="mt-3"><Link href={`/authors/${author}`}>{author}</Link></h5>
+            <p className="text-textLight">Written By</p>
+            <h5 className="mt-3 text-h5 text-textDark hover:text-primaryColor"><Link href={`/authors/${author}`}>{author}</Link></h5>
             {
               authorDetails.map((a, i) => (
                 <p key={i} className="mt-4" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}></p>
@@ -142,10 +142,10 @@ export default function PostPage({ frontmatter: { title, date, author, images,  
             }
           </div>
           <ul className={`flex mt-5 ${styles.writersLink}`}>
-            <li className="ml-5"><a href={`https://www.facebook.com/`}><FaFacebookF /></a></li>
-            <li className="ml-5"><a href={`https://twitter.com/`}><FaTwitter /></a></li>
-            <li className="ml-5"><a href={`https://instagram.com/`}><FaInstagram /></a></li>
-            <li className="ml-5"><a href="/#"><FaDribbble /></a></li>
+            <li className="ml-5"><a className="hover:text-primaryColor" href={`https://www.facebook.com/`}><FaFacebookF /></a></li>
+            <li className="ml-5"><a className="hover:text-primaryColor"   href={`https://twitter.com/`}><FaTwitter /></a></li>
+            <li className="ml-5"><a className="hover:text-primaryColor"  href={`https://instagram.com/`}><FaInstagram /></a></li>
+            <li className="ml-5"><a className="hover:text-primaryColor"  href="/#"><FaDribbble /></a></li>
           </ul>
         </div>
       </div>

@@ -1,14 +1,10 @@
 .secondHeader {
-  font-size: 30px;
-  color: #152035;
   font-weight: 600;
   text-align: center;
 }
 
-.blogContainer p {
+.blogContainer h1 {
   font-weight: 700;
-  color: #152035;
-  line-height: 1.4;
 }
 
 .blogContainer h3 {
@@ -30,40 +26,21 @@
 }
 
 .socialLink li:hover {
-  /* color: #e1677b; */
   opacity: 0.7;
 }
 
 .postTag a {
   display: inline-block;
-  background-color: #f7f8fa;
-  color: #152035;
   padding: 6px 13px;
   border-radius: 4px;
   font-weight: 500;
   font-size: 15px;
 }
 
-.postTag a:hover {
-  background-color: transparent;
-  color: #e1677b;
-}
-
-/* .cardHeader {
-  height: 350px;
-} */
-
 .cardHeader a {
   font-size: 20px;
   font-weight: 600;
-  color: #152035;
   line-height: 1.4;
-}
-
-/* color: #454e62; */
-
-.cardHeader a:hover {
-  color: #e1677b;
 }
 
 .writer {
@@ -76,11 +53,6 @@
   cursor: pointer;
 }
 
-.writer h5:hover {
-  color: #e1677b;
-}
-
-
 .writer img {
   border-radius: 50%;
 }
@@ -91,26 +63,12 @@
   color: rgba(0, 0, 0, 0.8);
 }
 
-.writersLink a:hover {
-  color: #e1677b;
-}
-
-.writer p {
-  color: #454e62;
-}
-
-.author span {
-  color: #454e62;
-}
-
 .author a {
   font-size: 13px !important;
-  color: #788193 !important;
   font-weight: 500 !important;
 }
 
 .tags {
   font-size: 13px !important;
-  color: #788193 !important;
   font-weight: 500 !important;
 }

@@ -1,20 +1,5 @@
-.heading {
-  font-family:'lora', sans-serif;
-  font-size: 30px;
-  color: #454e62;
-  line-height: 1.2;
-  font-weight: 500;
-}
-.titles {
-  color: #dd5269;
-}
-
 .icons li {
   font-size: 14px;
   padding: 7px;
   color: rgba(0, 0, 0, 0.8);
-}
-
-.icons a:hover {
-  color: #dd5269;
 }

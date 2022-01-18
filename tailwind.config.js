@@ -1,6 +1,5 @@
 const themeStyle = require("./config/style.json");
 const primaryFont = themeStyle.font.fontFamily.primary.replace(/\+/g, " ");
-const secondaryFont = themeStyle.font.fontFamily.secondary.replace(/\+/g, " ");
 const base = Number(themeStyle.font.fontSize.base.replace("px", ""));
 const font_scale = themeStyle.font.fontSize.font_scale;
 const h6 = base;
@@ -13,7 +12,7 @@ const h1_sm = h1 * 0.625;
 const h2_sm = h2 * 0.625;
 const h3_sm = h3 * 0.8;
 const large = base + base * 0.125;
-const small = base - base * 0.125;
+const small = base - base * 0.25;
 
 module.exports = {
   
@@ -61,16 +60,8 @@ module.exports = {
         primary: [
           primaryFont.replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, ""),
           themeStyle.font.fontFamily.primaryType,
-        ],
-        secondary: [
-          secondaryFont.replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, ""),
-          themeStyle.font.fontFamily.secondaryType,
-        ],
+        ]
       },
-      height: {
-        37: "18.75rem",
-      },
-
       colors: {
         primaryColor: themeStyle.color.themeColor.primary,
         light: themeStyle.color.basicColor.light,
@@ -78,10 +69,6 @@ module.exports = {
         textDark: themeStyle.color.textColor.dark,
         textColor: themeStyle.color.textColor.default,
         textLight: themeStyle.color.textColor.light,
-        borderColor: themeStyle.color.themeColor.border,
-        facebook: themeStyle.color.socialColor.facebook,
-        twitter: themeStyle.color.socialColor.twitter,
-        pinterest: themeStyle.color.socialColor.pinterest,
         body: themeStyle.color.themeColor.body,
       },
     },

@@ -17,39 +17,32 @@ const Blogs = ({ postsBlog, authors }) => {
               <div key={i} className="p-4 bg-white md:w-1/2 lg:w-1/3   overflow-hidden">
                 <div className={styles.cardHeader}>
                   <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={b.frontmatter.images} ></Image>
-                  <div className="mt-4">
-                    <Link href={`/blog/${b.slug}`} >{b.frontmatter.title}</Link>
-                  </div>
+                  <h3 className="mt-4 text-h3">
+                    <Link href={`/blog/${b.slug}`} ><a className="text-textDark hover:text-primaryColor">{b.frontmatter.title}</a></Link>
+                  </h3>
                 </div>
 
-                <div className="flex mt-6">
+                <div className="flex mt-4">
                   <div className="sm:mr-4 mr-1">
                     <div className={`flex ${styles.author}`}>
                       {
                         authors.map((a, i) => a.frontmatter.name === b.frontmatter.author && <div key={i}><img src={a.frontmatter.image} /></div>)
                       }
-                      <span><Link href={`/authors/${b.frontmatter.author}`}><a className="text-gray-500">{b.frontmatter.author}</a></Link></span>
+                      <span><Link href={`/authors/${b.frontmatter.author}`}><a className="text-textLight text-small">{b.frontmatter.author}</a></Link></span>
                     </div>
 
                   </div>
-                  <div className="sm:mr-4 mr-1"><small className="text-gray-700">&#x25C8; {new Date(b.frontmatter.date).toLocaleDateString("en-US", options)}</small>
+                  <div className="sm:mr-4 mr-1"><small className="text-textColor">&#x25C8; {new Date(b.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                   </div>
                   <div className="sm:mr-4 mr-1">
                     <Link href={`/tags/${kebabCase(b.frontmatter.tag[0])}`} >
-                      <a className={`text-gray-500 ${styles.tags}`}>&#x25C8; {b.frontmatter.tag[0]}</a>
+                      <a className={`text-textLight text-small ${styles.tags}`}>&#x25C8; {b.frontmatter.tag[0]}</a>
                     </Link>
-                    {/* {
-                      b.frontmatter.tag.map((t,i) => <div key={i}>
-                        <Link href={`/tags/${kebabCase(t)}`}>
-                          <a className={`text-gray-500 ${styles.tags}`}>&#x25C8; {t[0]}</a>
-                        </Link>
-                      </div>)
-                    } */}
                   </div>
 
                 </div>
-                <div className="mt-4 mb-3">
-                  <span dangerouslySetInnerHTML={{ __html: marked.parse(b.content).slice(0, 140) + ' ...' }} className='text-gray-400'>
+                <div className="mt-3 mb-3">
+                  <span dangerouslySetInnerHTML={{ __html: marked.parse(b.content).slice(0, 140) + ' ...' }} className='text-textLight'>
                   </span>
                 </div>
               </div>

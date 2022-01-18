@@ -1,8 +1,5 @@
 .container a {
-  font-size: 30px;
   font-weight: 600;
-  color: #152035;
-  line-height: 1.4;
 }
 
 .author img {
@@ -11,18 +8,10 @@
   margin-right: 8px;
 }
 
-.container a:hover {
-  color: #dd5269;
-}
-
 .tags {
-  font-size: 13px !important;
-  color: #788193 !important;
   font-weight: 500 !important;
 }
 
 .author a {
-  font-size: 13px !important;
-  color: #788193 !important;
-  font-weight: 500 !important;
+  font-weight: 500;
 }
