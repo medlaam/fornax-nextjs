@@ -6,24 +6,24 @@ import Head from 'next/head';
 import { marked } from 'marked';
 import { getPosts } from '../../lib/posts';
 import { getAuthor } from '../../lib/author';
-import { getAllTag } from '../../lib/tags';
 import { kebabCase } from '../../utils/kebabcase';
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { getAllCategory } from '../../lib/category';
 
 
-const TagName = ({ post, tags, authors }) => {
+const Category = ({ post, category, authors }) => {
   const blogsByTag = post.filter((p) => p.length > 0);
   let options = { year: "numeric", month: "long", day: "numeric" };
 
   return (
     <>
       <Head>
-        <title>tagname | {tags}</title>
+        <title>tagname | {category}</title>
       </Head>
       <div className="my-7 text-center m-auto">
-        <h3 className="text-h3_sm md:text-h3 text-bold">All <span className="text-primaryColor"> {tags}</span> blogs are here</h3>
+        <h3 className="text-h3_sm md:text-h3 text-bold">All <span className="text-primaryColor"> {category}</span> Category blogs are here</h3>
       </div>
 
       <div className={`my-14 flex flex-wrap justify-center container m-auto ${styles.container}`}>
@@ -73,10 +73,10 @@ const TagName = ({ post, tags, authors }) => {
 };
 
 export async function getStaticPaths() {
-  const tags = getAllTag();
-  const paths = Object.keys(tags).map((t) => ({
+  const category = getAllCategory();
+  const paths = Object.keys(category).map((c) => ({
     params: {
-      tagname: t,
+      category: c,
     },
   }));
   return {
@@ -94,13 +94,13 @@ export async function getStaticProps({ params }) {
       "utf-8"
     );
     const { data: frontmatter, content } = matter(metaDataWithFrontMatter);
-    const filter = frontmatter.tag.filter(
-      (c) => kebabCase(c) == params.tagname
+    const filter = frontmatter.category.filter(
+      (c) => kebabCase(c) == params.category
     );
 
     const post = getPosts();
     const data = post.filter(function (e) {
-      return e.frontmatter.tag.some(function (a) {
+      return e.frontmatter.category.some(function (a) {
         return filter.indexOf(a) != -1;
       });
     });
@@ -108,9 +108,9 @@ export async function getStaticProps({ params }) {
     return data;
   });
 
-  return { props: { post: posts, tags: params.tagname, authors } };
+  return { props: { post: posts, category: params.category, authors } };
 }
 
 
-export default TagName;
+export default Category;
 

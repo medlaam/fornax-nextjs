@@ -17,7 +17,7 @@ const Authors = ({ authorsData, authorDefaultPage }) => {
         <title>{title}</title>
       </Head>
       <div className={`mt-10 ${styles.about}`}>
-        <h3 className="text-center text-h3_sm md:text-h3">{title}</h3>
+        <h3 className="text-center text-textDark text-h3_sm md:text-h3">{title}</h3>
         <div className="flex gap-4 flex-wrap my-10 justify-center m-auto">
           {
             authorsData.map((a, i) => (

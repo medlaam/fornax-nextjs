@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/brands.min.css" crossOrigin="anonymous"
           referrerPolicy="no-referrer" />
       </Head>
-      <div className="font-primary">
+      <div className="font-primary bg-body">
         <Navbar toggle={toggle} isOpen={isOpen} />
         <MobileMenu toggle={toggle} isOpen={isOpen} />
         <main>{children}</main>

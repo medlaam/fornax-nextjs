@@ -3,6 +3,7 @@ title: 'Make the most of your LEAF with these tips'
 author: 'Melissa'
 date: 'Sat Jan 1 2022 12:04:21 GMT+0600'
 tag: ['Inspiration','Creative']
+category: [Inspiration, tech]
 images: '/01.jpg'
 ---
 

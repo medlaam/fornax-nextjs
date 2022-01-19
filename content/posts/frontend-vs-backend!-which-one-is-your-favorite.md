@@ -3,6 +3,7 @@ title: 'FrontEnd vs BackEnd! which one is your favorite'
 author: 'Melissa'
 date: 'Sat Jan 15 2022 10:04:21 GMT+0600'
 tag: ['tech','Creative', 'technology']
+category: [technology, tech]
 images: '/02.jpg'
 ---
 

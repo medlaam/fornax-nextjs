@@ -32,12 +32,16 @@ const Blogs = ({ postsBlog, authors }) => {
                     </div>
 
                   </div>
-                  <div className="sm:mr-4 mr-1"><small className="text-textColor">&#x25C8; {new Date(b.frontmatter.date).toLocaleDateString("en-US", options)}</small>
+                  <div className="sm:mr-4 mr-1"><small className="text-textLight">&#x25C8; {new Date(b.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                   </div>
                   <div className="sm:mr-4 mr-1">
-                    <Link href={`/tags/${kebabCase(b.frontmatter.tag[0])}`} >
-                      <a className={`text-textLight text-small ${styles.tags}`}>&#x25C8; {b.frontmatter.tag[0]}</a>
-                    </Link>
+                    {
+                      b.frontmatter.category.map((c, i) => (
+                          <Link key={i} href={`/category/${kebabCase(c)}`} >
+                            <a  className={`text-textLight text-small ${styles.tags}`}>&#x25C8; {c}</a>
+                          </Link>
+                      ))
+                    }
                   </div>
 
                 </div>

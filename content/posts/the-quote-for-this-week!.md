@@ -3,6 +3,7 @@ title: 'The quote for this week!'
 author: 'Melissa'
 date: 'Wed Dec 17 2022 12:04:21 GMT+0600'
 tag: ['Inspiration','tech']
+category: [Inspiration, tech]
 images: '/01.jpg'
 ---
 

@@ -14,7 +14,7 @@ import shareOption from '../../config/config.json'
 import { kebabCase } from '../../utils/kebabcase';
 
 
-export default function PostPage({ frontmatter: { title, date, author, images,  tag }, content, slug, suggestedBlog, authors }) {
+export default function PostPage({ frontmatter: { title, date, author, images, tag, category }, content, slug, suggestedBlog, authors }) {
 
   const remainingBlogs = suggestedBlog.filter(b => b.slug !== slug);
   const blogByAuthor = remainingBlogs.filter(r => r.frontmatter.author === author);
@@ -43,9 +43,13 @@ export default function PostPage({ frontmatter: { title, date, author, images,  
                 <div className="flex-auto ml-5"><small className="text-textLight">&#x25C8; {new Date(date).toLocaleDateString("en-US", options)}</small>
                 </div>
                 <div className="flex-auto ml-5 text-textLight">
-                  <Link href={`/tags/${kebabCase(tag[0])}`}>
-                    <a>&#x25C8; {tag[0]}</a>
-                  </Link>
+                  {
+                    category.map((c, i) => (
+                      <Link key={i} href={`/category/${kebabCase(c)}`}>
+                        <a>&#x25C8; {c}</a>
+                      </Link>
+                    ))
+                  }
                 </div>
 
               </div>
@@ -59,7 +63,7 @@ export default function PostPage({ frontmatter: { title, date, author, images,  
         {/* Read content from markdown files */}
 
         <div className="my-5 w-full p-4 md:w-2/3 m-auto">
-          <div className="mt-5 prose-h1:text-h1 prose-p:text-lg prose-h2:text-h2 prose-h3:text-h3 prose-h4:text-2xl text-gray-500" dangerouslySetInnerHTML={{ __html: marked.parse(content) }}>
+          <div className="mt-5 prose-h1:text-h1 prose-p:text-lg prose-h2:text-h2 prose-h3:text-h3 prose-h4:text-2xl" dangerouslySetInnerHTML={{ __html: marked.parse(content) }}>
           </div>
         </div>
 
@@ -69,7 +73,7 @@ export default function PostPage({ frontmatter: { title, date, author, images,  
               {
                 tag.map((t, i) => (
                   <li key={i}>
-                    <Link href={`/tags/${kebabCase(t)}`}><a className="md:mr-5 ml-3 text-textDark hover:text-primaryColor">{t}</a></Link>
+                    <Link href={`/tags/${kebabCase(t)}`}><a className="md:mr-5 ml-3 text-textDark hover:text-primaryColor"># {t}</a></Link>
                   </li>
                 ))
               }
@@ -110,9 +114,9 @@ export default function PostPage({ frontmatter: { title, date, author, images,  
                       </div>
 
                     </div>
-                    <div className="sm:mr-4 mr-1"><small className="text-textColor">&#x25C8; {new Date(r.frontmatter.date).toLocaleDateString("en-US", options)}</small>
+                    <div className="sm:mr-4 mr-1"><small className="text-textLight">&#x25C8; {new Date(r.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                     </div>
-                    <div className="sm:mr-4 mr-1"> <Link href={`/tags/${r.frontmatter.tag[0]}`}>
+                    <div className="sm:mr-4 mr-1"> <Link href={`/tags/${kebabCase(r.frontmatter.tag[0])}`}>
                       <a className={`text-textLight ${styles.tags}`}>&#x25C8; {r.frontmatter.tag[0]}</a>
                     </Link>
                     </div>
@@ -143,9 +147,9 @@ export default function PostPage({ frontmatter: { title, date, author, images,  
           </div>
           <ul className={`flex mt-5 ${styles.writersLink}`}>
             <li className="ml-5"><a className="hover:text-primaryColor" href={`https://www.facebook.com/`}><FaFacebookF /></a></li>
-            <li className="ml-5"><a className="hover:text-primaryColor"   href={`https://twitter.com/`}><FaTwitter /></a></li>
-            <li className="ml-5"><a className="hover:text-primaryColor"  href={`https://instagram.com/`}><FaInstagram /></a></li>
-            <li className="ml-5"><a className="hover:text-primaryColor"  href="/#"><FaDribbble /></a></li>
+            <li className="ml-5"><a className="hover:text-primaryColor" href={`https://twitter.com/`}><FaTwitter /></a></li>
+            <li className="ml-5"><a className="hover:text-primaryColor" href={`https://instagram.com/`}><FaInstagram /></a></li>
+            <li className="ml-5"><a className="hover:text-primaryColor" href="/#"><FaDribbble /></a></li>
           </ul>
         </div>
       </div>
