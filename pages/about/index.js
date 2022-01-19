@@ -24,13 +24,13 @@ const About = ({ about }) => {
               <ul className={`flex my-5 ${styles.writersLink}`}>
               {
               socialIcons.socialMedia.map(s => (
-                <li key={s.name} className="hover:text-primaryColor">
-                  <a className="mr-5" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
+                <li key={s.name}>
+                  <a className="mr-5 hover:text-primaryColor" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
                   </li>
               ))
             }
               </ul>
-              <div className="text-textDark" dangerouslySetInnerHTML={{ __html: marked.parse(a.content) }}>
+              <div className="text-textDark prose-p:text-sm" dangerouslySetInnerHTML={{ __html: marked.parse(a.content) }}>
               </div>
             </div>
           </div>

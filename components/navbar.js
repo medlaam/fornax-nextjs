@@ -33,7 +33,7 @@ const Navbar = ({ toggle, isOpen }) => {
 
         {/* for mobile Menu */}
         <div className={`px-4 flex items-center lg:hidden ${styles.mobileMenu}`}>
-          <li><a onClick={() => setShowSearch(!showSearch)} className="mr-8 p-4 cursor-pointer"><VscSearch size={20} /></a></li>
+          <li><a onClick={() => setShowSearch(!showSearch)} className="mr-8 p-4 hover:text-primaryColor cursor-pointer"><VscSearch size={20} /></a></li>
           <ul className={showSearch ? `block absolute ${styles.showSearch}` : 'hidden'} >
             <li ><Search/></li>
           </ul>

@@ -1,10 +1,4 @@
 .writersLink a{
   font-size: 16px;
-  padding-right:  7px;
-  color: rgba(0, 0, 0, 0.8);
-}
-
-.writersLink a:hover {
-  cursor: pointer;
-  color: #e1677b;
+  padding-right: 7px;
 }

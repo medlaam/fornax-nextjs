@@ -25,9 +25,9 @@ const Authors = ({ authorsData, authorDefaultPage }) => {
                 <div className="text-center">
                   <Image height={100} width={100} objectFit="cover" src={a.frontmatter.image} />
                 </div>
-                <h6 className="mt-3 text-center font-bold text-textDark text-small md:text-h5"><Link href={`/authors/${a.frontmatter.name}`}>{a.frontmatter.name}</Link></h6>
+                <h5 className="mt-3 text-center font-bold text-textDark text-sm md:text-h5 hover:text-primaryColor"><Link href={`/authors/${a.frontmatter.name}`}>{a.frontmatter.name}</Link></h5>
 
-                <div className="mt-4 text-center" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}>
+                <div className="mt-4 text-center prose-p:text-sm" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}>
                 </div>
                 <ul className={`flex items-center justify-center mt-10 ${styles.writersLink}`}>
                   {
