@@ -15,7 +15,10 @@ const large = base + base * 0.125;
 const small = base - base * 0.25;
 
 module.exports = {
-  
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   variants: {
     extend: {
       variantOrder: [
