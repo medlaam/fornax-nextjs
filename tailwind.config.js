@@ -41,7 +41,10 @@ module.exports = {
       display: ["group-hover"],
     },
   },
- 
+  plugins: [
+    require("@tailwindcss/typography"),
+    // ...
+  ],
   theme: {
     extend: {
       fontSize: {

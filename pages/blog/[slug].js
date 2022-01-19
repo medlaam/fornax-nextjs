@@ -59,7 +59,7 @@ export default function PostPage({ frontmatter: { title, date, author, images,  
         {/* Read content from markdown files */}
 
         <div className="my-5 w-full p-4 md:w-2/3 m-auto">
-          <div className="mt-5 text-xl text-gray-500" dangerouslySetInnerHTML={{ __html: marked.parse(content) }}>
+          <div className="mt-5 prose-h1:text-h1 prose-p:text-lg prose-h2:text-h2 prose-h3:text-h3 prose-h4:text-2xl text-gray-500" dangerouslySetInnerHTML={{ __html: marked.parse(content) }}>
           </div>
         </div>
 
