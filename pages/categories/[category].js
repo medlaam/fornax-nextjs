@@ -23,7 +23,7 @@ const Category = ({ post, category, authors }) => {
         <title>tagname | {category}</title>
       </Head>
       <div className="my-7 text-center m-auto">
-        <h3 className="text-h3_sm md:text-h3 text-bold">All <span className="text-primaryColor"> {category}</span> Category blogs are here</h3>
+        <h3 className="text-h3_sm md:text-h3 text-bold">All <span className="text-primaryColor"> {category}</span> Categories blogs are here</h3>
       </div>
 
       <div className={`my-14 flex flex-wrap justify-center container m-auto ${styles.container}`}>

@@ -37,7 +37,7 @@ const Blogs = ({ postsBlog, authors }) => {
                   <div className="sm:mr-4 mr-1">
                     {
                       b.frontmatter.category.map((c, i) => (
-                          <Link key={i} href={`/category/${kebabCase(c)}`} >
+                          <Link key={i} href={`/categories/${kebabCase(c)}`} >
                             <a  className={`text-textLight text-small ml-0 md:ml-1 ${styles.tags}`}>&#x25C8; {c}</a>
                           </Link>
                       ))

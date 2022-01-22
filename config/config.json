@@ -1,9 +1,13 @@
 {
   "parameter": {
     "title": "Leberte blog",
+    "logo": "/logo-dark.png",
+    "favicon": "favicon.ico",
     "pagination": "5",
+    "search":true,
     "sharePost": true,
-    "contactFormAction": "https://airform.io/rakib.themefisher@gmail.com"
+    "contactFormAction": "https://airform.io/rakib.themefisher@gmail.com",
+    "headerSocial": true
   },
   "socialMedia": [
     {

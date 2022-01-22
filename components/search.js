@@ -16,7 +16,7 @@ const Search = () => {
     if (searchTerm === "") {
       return ""
     }
-    else if (val.frontmatter.tag[0].toLowerCase().includes(searchTerm.toLowerCase())) {
+    else if (val.frontmatter.category[0].toLowerCase().includes(searchTerm.toLowerCase())) {
       return val
     }
     else if (val.frontmatter.title.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -56,18 +56,12 @@ const Search = () => {
                               <Link href={`/blog/${b.slug}`} ><a className="md:text-textColor hover:text-primaryColor">{b.frontmatter.title}</a></Link>
                             </div>
                             <div className="flex mt-6">
-                              <div className="sm:mr-4 mr-1">
-                                <div className={`flex ${styles.author}`}>
-                                  <span>
-                                    <a className="text-textLight">{b.frontmatter.author}</a></span>
-                                </div>
-                              </div>
-                              <div className="sm:mr-4 mr-1"><small className="text-gray-700">&#x25C8; {new Date(b.frontmatter.date).toLocaleDateString("en-US", options)}</small>
+                              <div className="sm:mr-4 mr-1"><small className="text-textLight">&#x25C8; {new Date(b.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                               </div>
                               <div className="sm:mr-4 mr-1">
                                 {
                                   b.frontmatter.category.map((c, i) => (
-                                    <a key={i} className="text-textLight ml-2">&#x25C8; {kebabCase(c)}</a>
+                                    <a key={i} className="text-textLight text-sm ml-2">&#x25C8; {kebabCase(c)}</a>
                                   ))
                                 }
                               </div>

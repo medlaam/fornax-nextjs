@@ -31,7 +31,7 @@
     },
     "fontSize": {
       "base": "16px",
-      "font_scale": 1.25
+      "fontScale": 1.25
     }
   }
 }

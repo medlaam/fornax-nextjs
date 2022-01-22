@@ -10,7 +10,7 @@ const Footer = () => {
           {
               socialIcons.socialMedia.map(s => (
                 <li key={s.name}>
-                  <a className="m-4 hover:text-primaryColor" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
+                  <a className="p-4 hover:text-primaryColor" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
                   </li>
               ))
             }
