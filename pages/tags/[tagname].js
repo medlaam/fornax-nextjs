@@ -43,7 +43,7 @@ const TagName = ({ post, tags, authors }) => {
                       {
                         authors.map((a, i) => a.frontmatter.name === r.frontmatter.author && <div key={i}><img src={a.frontmatter.image} /></div>)
                       }
-                      <span><Link href={`/authors/${r.frontmatter.author}`}><a className="text-textLight">{r.frontmatter.author}</a></Link></span>
+                      <span><Link href={`/authors/${kebabCase(r.frontmatter.author)}`}><a className="text-textLight">{r.frontmatter.author}</a></Link></span>
                     </div>
 
                   </div>

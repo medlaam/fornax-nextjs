@@ -28,7 +28,7 @@ const Blogs = ({ postsBlog, authors }) => {
                       {
                         authors.map((a, i) => a.frontmatter.name === b.frontmatter.author && <div key={i}><img src={a.frontmatter.image} /></div>)
                       }
-                      <span><Link href={`/authors/${b.frontmatter.author}`}><a className="text-textLight text-small">{b.frontmatter.author}</a></Link></span>
+                      <span><Link href={`/authors/${kebabCase(b.frontmatter.author)}`}><a className="text-textLight text-small">{b.frontmatter.author}</a></Link></span>
                     </div>
 
                   </div>

@@ -4,10 +4,11 @@ import Head from 'next/head';
 import { getAuthor } from '../../lib/author';
 import { marked } from 'marked';
 import socialIcons from '../../config/config.json'
+import { kebabCase } from '../../utils/kebabcase';
 
 
 const SingleAuthor = ({ authorName, author }) => {
-  const authors = authorName.filter(a => a.frontmatter.name === author)
+  const authors = authorName.filter(a => kebabCase(a.frontmatter.name) === author)
   return (
     <>
       <Head>
@@ -42,7 +43,7 @@ export async function getStaticPaths() {
   const authors = getAuthor()
   const paths = authors.map(n => ({
     params: {
-      author: n.frontmatter.name
+      author: kebabCase(n.frontmatter.name)
     }
   }))
 

@@ -7,8 +7,7 @@
     "textColor": {
       "default": "#152035",
       "dark": "#152035",
-      "light": "#788193",
-      "white":"#ffff"
+      "light": "#788193"
     },
     "basicColor": {
       "black": "#000",

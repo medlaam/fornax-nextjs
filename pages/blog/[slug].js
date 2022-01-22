@@ -40,7 +40,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
                 {
                   authors.map((a, i) => a.frontmatter.name === author && <div key={i}><img src={a.frontmatter.image} /></div>)
                 }
-                <span className="text-textLight"><Link href={`/authors/${author}`}><a>{author}</a></Link></span>
+                <span className="text-textLight"><Link href={`/authors/${kebabCase(author)}`}><a>{author}</a></Link></span>
                 <div className="flex-auto ml-5"><small className="text-textLight">&#x25C8; {new Date(date).toLocaleDateString("en-US", options)}</small>
                 </div>
                 <div className="flex-auto ml-5 text-textLight">
@@ -146,7 +146,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
           </div>
           <div className="text-center mt-5 w-2/3">
             <p className="text-textLight">Written By</p>
-            <h5 className="mt-3 text-h5 text-textColor hover:text-primaryColor"><Link href={`/authors/${author}`}>{author}</Link></h5>
+            <h5 className="mt-3 text-h5 text-textColor hover:text-primaryColor"><Link href={`/authors/${kebabCase(author)}`}>{author}</Link></h5>
             {
               authorDetails.map((a, i) => (
                 <p key={i} className="mt-4" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}></p>

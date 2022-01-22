@@ -56,7 +56,7 @@ module.exports = {
         textDark: themeStyle.color.textColor.dark,
         textColor: themeStyle.color.textColor.default,
         textLight: themeStyle.color.textColor.light,
-        textWhite: themeStyle.color.textColor.white,
+        textWhite: themeStyle.color.basicColor.white,
         borderColor: themeStyle.color.themeColor.border,
         body: themeStyle.color.themeColor.body,
         facebook: themeStyle.color.socialColor.facebook,
