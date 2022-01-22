@@ -36,8 +36,8 @@ const Search = () => {
       <div className={`${styles.searchContainer} relative`}>
         <div className={`${styles.search} overflow-auto fixed right-0 left-0 top-0 sm:top-20 z-50 justify-center items-center md:inset-0 h-modal sm:h-full`} id="large-modal">
           <div className={`relative px-4 w-full md:w-2/3 max-w-4xl h-full md:h-auto ${styles.searchModal}`}>
-            <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-              <div className="flex justify-between items-center rounded-t  dark:border-gray-600">
+            <div className="relative bg-white rounded-lg shadow">
+              <div className="flex justify-between items-center rounded-t">
                 <input className="rounded focus:outline-none	w-full" type="text" value={searchTerm} placeholder="Search here" onChange={(e) => { setSearchTerm(e.target.value) }} />
 
                 <button onClick={resetSearchInput} type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-3 mr-2 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="large-modal">
