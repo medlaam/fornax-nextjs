@@ -53,7 +53,7 @@ const Search = () => {
                           <div key={i} className="p-4 block border-b-2  overflow-hidden">
 
                             <div onClick={() => setShowSearch(!showSearch)} className={`text-2xl ${styles.heading}`}>
-                              <Link href={`/blog/${b.slug}`} ><a className="md:text-textDark hover:text-primaryColor">{b.frontmatter.title}</a></Link>
+                              <Link href={`/blog/${b.slug}`} ><a className="md:text-textColor hover:text-primaryColor">{b.frontmatter.title}</a></Link>
                             </div>
                             <div className="flex mt-6">
                               <div className="sm:mr-4 mr-1">

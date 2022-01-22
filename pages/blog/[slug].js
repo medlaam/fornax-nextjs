@@ -12,6 +12,7 @@ import { sortByDate } from '../../utils';
 import { getAuthor } from '../../lib/author';
 import shareOption from '../../config/config.json'
 import { kebabCase } from '../../utils/kebabcase';
+import socialIcons from '../../config/config.json'
 
 
 export default function PostPage({ frontmatter: { title, date, author, images, tag, category }, content, slug, suggestedBlog, authors }) {
@@ -33,7 +34,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
       <div className={`${styles.singleBlog} container md:m-auto`}>
         <div className="w-full xl:w-2/3 items-center md:m-auto ">
           <div className={`${styles.blogContainer} p-4  py-16 `}>
-            <h1 className="text-h1_sm lg:text-h1 text-textDark">{title}</h1>
+            <h1 className="text-h1_sm lg:text-h1 text-textColor">{title}</h1>
             <div className="flex items-center sm:justify-between mt-5">
               <div className={`flex ${styles.author}`}>
                 {
@@ -73,7 +74,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
               {
                 tag.map((t, i) => (
                   <li key={i}>
-                    <Link href={`/tags/${kebabCase(t)}`}><a className="md:mr-5 ml-3 text-textDark hover:text-primaryColor"># {t}</a></Link>
+                    <Link href={`/tags/${kebabCase(t)}`}><a className="md:mr-5 ml-3 text-textColor hover:text-primaryColor"># {t}</a></Link>
                   </li>
                 ))
               }
@@ -82,26 +83,26 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
           <div className="text-center md:text-right md:justify-between">
             {
               postShare &&
-              <ul className={`${styles.socialLink} my-5 md:my-0 flex justify-center`}>
-                <li style={{ backgroundColor: '#395693' }} className="ml-5"><a href={`https://www.facebook.com/sharer/sharer.php?u=+https://liberte-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a></li>
-                <li style={{ backgroundColor: '#1C9CEA' }} className="ml-5"><a href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://liberte-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a></li>
-                <li style={{ backgroundColor: '#894DB8' }} className="ml-5"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a></li>
-                <li style={{ backgroundColor: '#E34A85' }} className="ml-5"><a href="/#"><FaDribbble /></a> </li>
-              </ul>
+              <div className={`${styles.socialLink} my-5 md:my-0 flex justify-center`}>
+                <a className="bg-facebook text-textWhite" href={`https://www.facebook.com/sharer/sharer.php?u=+https://liberte-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+                <a className="ml-5 bg-twitter text-textWhite" href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://liberte-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+                <a className="ml-5 bg-instagram text-textWhite" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                <a className="ml-5 bg-dribles text-textWhite" href="/#"><FaDribbble /></a>
+              </div>
             }
           </div>
         </div>
-        <h3 className={`text-textDark text-h3_sm md:text-h3   ${styles.secondHeader}`}>You may also Like</h3>
+        <h3 className={`text-textColor text-h3_sm md:text-h3   ${styles.secondHeader}`}>You may also Like</h3>
         <div className="my-5 flex flex-wrap justify-center">
 
           {
             recentBlogByAuthor.map((r, i) => {
               return (
-                <div key={i} className="p-4 bg-white md:w-1/2 lg:w-1/3 overflow-hidden">
+                <div key={i} className="p-4 bg-body md:w-1/2 lg:w-1/3 overflow-hidden">
                   <div className={styles.cardHeader}>
                     <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image>
                     <div className="mt-4">
-                      <Link href={`/blog/${r.slug}`} ><a className="text-textDark hover:text-primaryColor">{r.frontmatter.title}</a></Link>
+                      <Link href={`/blog/${r.slug}`} ><a className="text-textColor hover:text-primaryColor">{r.frontmatter.title}</a></Link>
                     </div>
                   </div>
                   <div className="flex mt-6">
@@ -116,9 +117,16 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
                     </div>
                     <div className="sm:mr-4 mr-1"><small className="text-textLight">&#x25C8; {new Date(r.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                     </div>
-                    <div className="sm:mr-4 mr-1"> <Link href={`/tags/${kebabCase(r.frontmatter.tag[0])}`}>
-                      <a className={`text-textLight ${styles.tags}`}>&#x25C8; {r.frontmatter.tag[0]}</a>
-                    </Link>
+                    <div className="sm:mr-4 mr-1">
+                      
+                        {
+                          r.frontmatter.category.map((c, i) => (
+                              <Link key={i} href={`/category/${kebabCase(c)}`} >
+                                <a  className={`text-textLight text-small`}>&#x25C8; {c}</a>
+                              </Link>
+                          ))
+                        }
+                      
                     </div>
 
                   </div>
@@ -138,7 +146,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
           </div>
           <div className="text-center mt-5 w-2/3">
             <p className="text-textLight">Written By</p>
-            <h5 className="mt-3 text-h5 text-textDark hover:text-primaryColor"><Link href={`/authors/${author}`}>{author}</Link></h5>
+            <h5 className="mt-3 text-h5 text-textColor hover:text-primaryColor"><Link href={`/authors/${author}`}>{author}</Link></h5>
             {
               authorDetails.map((a, i) => (
                 <p key={i} className="mt-4" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}></p>
@@ -146,10 +154,13 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
             }
           </div>
           <ul className={`flex mt-5 ${styles.writersLink}`}>
-            <li className="ml-5"><a className="hover:text-primaryColor" href={`https://www.facebook.com/`}><FaFacebookF /></a></li>
-            <li className="ml-5"><a className="hover:text-primaryColor" href={`https://twitter.com/`}><FaTwitter /></a></li>
-            <li className="ml-5"><a className="hover:text-primaryColor" href={`https://instagram.com/`}><FaInstagram /></a></li>
-            <li className="ml-5"><a className="hover:text-primaryColor" href="/#"><FaDribbble /></a></li>
+            {
+              socialIcons.socialMedia.map(s => (
+                <li key={s.name} className="hover:text-primaryColor">
+                  <a className="ml-5" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
+                </li>
+              ))
+            }
           </ul>
         </div>
       </div>

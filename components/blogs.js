@@ -14,11 +14,11 @@ const Blogs = ({ postsBlog, authors }) => {
         {
           postsBlog.map((b, i) => {
             return (
-              <div key={i} className="p-4 bg-white md:w-1/2 lg:w-1/3   overflow-hidden">
+              <div key={i} className="p-4  bg-body md:w-1/2 lg:w-1/3   overflow-hidden">
                 <div className={styles.cardHeader}>
                   <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={b.frontmatter.images} ></Image>
-                  <h3 className="mt-4 text-h3">
-                    <Link href={`/blog/${b.slug}`} ><a className="text-textDark hover:text-primaryColor">{b.frontmatter.title}</a></Link>
+                  <h3 className="mt-4 h3_sm md:text-h3">
+                    <Link href={`/blog/${b.slug}`} ><a className="text-textColor hover:text-primaryColor">{b.frontmatter.title}</a></Link>
                   </h3>
                 </div>
 
@@ -45,9 +45,7 @@ const Blogs = ({ postsBlog, authors }) => {
                   </div>
 
                 </div>
-                <div className="mt-3 mb-3">
-                  <span dangerouslySetInnerHTML={{ __html: marked.parse(b.content).slice(0, 140) + ' ...' }} className='text-textLight'>
-                  </span>
+                <div className="mt-3 mb-3 text-small md:text-large text-textLight" dangerouslySetInnerHTML={{ __html: marked.parse(b.content).slice(0, 140) + ' ...' }}>                  
                 </div>
               </div>
             )

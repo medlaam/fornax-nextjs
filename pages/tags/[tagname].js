@@ -34,7 +34,7 @@ const TagName = ({ post, tags, authors }) => {
                 <div >
                   <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image>
                   <div className="mt-4">
-                    <Link href={`/blog/${r.slug}`} ><a className="text-textDark hover:text-primaryColor">{r.frontmatter.title}</a></Link>
+                    <Link href={`/blog/${r.slug}`} ><a className="text-textColor hover:text-primaryColor">{r.frontmatter.title}</a></Link>
                   </div>
                 </div>
                 <div className="flex mt-6">

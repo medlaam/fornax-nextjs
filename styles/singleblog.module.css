@@ -18,14 +18,12 @@
   margin-right: 8px;
 }
 
-.socialLink li {
+.socialLink a {
   font-size: 18px;
   padding: 7px;
-  color: #ffff;
-  cursor: pointer;
 }
 
-.socialLink li:hover {
+.socialLink a:hover {
   opacity: 0.7;
 }
 

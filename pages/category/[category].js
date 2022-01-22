@@ -30,11 +30,11 @@ const Category = ({ post, category, authors }) => {
         {
           blogsByTag[0].map((r, i) => {
             return (
-              <div key={i} className="p-4 bg-white md:w-1/2 lg:w-1/3  overflow-hidden">
+              <div key={i} className="p-4 bg-body md:w-1/2 lg:w-1/3  overflow-hidden">
                 <div >
                   <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image>
                   <div className="mt-4">
-                    <Link href={`/blog/${r.slug}`} ><a className="text-textDark hover:text-primaryColor">{r.frontmatter.title}</a></Link>
+                    <Link href={`/blog/${r.slug}`} ><a className="text-textColor hover:text-primaryColor">{r.frontmatter.title}</a></Link>
                   </div>
                 </div>
                 <div className="flex mt-6">

@@ -2,19 +2,25 @@
   "color": {
     "themeColor": {
       "primary": "#dd5269",
-      "body": "#ffff",
-      "border": "#788193"
+      "body": "#ffff"
     },
     "textColor": {
-      "default": "#2e2b2b",
+      "default": "#152035",
       "dark": "#152035",
-      "light": "#788193"
+      "light": "#788193",
+      "white":"#ffff"
     },
     "basicColor": {
       "black": "#000",
       "white": "#ffff",
       "dark": "#333",
       "light": "#ddd"
+    },
+    "socialColor": {
+      "facebook": "#395693",
+      "twitter": "#1C9CEA",
+      "instagram": "#894DB8",
+      "dribles": "#E34A85"
     }
   },
   "font": {

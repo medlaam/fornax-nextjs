@@ -26,7 +26,7 @@ const Navbar = ({ toggle, isOpen }) => {
 
   return (
     <div>
-      <nav className="flex justify-between items-center h-18 bg-white  relative shadow-sm" role="navigation">
+      <nav className="flex justify-between items-center h-18 bg-body relative shadow-sm" role="navigation">
         <Link href="/"><a className="md:ml-8 p-4 md:p-8 mt-2">
           <Image src={Img1}></Image>
         </a></Link>
@@ -46,7 +46,7 @@ const Navbar = ({ toggle, isOpen }) => {
           <ul className="flex items-center justify-center">
             {
               Menu.header.map(h => (
-                <li key={h.menu} className="text-textDark hover:text-primaryColor">
+                <li key={h.menu} className="text-textColor hover:text-primaryColor">
                   <Link href={h.link}><a className={router.pathname == `${h.link}` ? `text-primaryColor p-6` : "p-6"}>{h.menu}</a></Link>
                 </li>
               ))
@@ -54,12 +54,12 @@ const Navbar = ({ toggle, isOpen }) => {
             <li className=" flex items-center justify-center border-l-2 p-4 ml-4"></li>
             {
               socialIcons.socialMedia.map(s => (
-                <li key={s.name} className="text-textDark hover:text-primaryColor">
+                <li key={s.name} className="text-textColor hover:text-primaryColor">
                   <a className="mr-8 p-2" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
                   </li>
               ))
             }
-            <li className="cursor-pointer" ><a onClick={() => setShowSearch(!showSearch)} className="mr-8 p-4 text-textDark hover:text-primaryColor"><VscSearch /></a>
+            <li className="cursor-pointer" ><a onClick={() => setShowSearch(!showSearch)} className="mr-8 p-4 text-textColor hover:text-primaryColor"><VscSearch /></a>
             </li>
           </ul>
           <div className={showSearch ? `block relative ${styles.showSearch}` : 'hidden'} >

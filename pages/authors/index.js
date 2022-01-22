@@ -17,7 +17,7 @@ const Authors = ({ authorsData, authorDefaultPage }) => {
         <title>{title}</title>
       </Head>
       <div className={`mt-10 ${styles.about}`}>
-        <h3 className="text-center text-textDark text-h3_sm md:text-h3">{title}</h3>
+        <h3 className="text-center text-textColor text-h3_sm md:text-h3">{title}</h3>
         <div className="flex gap-4 flex-wrap my-10 justify-center m-auto">
           {
             authorsData.map((a, i) => (
@@ -25,7 +25,7 @@ const Authors = ({ authorsData, authorDefaultPage }) => {
                 <div className="text-center">
                   <Image height={100} width={100} objectFit="cover" src={a.frontmatter.image} />
                 </div>
-                <h5 className="mt-3 text-center font-bold text-textDark text-sm md:text-h5 hover:text-primaryColor"><Link href={`/authors/${a.frontmatter.name}`}>{a.frontmatter.name}</Link></h5>
+                <h5 className="mt-3 text-center font-bold text-textColor text-sm md:text-h5 hover:text-primaryColor"><Link href={`/authors/${a.frontmatter.name}`}>{a.frontmatter.name}</Link></h5>
 
                 <div className="mt-4 text-center prose-p:text-sm" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}>
                 </div>

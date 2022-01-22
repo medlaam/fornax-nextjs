@@ -14,7 +14,7 @@ const Contact = ({ contact }) => {
         <title>{contact.frontmatter.title}</title>
       </Head>
       <div className={`mt-10`}>
-        <h2 className="text-center text-h2_sm md:text-h2 text-textDark">Contact Me</h2>
+        <h2 className="text-center text-h2_sm md:text-h2 text-textColor">Contact Me</h2>
         <div className={`py-16 px-4 sm:px-6 flex justify-center items-center `}>
           <div className="mx-auto w-full max-w-2xl rounded-xl p-8">
             <form
