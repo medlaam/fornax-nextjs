@@ -53,7 +53,7 @@ const TagName = ({ post, tags, authors }) => {
                     {
                       r.frontmatter.category.map((c, i) => (
                         <Link key={i} href={`/category/${kebabCase(c)}`} >
-                          <a className={`text-textLight ${styles.tags}`}>&#x25C8; {c}</a>
+                          <a className={`text-textLight ml-0 md:ml-1 ${styles.tags}`}>&#x25C8; {c}</a>
                         </Link>
                       ))
                     }

@@ -47,7 +47,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
                   {
                     category.map((c, i) => (
                       <Link key={i} href={`/category/${kebabCase(c)}`}>
-                        <a>&#x25C8; {c}</a>
+                        <a className="m-0 md:m-2">&#x25C8; {c}</a>
                       </Link>
                     ))
                   }
@@ -122,7 +122,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
                         {
                           r.frontmatter.category.map((c, i) => (
                               <Link key={i} href={`/category/${kebabCase(c)}`} >
-                                <a  className={`text-textLight text-small`}>&#x25C8; {c}</a>
+                                <a  className={`text-textLight text-small ml-0 md:ml-1`}>&#x25C8; {c}</a>
                               </Link>
                           ))
                         }

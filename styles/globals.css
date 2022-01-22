@@ -4,12 +4,6 @@ body {
   margin: 0;
 }
 
-::selection {
-  color: #ffffff;
-  background-color: #e1677b;
-  text-shadow: none;
-}
-
 * {
   box-sizing: border-box;
 }

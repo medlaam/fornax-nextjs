@@ -53,14 +53,14 @@ const Category = ({ post, category, authors }) => {
                     {
                       r.frontmatter.category.map((c, i) => (
                         <Link key={i} href={`/category/${kebabCase(c)}`} >
-                          <a className={`text-textLight ${styles.tags}`}>&#x25C8; {c}</a>
+                          <a className={`text-textLight ml-0 md:ml-1 ${styles.tags}`}>&#x25C8; {c}</a>
                         </Link>
                       ))
                     }
                   </div>
 
                 </div>
-                <div className="mt-4 mb-3">
+                <div className="mt-4 mb-3 text-small md:text-large text-textLight">
                   <span dangerouslySetInnerHTML={{ __html: marked.parse(r.content).slice(0, 130) + ' ...' }}></span>
                 </div>
               </div>
