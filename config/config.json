@@ -7,7 +7,7 @@
     "search":true,
     "sharePost": true,
     "contactFormAction": "https://airform.io/rakib.themefisher@gmail.com",
-    "headerSocial": false
+    "headerSocial": true
   },
   "footer": {
     "copyright": "Copyright by your [company](https://google.com/)",
