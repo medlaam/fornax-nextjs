@@ -1,13 +1,13 @@
 {
   "parameter": {
-    "title": "Leberte blog",
+    "title": "Fornax blog",
     "logo": "/Fornax-logo.png",
     "favicon": "Fav.png",
     "pagination": "5",
     "search":true,
     "sharePost": true,
     "contactFormAction": "https://airform.io/rakib.themefisher@gmail.com",
-    "headerSocial": true
+    "headerSocial": false
   },
   "footer": {
     "copyright": "Copyright by your [company](https://google.com/)",
