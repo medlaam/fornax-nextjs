@@ -43,17 +43,17 @@ const TagName = ({ post, tags, authors }) => {
                       {
                         authors.map((a, i) => a.frontmatter.name === r.frontmatter.author && <div key={i}><img src={a.frontmatter.image} /></div>)
                       }
-                      <span><Link href={`/authors/${kebabCase(r.frontmatter.author)}`}><a className="text-textLight">{r.frontmatter.author}</a></Link></span>
+                      <span><Link href={`/authors/${kebabCase(r.frontmatter.author)}`}><a className="text-textLight text-small">{r.frontmatter.author}</a></Link></span>
                     </div>
 
                   </div>
-                  <div className="sm:mr-4 mr-1"><small className="text-textLight">&#x25C8; {new Date(r.frontmatter.date).toLocaleDateString("en-US", options)}</small>
+                  <div className="sm:mr-4 mr-1"><small className="text-textLight text-small">&#x25C8; {new Date(r.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                   </div>
                   <div className="sm:mr-4 mr-1">
                     {
                       r.frontmatter.category.map((c, i) => (
                         <Link key={i} href={`/categories/${kebabCase(c)}`} >
-                          <a className={`text-textLight ml-0 md:ml-1 ${styles.tags}`}>&#x25C8; {c}</a>
+                          <a className={`text-textLight text-small ml-0 md:ml-1 ${styles.tags}`}>&#x25C8; {c}</a>
                         </Link>
                       ))
                     }

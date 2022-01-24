@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { getAuthor, getAuthorDefault } from '../../lib/author';
 import { marked } from 'marked';
 import socialIcons from '../../config/config.json'
+import { kebabCase } from '../../utils/kebabcase';
 
 
 const Authors = ({ authorsData, authorDefaultPage }) => {
@@ -25,7 +26,7 @@ const Authors = ({ authorsData, authorDefaultPage }) => {
                 <div className="text-center">
                   <Image height={100} width={100} objectFit="cover" src={a.frontmatter.image} />
                 </div>
-                <h5 className="mt-3 text-center font-bold text-textColor text-sm md:text-h5 hover:text-primaryColor"><Link href={`/authors/${a.frontmatter.name}`}>{a.frontmatter.name}</Link></h5>
+                <h5 className="mt-3 text-center font-bold text-textColor text-sm md:text-h5 hover:text-primaryColor"><Link href={`/authors/${kebabCase(a.frontmatter.name)}`}>{a.frontmatter.name}</Link></h5>
 
                 <div className="mt-4 text-center prose-p:text-sm" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}>
                 </div>

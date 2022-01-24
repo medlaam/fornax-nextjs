@@ -1,12 +1,12 @@
 import { useForm } from 'react-hook-form';
 import Head from 'next/head';
-import airForm from '../../config/config.json'
+import airForm from '../../config/config.json';
 import { getContactData } from '../../lib/contact';
 
 
 const Contact = ({ contact }) => {
   const { register, errors } = useForm();
-  const email = airForm.parameter.contactFormAction
+  const email = airForm.parameter.contactFormAction;
 
   return (
     <>

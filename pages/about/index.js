@@ -4,7 +4,7 @@ import styles from '../../styles/about.module.css';
 import Head from 'next/head';
 import { getAbout } from '../../lib/about';
 import { marked } from 'marked';
-import socialIcons from '../../config/config.json'
+import socialIcons from '../../config/config.json';
 
 
 const About = ({ about }) => {
@@ -15,10 +15,10 @@ const About = ({ about }) => {
       </Head>
       {
         about.map((a, i) => (
-          <div key={i} className={`mt-10 w-full p-4 md:w-1/3 md:p-0 m-auto  ${styles.about}`}>
+          <div key={i} className={`mt-10 w-full p-4 md:w-2/4 md:p-0 m-auto  ${styles.about}`}>
             <div>
               <div className="relative w-full h-60">
-                <Image layout='fill' objectFit="cover" src={a.frontmatter.image}></Image>
+                <Image width={700} height={340} layout='fill' objectFit="cover" src={a.frontmatter.image}></Image>
               </div>
               <h3 className="mt-3 font-bold text-h3_sm md:text-h3">{a.frontmatter.name}</h3>
               <ul className={`flex my-5 ${styles.writersLink}`}>

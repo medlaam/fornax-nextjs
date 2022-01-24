@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from 'react'
-import Head from 'next/head'
-import MobileMenu from './MobileMenu';
+import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
+import MobileMenu from './mobileMenu';
 import Footer from './footer';
 import Navbar from './navbar';
 import config from "../config/style.json";
 
 const Layout = ({ children }) => {
   const { fontFamily } = config.font;
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
-    setIsOpen(!isOpen)
+    setIsOpen(!isOpen);
 
-  }
+  };
   useEffect(() => {
     const hiddenMenu = () => {
       if (window.innerWidth > 768 && isOpen) {
-        setIsOpen(false)
+        setIsOpen(false);
 
       }
-    }
-    window.addEventListener('resize', hiddenMenu)
+    };
+    window.addEventListener('resize', hiddenMenu);
 
     return () => {
-      window.removeEventListener('resize', hiddenMenu)
-    }
-  })
+      window.removeEventListener('resize', hiddenMenu);
+    };
+  });
   return (
     <>
       <Head>

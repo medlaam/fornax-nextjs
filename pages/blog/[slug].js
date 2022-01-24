@@ -10,20 +10,20 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaDribbble } from 'react-icons/fa'
 import styles from '../../styles/singleblog.module.css';
 import { sortByDate } from '../../utils';
 import { getAuthor } from '../../lib/author';
-import shareOption from '../../config/config.json'
+import shareOption from '../../config/config.json';
 import { kebabCase } from '../../utils/kebabcase';
-import socialIcons from '../../config/config.json'
+import socialIcons from '../../config/config.json';
 
 
 export default function PostPage({ frontmatter: { title, date, author, images, tag, category }, content, slug, suggestedBlog, authors }) {
 
   const remainingBlogs = suggestedBlog.filter(b => b.slug !== slug);
   const blogByAuthor = remainingBlogs.filter(r => r.frontmatter.author === author);
-  const sortedBlogByAuthor = blogByAuthor.sort(sortByDate)
-  const recentBlogByAuthor = sortedBlogByAuthor.slice(0, 2)
-  const authorDetails = authors.filter(a => a.frontmatter.name === author)
+  const sortedBlogByAuthor = blogByAuthor.sort(sortByDate);
+  const recentBlogByAuthor = sortedBlogByAuthor.slice(0, 2);
+  const authorDetails = authors.filter(a => a.frontmatter.name === author);
 
-  const postShare = shareOption.parameter.sharePost
+  const postShare = shareOption.parameter.sharePost;
   let options = { year: "numeric", month: "long", day: "numeric" };
 
   return (
@@ -84,8 +84,8 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
             {
               postShare &&
               <div className={`${styles.socialLink} my-5 md:my-0 flex justify-center`}>
-                <a className="bg-facebook text-textWhite" href={`https://www.facebook.com/sharer/sharer.php?u=+https://liberte-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-                <a className="ml-5 bg-twitter text-textWhite" href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://liberte-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+                <a className="bg-facebook text-textWhite" href={`https://www.facebook.com/sharer/sharer.php?u=+https://fornax-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+                <a className="ml-5 bg-twitter text-textWhite" href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://fornax-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
                 <a className="ml-5 bg-instagram text-textWhite" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
                 <a className="ml-5 bg-dribles text-textWhite" href="/#"><FaDribbble /></a>
               </div>

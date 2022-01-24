@@ -1,17 +1,17 @@
 import Image from 'next/image';
 import { FaBuromobelexperte, FaTimes } from 'react-icons/fa';
-import { VscSearch } from 'react-icons/vsc'
+import { VscSearch } from 'react-icons/vsc';
 import styles from '../styles/navbar.module.css';
 import Link from 'next/link';
 import { useContext, useEffect } from 'react';
 import { AppContext } from './context';
 import { useRouter } from 'next/router';
 import Search from './search';
-import Menu from '../config/menu.json'
-import socialIcons from '../config/config.json'
-import logo from '../config/config.json'
-import search from '../config/config.json'
-import socialHeader from '../config/config.json'
+import Menu from '../config/menu.json';
+import socialIcons from '../config/config.json';
+import logo from '../config/config.json';
+import search from '../config/config.json';
+import socialHeader from '../config/config.json';
 
 
 const Navbar = ({ toggle, isOpen }) => {
@@ -21,10 +21,10 @@ const Navbar = ({ toggle, isOpen }) => {
   useEffect(() => {
     document.addEventListener('keydown', (e) => {
       e.key === 'Escape' && setShowSearch(false);
-    })
-  }, [])
+    });
+  }, []);
 
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <div>

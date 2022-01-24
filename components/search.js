@@ -7,27 +7,27 @@ import { kebabCase } from '../utils/kebabcase';
 
 
 const Search = () => {
-  const [searchTerm, setSearchTerm] = useState('')
+  const [searchTerm, setSearchTerm] = useState('');
   const { value1, value2 } = useContext(AppContext);
-  const [showSearch, setShowSearch] = value1
-  const [showSearchPosts, setShowSearchPosts] = value2
+  const [showSearch, setShowSearch] = value1;
+  const [showSearchPosts, setShowSearchPosts] = value2;
 
   const searchAllBlogs = showSearchPosts.filter(val => {
     if (searchTerm === "") {
-      return ""
+      return "";
     }
     else if (val.frontmatter.category[0].toLowerCase().includes(searchTerm.toLowerCase())) {
-      return val
+      return val;
     }
     else if (val.frontmatter.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-      return val
+      return val;
     }
-  })
+  });
 
   const resetSearchInput = () => {
-    setShowSearch(!showSearch)
+    setShowSearch(!showSearch);
     setSearchTerm("");
-  }
+  };
 
   let options = { year: "numeric", month: "long", day: "numeric" };
 

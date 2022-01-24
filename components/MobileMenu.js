@@ -1,7 +1,7 @@
-import Link from 'next/link'
+import Link from 'next/link';
 import styles from '../styles/navbar.module.css';
-import Menu from '../config/menu.json'
-import socialIcons from '../config/config.json'
+import Menu from '../config/menu.json';
+import socialIcons from '../config/config.json';
 
 
 const MobileMenu = ({ isOpen, toggle }) => {
