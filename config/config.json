@@ -1,13 +1,17 @@
 {
   "parameter": {
     "title": "Leberte blog",
-    "logo": "/logo-dark.png",
-    "favicon": "favicon.ico",
+    "logo": "/Fornax-logo.png",
+    "favicon": "Fav.png",
     "pagination": "5",
     "search":true,
     "sharePost": true,
     "contactFormAction": "https://airform.io/rakib.themefisher@gmail.com",
     "headerSocial": true
+  },
+  "footer": {
+    "copyright": "Copyright by your [company](https://google.com/)",
+    "theme_copyright": true
   },
   "socialMedia": [
     {

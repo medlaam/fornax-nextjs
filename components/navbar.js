@@ -30,7 +30,7 @@ const Navbar = ({ toggle, isOpen }) => {
     <div>
       <nav className="flex justify-between items-center h-18 bg-body relative shadow-sm" role="navigation">
         <Link href="/"><a className="md:ml-8 p-4 md:p-8 mt-2">
-          <Image width="114" height="29" src={logo.parameter.logo}></Image>
+          <Image width="134" height="29" objectFit="contain" src={logo.parameter.logo}></Image>
         </a></Link>
 
         {/* for mobile Menu */}
@@ -47,22 +47,22 @@ const Navbar = ({ toggle, isOpen }) => {
         <div className={`${styles.navLink} pr-8 lg:block hidden`}>
           <ul className="flex items-center justify-center">
             {
-              Menu.header.map(h => (
-                <li key={h.menu} className="text-textColor hover:text-primaryColor">
+              Menu.header.map((h,i) => (
+                <li key={i} className="text-textColor hover:text-primaryColor">
                   <Link href={h.link}><a className={router.pathname == `${h.link}` ? `text-primaryColor p-6` : "p-6"}>{h.menu}</a></Link>
                 </li>
               ))
             }
             <li className=" flex items-center justify-center border-l-2 p-4 ml-4"></li>
             {
-              socialIcons.socialMedia.map(s => (
-                <>
+              socialIcons.socialMedia.map((s,i) => (
+                <div key={i}>
                   {socialHeader.parameter.headerSocial &&
-                    <li key={s.name} className="text-textColor hover:text-primaryColor">
+                    <li  className="text-textColor hover:text-primaryColor">
                       <a className="mr-8 p-2" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
                     </li>
                     }
-                </>
+                </div>
               ))
             }
             {
