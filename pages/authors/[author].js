@@ -3,7 +3,7 @@ import styles from '../../styles/about.module.css';
 import Head from 'next/head';
 import { getAuthor } from '../../lib/author';
 import { marked } from 'marked';
-import socialIcons from '../../config/config.json'
+import socialIcons from '../../config/config.json';
 import { kebabCase } from '../../utils/kebabcase';
 
 

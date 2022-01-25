@@ -38,7 +38,10 @@ const Search = () => {
           <div className={`relative px-4 w-full md:w-2/3 max-w-4xl h-full md:h-auto ${styles.searchModal}`}>
             <div className="relative bg-body rounded-lg shadow">
               <div className="flex justify-between items-center rounded-t">
-                <input className="rounded focus:outline-none bg-body	w-full" type="text" value={searchTerm} placeholder="Search here" onChange={(e) => { setSearchTerm(e.target.value) }} />
+                <input className="rounded focus:outline-none bg-body	w-full" type="text" value={searchTerm} placeholder="Search here" onChange={(e) => { setSearchTerm(e.target.value) }} ref={inputElement => {if (inputElement) {
+                    inputElement.focus();
+                  }
+                }} />
 
                 <button onClick={resetSearchInput} type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-3 mr-2 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="large-modal">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
