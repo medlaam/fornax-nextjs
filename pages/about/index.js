@@ -15,7 +15,7 @@ const About = ({ about }) => {
       </Head>
       {
         about.map((a, i) => (
-          <div key={i} className={`mt-10 w-full p-4 md:w-2/4 md:p-0 m-auto  ${styles.about}`}>
+          <div key={i} className={`mt-10 w-full p-4 md:w-3/4 lg:w-2/4 md:p-0 m-auto  ${styles.about}`}>
             <div>
               <div className="relative w-full h-60">
                 <Image layout='fill' objectFit="cover" src={a.frontmatter.image}></Image>

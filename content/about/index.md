@@ -1,6 +1,6 @@
 --- 
 name : 'Sarah Taylor'
-image : '/about.jpg'
+image : '/about.jpeg'
 ---
 
 Maecenas sit amet purus eget ipsum elementum venenatis. Aenean maximus urna magna elementum venenatis, quis rutrum mi semper non purus eget ipsum elementum venenatis.aecenas sit amet purus eget ipsum elementum venenatis. Aenean maximus urna magna elementum venenatis, quis rutrum mi semper non purus eget ipsum elementum venenatis.
