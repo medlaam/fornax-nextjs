@@ -1,10 +1,10 @@
-import Layout from '../components/Layout'
-import '../styles/globals.css'
-import '../styles/index.css'
+import Layout from '../components/layout';
+import '../styles/globals.css';
+import '../styles/index.css';
 import { AppContext } from '../components/context';
 import { useState } from 'react';
 import Head from 'next/head';
-import favicon from '../config/config.json'
+import favicon from '../config/config.json';
 
 function MyApp({ Component, pageProps }) {
   const [showSearch, setShowSearch] = useState(false);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import MobileMenu from './MobileMenu';
+import MobileMenu from './mobileMenu';
 import Footer from './footer';
 import Navbar from './navbar';
 import config from "../config/style.json";
