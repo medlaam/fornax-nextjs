@@ -1,4 +1,4 @@
-import Layout from '../components/layoutNew';
+import Layout from '../components/layout';
 import '../styles/globals.css';
 import '../styles/index.css';
 import { AppContext } from '../components/context';
