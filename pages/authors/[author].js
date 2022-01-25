@@ -8,7 +8,7 @@ import { kebabCase } from '../../utils/kebabcase';
 
 
 const SingleAuthor = ({ authorName, author }) => {
-  const authors = authorName.filter(a => kebabCase(a.frontmatter.name) === author)
+  const authors = authorName.filter(a => kebabCase(a.frontmatter.name) === author);
   return (
     <>
       <Head>

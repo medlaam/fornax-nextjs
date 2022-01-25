@@ -1,12 +1,12 @@
 import styles from '../styles/footer.module.css';
-import socialIcons from '../config/config.json'
+import socialIcons from '../config/config.json';
 import footerData from "../config/config.json";
 import { marked } from "marked";
-import Link from 'next/link'
+import Link from 'next/link';
 
 const Footer = () => {
 
-  const { footer } = footerData
+  const { footer } = footerData;
 
   return (
     <div className={`mt-24 pt-5 border-t-2 mb-5`}>

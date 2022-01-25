@@ -5,12 +5,12 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { getAuthor, getAuthorDefault } from '../../lib/author';
 import { marked } from 'marked';
-import socialIcons from '../../config/config.json'
+import socialIcons from '../../config/config.json';
 import { kebabCase } from '../../utils/kebabcase';
 
 
 const Authors = ({ authorsData, authorDefaultPage }) => {
-  const title = authorDefaultPage.map(a => a.frontmatter.title)
+  const title = authorDefaultPage.map(a => a.frontmatter.title);
 
   return (
     <>
