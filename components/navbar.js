@@ -47,28 +47,29 @@ const Navbar = ({ toggle, isOpen }) => {
         <div className={`${styles.navLink} pr-8 lg:block hidden`}>
           <ul className="flex items-center justify-center">
             {
-              Menu.header.map((h,i) => (
+              Menu.header.map((h, i) => (
                 <li key={i} className="text-textColor hover:text-primaryColor">
                   <Link href={h.link}><a className={router.pathname == `${h.link}` ? `text-primaryColor p-6` : "p-6"}>{h.menu}</a></Link>
                 </li>
               ))
             }
-            <li className=" flex items-center justify-center border-l-2 p-4 ml-4"></li>
-            {
-              socialIcons.socialMedia.map((s,i) => (
-                <div key={i}>
-                  {socialHeader.parameter.headerSocial &&
-                    <li  className="text-textColor hover:text-primaryColor">
-                      <a className="mr-8 p-2" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
-                    </li>
+            <div className=" flex items-center justify-center border-l-2 p-4 ml-4">
+              {
+                socialIcons.socialMedia.map((s, i) => (
+                  <div key={i}>
+                    {socialHeader.parameter.headerSocial &&
+                      <li className="text-textColor hover:text-primaryColor">
+                        <a className="p-6" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
+                      </li>
                     }
-                </div>
-              ))
-            }
+                  </div>
+                ))
+              }
+            </div>
             {
               search.parameter.search &&
-              <li className="cursor-pointer" ><a onClick={() => setShowSearch(!showSearch)} className="mr-8 p-4 text-textColor hover:text-primaryColor"><VscSearch /></a>
-              </li>
+              <div className="cursor-pointer flex items-start justify-center text-textColor hover:text-primaryColor"><a onClick={() => setShowSearch(!showSearch)} className="p-2 mr-2"><VscSearch /></a>
+              </div>
             }
           </ul>
           <div className={showSearch ? `block relative ${styles.showSearch}` : 'hidden'} >

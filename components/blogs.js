@@ -7,7 +7,7 @@ import { kebabCase } from '../utils/kebabcase';
 
 
 const Blogs = ({ postsBlog, authors }) => {
-  let options = { year: "numeric", month: "long", day: "numeric" };
+  let options = { year: "numeric", month: "long", day: "numeric" }
   return (
     <div className={styles.container}>
       <div className="flex flex-wrap my-7 justify-center container m-auto">
@@ -37,15 +37,15 @@ const Blogs = ({ postsBlog, authors }) => {
                   <div className="sm:mr-4 mr-1">
                     {
                       b.frontmatter.category.map((c, i) => (
-                          <Link key={i} href={`/categories/${kebabCase(c)}`} >
-                            <a  className={`text-textLight text-small ml-0 md:ml-1 ${styles.tags}`}>&#x25C8; {c}</a>
-                          </Link>
+                        <Link key={i} href={`/categories/${kebabCase(c)}`} >
+                          <a className={`text-textLight text-small ml-0 md:ml-1 ${styles.tags}`}>&#x25C8; {c}</a>
+                        </Link>
                       ))
                     }
                   </div>
 
                 </div>
-                <div className="mt-3 mb-3 text-small md:text-large text-textLight" dangerouslySetInnerHTML={{ __html: marked.parse(b.content).slice(0, 140) + ' ...' }}>                  
+                <div className="mt-3 mb-3 text-small md:text-large text-textLight" dangerouslySetInnerHTML={{ __html: marked.parse(b.content).slice(0, 140) + ' ...' }}>
                 </div>
               </div>
             )

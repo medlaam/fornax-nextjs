@@ -145,21 +145,21 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
                 authors.map((a, i) => a.frontmatter.name === author && <div key={i} className="flex items-center justify-center" ><img src={a.frontmatter.image} /></div>)
               }
               <div className=" mt-5 w-full">
-              <p className="text-textLight">Written By</p>
-              <h5 className="mt-3 text-h5 text-textColor hover:text-primaryColor"><Link href={`/authors/${kebabCase(author)}`}>{author}</Link></h5>
-              {
-                authorDetails.map((a, i) => (
-                  <p key={i} className="mt-4" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}></p>
-                ))
-              }
+                <p className="text-textLight">Written By</p>
+                <h5 className="mt-3 text-h5 text-textColor hover:text-primaryColor"><Link href={`/authors/${kebabCase(author)}`}>{author}</Link></h5>
+                {
+                  authorDetails.map((a, i) => (
+                    <p key={i} className="mt-4" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}></p>
+                  ))
+                }
+              </div>
             </div>
-            </div>
-            
-            <ul className={`flex items-center justify-center mt-5 ${styles.writersLink}`}>
+
+            <ul className={`flex items-center justify-center mt-5`}>
               {
                 socialIcons.socialMedia.map(s => (
-                  <li key={s.name} className="hover:text-primaryColor">
-                    <a className="ml-5" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
+                  <li key={s.name}>
+                    <a className="p-4 hover:text-primaryColor" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
                   </li>
                 ))
               }

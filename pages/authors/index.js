@@ -30,11 +30,11 @@ const Authors = ({ authorsData, authorDefaultPage }) => {
 
                 <div className="mt-4 p-6 text-center prose-p:text-sm" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}>
                 </div>
-                <ul className={`flex items-center justify-center mt-10 ${styles.writersLink}`}>
+                <ul className={`flex items-center justify-center mt-10 `}>
                   {
                     socialIcons.socialMedia.map(s => (
-                      <li key={s.name} className="hover:text-primaryColor">
-                        <a className="ml-5" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
+                      <li key={s.name} className="">
+                        <a className="p-4 hover:text-primaryColor" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
                       </li>
                     ))
                   }
