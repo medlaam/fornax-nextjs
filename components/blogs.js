@@ -17,7 +17,7 @@ const Blogs = ({ postsBlog, authors }) => {
               <div key={i} className="p-4  bg-body md:w-1/2 lg:w-1/3   overflow-hidden">
                 <div className={styles.cardHeader}>
                   <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={b.frontmatter.images} ></Image>
-                  <h3 className="mt-4 h3_sm md:text-h3">
+                  <h3 className="mt-4 text-h3_sm md:text-h3">
                     <Link href={`/blog/${b.slug}`} ><a className="block text-textColor hover:text-primaryColor">{b.frontmatter.title}</a></Link>
                   </h3>
                 </div>
