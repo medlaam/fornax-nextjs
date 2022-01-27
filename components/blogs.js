@@ -18,11 +18,11 @@ const Blogs = ({ postsBlog, authors }) => {
                 <div className={styles.cardHeader}>
                   <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={b.frontmatter.images} ></Image>
                   <h3 className="mt-4 h3_sm md:text-h3">
-                    <Link href={`/blog/${b.slug}`} ><a className="text-textColor hover:text-primaryColor">{b.frontmatter.title}</a></Link>
+                    <Link href={`/blog/${b.slug}`} ><a className="block text-textColor hover:text-primaryColor">{b.frontmatter.title}</a></Link>
                   </h3>
                 </div>
 
-                <div className="flex mt-4">
+                <div className="flex flex-wrap mt-4">
                   <div className="sm:mr-4 mr-1">
                     <div className={`flex ${styles.author}`}>
                       {

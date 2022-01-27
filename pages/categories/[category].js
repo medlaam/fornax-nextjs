@@ -37,9 +37,9 @@ const Category = ({ post, category, authors }) => {
                     <Link href={`/blog/${r.slug}`} ><a className="text-textColor hover:text-primaryColor">{r.frontmatter.title}</a></Link>
                   </div>
                 </div>
-                <div className="flex mt-6">
+                <div className="flex flex-wrap mt-6">
                   <div className="sm:mr-4 mr-1">
-                    <div className={`flex ${styles.author}`}>
+                    <div className={`flex flex-shrink-0 ${styles.author}`}>
                       {
                         authors.map((a, i) => a.frontmatter.name === r.frontmatter.author && <div key={i}><img src={a.frontmatter.image} /></div>)
                       }

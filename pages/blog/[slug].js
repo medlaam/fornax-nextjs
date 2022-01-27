@@ -36,7 +36,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
           <div className={`${styles.blogContainer} p-4  py-16 `}>
             <h1 className="text-h1_sm lg:text-h1 text-textColor">{title}</h1>
             <div className="flex items-center sm:justify-between mt-5">
-              <div className={`flex ${styles.author}`}>
+              <div className={`flex flex-wrap ${styles.author}`}>
                 {
                   authors.map((a, i) => a.frontmatter.name === author && <div key={i}><img src={a.frontmatter.image} /></div>)
                 }
@@ -105,7 +105,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
                       <Link href={`/blog/${r.slug}`} ><a className="text-textColor hover:text-primaryColor">{r.frontmatter.title}</a></Link>
                     </div>
                   </div>
-                  <div className="flex mt-6">
+                  <div className="flex flex-wrap mt-6">
                     <div className="sm:mr-4 mr-1">
                       <div className={`flex ${styles.author}`}>
                         {
@@ -118,15 +118,15 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
                     <div className="sm:mr-4 mr-1"><small className="text-textLight">&#x25C8; {new Date(r.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                     </div>
                     <div className="sm:mr-4 mr-1">
-                      
-                        {
-                          r.frontmatter.category.map((c, i) => (
-                              <Link key={i} href={`/categories/${kebabCase(c)}`} >
-                                <a  className={`text-textLight text-small ml-0 md:ml-1`}>&#x25C8; {c}</a>
-                              </Link>
-                          ))
-                        }
-                      
+
+                      {
+                        r.frontmatter.category.map((c, i) => (
+                          <Link key={i} href={`/categories/${kebabCase(c)}`} >
+                            <a className={`text-textLight text-small ml-0 md:ml-1`}>&#x25C8; {c}</a>
+                          </Link>
+                        ))
+                      }
+
                     </div>
 
                   </div>
@@ -138,30 +138,33 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
             })
           }
         </div>
-        <div className={`${styles.writer} my-14 flex flex-col	justify-center`}>
-          <div>
-            {
-              authors.map((a, i) => a.frontmatter.name === author && <div key={i}><img src={a.frontmatter.image} /></div>)
-            }
+        <div className={` py-10 px-4 sm:px-6 flex justify-center items-center`}>
+          <div className={`mx-auto w-full max-w-xl ${styles.writer}`}>
+            <div className="text-center">
+              {
+                authors.map((a, i) => a.frontmatter.name === author && <div key={i} className="flex items-center justify-center" ><img src={a.frontmatter.image} /></div>)
+              }
+              <div className=" mt-5 w-full">
+              <p className="text-textLight">Written By</p>
+              <h5 className="mt-3 text-h5 text-textColor hover:text-primaryColor"><Link href={`/authors/${kebabCase(author)}`}>{author}</Link></h5>
+              {
+                authorDetails.map((a, i) => (
+                  <p key={i} className="mt-4" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}></p>
+                ))
+              }
+            </div>
+            </div>
+            
+            <ul className={`flex items-center justify-center mt-5 ${styles.writersLink}`}>
+              {
+                socialIcons.socialMedia.map(s => (
+                  <li key={s.name} className="hover:text-primaryColor">
+                    <a className="ml-5" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
+                  </li>
+                ))
+              }
+            </ul>
           </div>
-          <div className="text-center mt-5 w-2/3">
-            <p className="text-textLight">Written By</p>
-            <h5 className="mt-3 text-h5 text-textColor hover:text-primaryColor"><Link href={`/authors/${kebabCase(author)}`}>{author}</Link></h5>
-            {
-              authorDetails.map((a, i) => (
-                <p key={i} className="mt-4" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}></p>
-              ))
-            }
-          </div>
-          <ul className={`flex mt-5 ${styles.writersLink}`}>
-            {
-              socialIcons.socialMedia.map(s => (
-                <li key={s.name} className="hover:text-primaryColor">
-                  <a className="ml-5" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
-                </li>
-              ))
-            }
-          </ul>
         </div>
       </div>
 

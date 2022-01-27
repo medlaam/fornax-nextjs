@@ -37,11 +37,11 @@ const TagName = ({ post, tags, authors }) => {
                     <Link href={`/blog/${r.slug}`} ><a className="text-textColor hover:text-primaryColor">{r.frontmatter.title}</a></Link>
                   </div>
                 </div>
-                <div className="flex mt-6">
+                <div className="flex flex-wrap mt-6">
                   <div className="sm:mr-4 mr-1">
                     <div className={`flex ${styles.author}`}>
                       {
-                        authors.map((a, i) => a.frontmatter.name === r.frontmatter.author && <div key={i}><img src={a.frontmatter.image} /></div>)
+                        authors.map((a, i) => a.frontmatter.name === r.frontmatter.author && <div key={i} className="flex-shrink-0"><img src={a.frontmatter.image} /></div>)
                       }
                       <span><Link href={`/authors/${kebabCase(r.frontmatter.author)}`}><a className="text-textLight text-small">{r.frontmatter.author}</a></Link></span>
                     </div>
