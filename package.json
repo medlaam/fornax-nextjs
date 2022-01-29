@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cache-posts": "node scripts/cache.js",
+    "prepare": "husky install"
   },
   "dependencies": {
     "github-slugger": "^1.4.0",
@@ -18,9 +20,10 @@
     "react-icons": "^4.3.1"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.0",
     "autoprefixer": "^10.4.2",
+    "husky": "^7.0.4",
     "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.17",
-    "@tailwindcss/typography": "^0.5.0"
+    "tailwindcss": "^3.0.17"
   }
 }

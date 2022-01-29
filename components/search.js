@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../styles/search.module.css';
 import { useContext } from 'react';
 import Link from 'next/link';
@@ -12,7 +12,19 @@ const Search = () => {
   const [showSearch, setShowSearch] = value1;
   const [showSearchPosts, setShowSearchPosts] = value2;
 
-  const searchAllBlogs = showSearchPosts.filter(val => {
+  const [search, setSearch] = useState([]);
+
+  useEffect(() => {
+    const getPosts = async () => {
+      const res = await fetch("/api/search");
+
+      const post = await res.json();
+      setSearch(post);
+    };
+    getPosts();
+  }, []);
+
+  const searchAllBlogs = search.filter(val => {
     if (searchTerm === "") {
       return "";
     }
