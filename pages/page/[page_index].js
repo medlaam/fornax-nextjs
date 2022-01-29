@@ -2,12 +2,11 @@ import fs from 'fs'
 import path from 'path'
 import Pagination from '../../components/pagination';
 import Head from 'next/head';
-import { useContext, useEffect, useState } from 'react';
-import { AppContext } from '../../components/context';
+import { useState } from 'react';
 import { getPosts } from '../../lib/posts';
 import dynamic from 'next/dynamic';
-import  posts  from '../../config/config.json'
-import  title  from '../../config/config.json'
+import  posts  from '../../config/config.json';
+import  title  from '../../config/config.json';
 import { getAuthor } from '../../lib/author';
 
 const Blogs = dynamic(() => import('../../components/blogs'),
@@ -15,15 +14,8 @@ const Blogs = dynamic(() => import('../../components/blogs'),
 )
 
 function Home({ page, postsBlog, authors }) {
-  const { value2 } = useContext(AppContext);
-  const [showSearchPosts, setShowSearchPosts] = value2
 
   const [currentPage, setCurrentPage] = useState(1);
-
-  useEffect(() => {
-    setShowSearchPosts(postsBlog)
-  })
-
   const titleBlog = title.parameter.title
   const postPerPage = posts.parameter.pagination
   const indexOfLastPost = page * postPerPage

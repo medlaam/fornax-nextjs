@@ -15,8 +15,8 @@ import socialHeader from '../config/config.json';
 
 
 const Navbar = ({ toggle, isOpen }) => {
-  const { value1 } = useContext(AppContext);
-  const [showSearch, setShowSearch] = value1;
+  const { toggleSearch } = useContext(AppContext);
+  const [showSearch, setShowSearch] = toggleSearch;
 
   useEffect(() => {
     document.addEventListener('keydown', (e) => {

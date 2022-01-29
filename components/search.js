@@ -8,9 +8,8 @@ import { kebabCase } from '../utils/kebabcase';
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const { value1, value2 } = useContext(AppContext);
-  const [showSearch, setShowSearch] = value1;
-  const [showSearchPosts, setShowSearchPosts] = value2;
+  const { toggleSearch } = useContext(AppContext);
+  const [showSearch, setShowSearch] = toggleSearch;
 
   const [search, setSearch] = useState([]);
 
