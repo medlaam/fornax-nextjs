@@ -142,14 +142,14 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
           <div className={`mx-auto w-full max-w-xl ${styles.writer}`}>
             <div className="text-center">
               {
-                authors.map((a, i) => a.frontmatter.name === author && <div key={i} className="flex items-center justify-center" ><img src={a.frontmatter.image} /></div>)
+                authors.map((a, i) => a.frontmatter.name === author && <div key={i} className="flex items-center justify-center" ><img height={150} width={150} src={a.frontmatter.image} /></div>)
               }
               <div className=" mt-5 w-full">
                 <p className="text-textLight">Written By</p>
                 <h5 className="mt-3 text-h5 text-textColor hover:text-primaryColor"><Link href={`/authors/${kebabCase(author)}`}>{author}</Link></h5>
                 {
-                  authorDetails.map((a, i) => (
-                    <p key={i} className="mt-4" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}></p>
+                  author && authorDetails.map((a, i) => (
+                    <div key={i} className="mt-4" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}></div>
                   ))
                 }
               </div>
