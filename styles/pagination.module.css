@@ -1,6 +1,6 @@
 .pagination .page {
   padding: 0;
-  margin-left: 0;
+  margin: 0 5px;
   color: #152035;
   border: 0;
   height: 48px;
@@ -11,7 +11,6 @@
   border-radius: 0 !important;
   position: relative;
   cursor: pointer;
-
 }
 
 .pagination .arrow {
@@ -21,7 +20,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
-  
 }
 
 .active {
@@ -49,7 +47,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  cursor:not-allowed;
+  cursor: not-allowed;
 }
 .disablePage {
   padding: 0;

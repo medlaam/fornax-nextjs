@@ -34,7 +34,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
       <div className={`${styles.singleBlog} container md:m-auto`}>
         <div className="w-full xl:w-2/3 items-center md:m-auto ">
           <div className={`${styles.blogContainer} p-4  py-16 `}>
-            <h1 className="text-h1_sm lg:text-h1 text-textColor">{title}</h1>
+          <h1 className="text-h2_sm lg:text-h2 text-textColor">{title}</h1>
             <div className="flex items-center sm:justify-between mt-5">
               <div className={`flex flex-wrap ${styles.author}`}>
                 {
@@ -74,7 +74,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
               {
                 tag.map((t, i) => (
                   <li key={i}>
-                    <Link href={`/tags/${kebabCase(t)}`}><a className="md:mr-5 ml-3 text-textColor hover:text-primaryColor"># {t}</a></Link>
+                    <Link href={`/tags/${kebabCase(t)}`}><a className="md:mr-5 ml-3 text-textColor transition duration-300 ease-in-outs hover:text-primaryColor"># {t}</a></Link>
                   </li>
                 ))
               }
@@ -84,11 +84,11 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
             {
               postShare &&
               <div className={`${styles.socialLink} my-5 md:my-0 flex justify-center`}>
-                <a className="bg-facebook text-textWhite" href={`https://www.facebook.com/sharer/sharer.php?u=+https://fornax-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-                <a className="ml-5 bg-twitter text-textWhite" href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://fornax-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-                <a className="ml-5 bg-instagram text-textWhite" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-                <a className="ml-5 bg-dribles text-textWhite" href="/#"><FaDribbble /></a>
-              </div>
+              <a className="bg-facebook translate-y-0 hover:-translate-y-2 text-textWhite transition-all duration-300 ease-in-out" href={`https://www.facebook.com/sharer/sharer.php?u=+https://fornax-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+              <a className="ml-5 bg-twitter translate-y-0 hover:-translate-y-2 transition-all duration-300 ease-in-out text-textWhite" href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://fornax-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+              <a className="ml-5 bg-instagram translate-y-0 hover:-translate-y-2 transition-all duration-300 ease-in-out text-textWhite" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+              <a className="ml-5 bg-dribles transition-all duration-300 ease-in-out  translate-y-0 hover:-translate-y-2 text-textWhite" href="/#"><FaDribbble /></a>
+            </div>
             }
           </div>
         </div>
@@ -102,7 +102,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
                   <div className={styles.cardHeader}>
                     <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image>
                     <div className="mt-4">
-                      <Link href={`/blog/${r.slug}`} ><a className="text-textColor hover:text-primaryColor">{r.frontmatter.title}</a></Link>
+                      <Link href={`/blog/${r.slug}`} ><a className="text-textColor transition duration-300 ease-in-outs hover:text-primaryColor">{r.frontmatter.title}</a></Link>
                     </div>
                   </div>
                   <div className="flex flex-wrap mt-6">
@@ -146,7 +146,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
               }
               <div className=" mt-5 w-full">
                 <p className="text-textLight">Written By</p>
-                <h5 className="mt-3 text-h5 text-textColor hover:text-primaryColor"><Link href={`/authors/${kebabCase(author)}`}>{author}</Link></h5>
+                <h5 className="mt-3 text-h5 text-textColor transition duration-300 ease-in-outs hover:text-primaryColor"><Link href={`/authors/${kebabCase(author)}`}>{author}</Link></h5>
                 {
                   author && authorDetails.map((a, i) => (
                     <div key={i} className="mt-4" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}></div>
@@ -159,7 +159,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
               {
                 socialIcons.socialMedia.map(s => (
                   <li key={s.name}>
-                    <a className="p-4 hover:text-primaryColor" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
+                    <a className="p-4 transition duration-300 ease-in-outs hover:text-primaryColor" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
                   </li>
                 ))
               }

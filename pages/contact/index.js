@@ -111,9 +111,9 @@ const Contact = ({ contact }) => {
                 </span>
               </div>
               <div>
-                <button
+              <button
                   type="submit"
-                  className="primary-button bg-primaryColor">
+                  className="primary-button transition duration-300 ease-in-outs bg-primaryColor hover:bg-black">
                   Submit
                 </button>
               </div>

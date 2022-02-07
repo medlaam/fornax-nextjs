@@ -35,12 +35,12 @@ const Navbar = ({ toggle, isOpen }) => {
 
         {/* for mobile Menu */}
         <div className={`px-4 flex items-center lg:hidden ${styles.mobileMenu}`}>
-          <li><a onClick={() => setShowSearch(!showSearch)} className="mr-8 p-4 hover:text-primaryColor cursor-pointer"><VscSearch size={20} /></a></li>
+          <li><a onClick={() => setShowSearch(!showSearch)} className="mr-8 p-4 transition  duration-300 ease-in-out hover:text-primaryColor cursor-pointer"><VscSearch size={20} /></a></li>
           <ul className={showSearch ? `block absolute ${styles.showSearch}` : 'hidden'} >
             <li ><Search /></li>
           </ul>
           <li>
-            {isOpen ? <FaTimes className="cursor-pointer hover:text-primaryColor" size={25} onClick={toggle} /> : <FaBuromobelexperte className="cursor-pointer hover:text-primaryColor" size={25} onClick={toggle} />}
+            {isOpen ? <FaTimes className="cursor-pointer hover:text-primaryColor" size={25} onClick={toggle} /> : <FaBuromobelexperte className="cursor-pointer transition  duration-300 ease-in-out hover:text-primaryColor" size={25} onClick={toggle} />}
           </li>
         </div>
 
@@ -48,7 +48,7 @@ const Navbar = ({ toggle, isOpen }) => {
           <ul className="flex items-center justify-center">
             {
               Menu.header.map((h, i) => (
-                <li key={i} className="text-textColor hover:text-primaryColor">
+                <li key={i} className="text-textColor transition  duration-300 ease-in-out hover:text-primaryColor">
                   <Link href={h.link}><a className={router.pathname == `${h.link}` ? `text-primaryColor p-6` : "p-6"}>{h.menu}</a></Link>
                 </li>
               ))
@@ -58,7 +58,7 @@ const Navbar = ({ toggle, isOpen }) => {
                 socialIcons.socialMedia.map((s, i) => (
                   <div key={i}>
                     {socialHeader.parameter.headerSocial &&
-                      <li className="text-textColor hover:text-primaryColor">
+                      <li className="text-textColor transition  duration-300 ease-in-out hover:text-primaryColor">
                         <a className="p-6" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
                       </li>
                     }
@@ -68,7 +68,7 @@ const Navbar = ({ toggle, isOpen }) => {
             </div>
             {
               search.parameter.search &&
-              <div className="cursor-pointer flex items-start justify-center text-textColor hover:text-primaryColor"><a onClick={() => setShowSearch(!showSearch)} className="p-2 mr-2"><VscSearch /></a>
+              <div className="cursor-pointer flex items-start justify-center text-textColortransition  duration-300 ease-in-out  hover:text-primaryColor"><a onClick={() => setShowSearch(!showSearch)} className="p-2 mr-2"><VscSearch /></a>
               </div>
             }
           </ul>

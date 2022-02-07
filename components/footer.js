@@ -16,7 +16,7 @@ const Footer = () => {
         {
           socialIcons.socialMedia.map(s => (
             <li key={s.name}>
-              <a className="p-4 hover:text-primaryColor" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
+              <a className="p-4 transition  duration-300 ease-in-out hover:text-primaryColor" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
             </li>
           ))
         }
@@ -30,7 +30,7 @@ const Footer = () => {
             &nbsp; Theme by&nbsp;
             <Link href="https://statichunt.com/">
               <a
-                className="text-primaryColor hover:opacity-80"
+                className="transition  duration-300 ease-in-out text-primaryColor hover:opacity-80"
                 target="_blank"
                 rel="noflow"
               >

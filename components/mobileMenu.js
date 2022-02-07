@@ -12,7 +12,7 @@ const MobileMenu = ({ isOpen, toggle }) => {
           {
             Menu.header.map(n => {
               return (
-                <li onClick={toggle} key={n.menu} className="p-2 hover:text-primaryColor">
+                <li onClick={toggle} key={n.menu} className="p-2 transition  duration-300 ease-in-out hover:text-primaryColor">
                   <Link href={n.link}><a>{n.menu}</a></Link>
                 </li>
               )
@@ -24,7 +24,7 @@ const MobileMenu = ({ isOpen, toggle }) => {
           {
             socialIcons.socialMedia.map(s => {
               return (
-                <li key={s.name} className="p-4 hover:text-primaryColor">
+                <li key={s.name} className="p-4 transition  duration-300 ease-in-out hover:text-primaryColor">
                   <Link href={s.link}><a><i className={`${s.icon} not-italic`}></i></a></Link>
                 </li>
               )

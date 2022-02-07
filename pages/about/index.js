@@ -25,12 +25,12 @@ const About = ({ about }) => {
               {
               socialIcons.socialMedia.map(s => (
                 <li key={s.name}>
-                  <a className="mr-5 hover:text-primaryColor" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
+                  <a className="mr-5 transition  duration-300 ease-in-out  hover:text-primaryColor" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
                   </li>
               ))
             }
               </ul>
-              <div className="text-textColor prose-p:text-sm" dangerouslySetInnerHTML={{ __html: marked.parse(a.content) }}>
+              <div className="text-textColor prose-p:text-xl" dangerouslySetInnerHTML={{ __html: marked.parse(a.content) }}>
               </div>
             </div>
           </div>

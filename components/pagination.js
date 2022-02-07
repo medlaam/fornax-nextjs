@@ -17,7 +17,7 @@ const Pagination = ({ postPerPage, totalPost, page, paginate, hasNextPage, hasPr
       <ul className={`flex justify-between ${styles.pagination}`}>
         {
           hasPreviousPage ?
-            <li onClick={() => router.push(`/page/${page - 1}`)} className={`px-5 h-10 ${styles.page} hover:bg-primaryColor`}>
+            <li onClick={() => router.push(`/page/${page - 1}`)} className={`px-5 h-10 ${styles.page} transition  duration-300 ease-in-out hover:bg-primaryColor`}>
               <a className={styles.arrow}><FaAngleLeft /></a>
             </li> :
             <button disabled className={`px-5 h-10 ${styles.disablePage}`}>
@@ -28,7 +28,7 @@ const Pagination = ({ postPerPage, totalPost, page, paginate, hasNextPage, hasPr
           <ul className={`flex flex-wrap ${styles.pagination}`}>
             {
               pageNumber.map(num => (
-                <li key={num} onClick={() => { paginate(num); router.push(`/page/${num}`) }} className={num==page ? `px-5 h-10 ${styles.active} bg-primaryColor `: `px-5 h-10 ${styles.page} hover:bg-primaryColor `}><a >{num}</a>
+                <li key={num} onClick={() => { paginate(num); router.push(`/page/${num}`) }} className={num==page ? `px-5 h-10 ${styles.active} transition  duration-300 ease-in-out bg-primaryColor `: `px-5 h-10 ${styles.page} transition  duration-300 ease-in-out hover:bg-primaryColor `}><a >{num}</a>
                 </li>
               ))
             }
@@ -36,7 +36,7 @@ const Pagination = ({ postPerPage, totalPost, page, paginate, hasNextPage, hasPr
         </li>
         {
           hasNextPage ?
-            <li onClick={() => router.push(`/page/${page + 1}`)} className={`px-5 h-10 ${styles.page} hover:bg-primaryColor`}>
+            <li onClick={() => router.push(`/page/${page + 1}`)} className={`px-5 h-10 ${styles.page} transition  duration-300 ease-in-out hover:bg-primaryColor`}>
               <a className={styles.arrow}><FaAngleRight /></a>
             </li>
             :
