@@ -43,6 +43,9 @@ module.exports = {
         h2_sm: h2_sm + "px",
         h3_sm: h3_sm + "px",
       },
+      height: {
+        37: "20rem",
+      },
       fontFamily: {
         primary: [
           primaryFont.replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, ""),

@@ -17,7 +17,7 @@ const About = ({ about }) => {
         about.map((a, i) => (
           <div key={i} className={`py-16 px-4 sm:px-6 flex justify-center items-center ${styles.about}`}>
             <div className="mx-auto w-full max-w-4xl">
-              <div className="relative w-full h-60">
+              <div className="relative w-full md:h-37 h-60">
                 <Image layout='fill' objectFit="cover" src={a.frontmatter.image}></Image>
               </div>
               <h3 className="mt-3 font-bold text-h3_sm md:text-h3">{a.frontmatter.name}</h3>

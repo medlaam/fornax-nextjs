@@ -19,7 +19,7 @@ const SingleAuthor = ({ authorName, author }) => {
           <div key={i} className="py-16 px-4 sm:px-6 flex justify-center items-center">
             <div className={`mx-auto w-full max-w-xl ${styles.about}`}>
               <div className="text-center">
-                <Image height={100} width={100} objectFit="cover" src={a.frontmatter.image}></Image>
+                <Image className="rounded-full" height={150} width={150} src={a.frontmatter.image}></Image>
                 <p className="mt-3 font-bold">{a.frontmatter.name}</p>
                 <div className="mt-4 mx-auto p-0 md:p-3" dangerouslySetInnerHTML={{ __html: marked.parse(a.content) }}>
                 </div>
