@@ -16,7 +16,7 @@ const Blogs = ({ postsBlog, authors }) => {
             return (
               <div key={i} className="p-4  bg-body md:w-1/2 lg:w-1/3   overflow-hidden">
                 <div className={styles.cardHeader}>
-                  <Image layout="responsive" width={350} height={200} objectFit={'cover'} preload={true} placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAANQTFRF2+HjWMCWZAAAAApJREFUeJxjYAAAAAIAAUivpHEAAAAASUVORK5CYII=" src={b.frontmatter.images} ></Image>
+                  <Image layout="responsive" width={350} height={200} objectFit={'cover'} preload="true" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAANQTFRF2+HjWMCWZAAAAApJREFUeJxjYAAAAAIAAUivpHEAAAAASUVORK5CYII=" src={b.frontmatter.images} ></Image>
                   <h3 className="mt-4 text-h4 md:text-h4">
                     <Link href={`/blog/${b.slug}`} ><a className="block text-textColor transition  duration-300 ease-in-out hover:text-primaryColor">{b.frontmatter.title}</a></Link>
                   </h3>

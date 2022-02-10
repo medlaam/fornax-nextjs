@@ -24,7 +24,7 @@ const Authors = ({ authorsData, authorDefaultPage }) => {
             authorsData.map((a, i) => (
               <div key={i} className="p-4 shadow w-2/3 max-w-xl">
                 <div className="text-center">
-                  <Image className=" rounded-full" height={150} width={150} objectFit="cover" priority={true} src={a.frontmatter.image} />
+                  <Image className=" rounded-full" height={150} width={150} objectFit="cover" priority="true" src={a.frontmatter.image} />
                 </div>
                 <h5 className="mt-3 text-center font-bold text-textColor text-sm md:text-h5 transition  duration-300 ease-in-out hover:text-primaryColor"><Link href={`/authors/${kebabCase(a.frontmatter.name)}`}>{a.frontmatter.name}</Link></h5>
 
