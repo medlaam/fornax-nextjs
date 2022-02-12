@@ -9,19 +9,19 @@ const Footer = () => {
   const { footer } = footerData;
 
   return (
-    <div className={`mt-24 pt-5 border-t-2 mb-5`}>
+    <div className={`border-t-2 md:py-16 py-10`}>
       <div className="text-center">
       </div>
-      <ul className={`${styles.icons} mt-10 flex items-center justify-center`}>
+      <ul className={`${styles.icons} mb-4 sm:mb-8 flex items-center justify-center`}>
         {
           socialIcons.socialMedia.map(s => (
             <li key={s.name}>
-              <a className="p-4 transition  duration-300 ease-in-out hover:text-primaryColor" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
+              <a className="p-4  transition  duration-300 ease-in-out hover:text-primaryColor" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
             </li>
           ))
         }
       </ul>
-      <div className="mt-5 text-center">
+      <div className="text-center">
         <div className="markdown" dangerouslySetInnerHTML={{ __html: marked(footer.copyright) }}>
 
         </div>

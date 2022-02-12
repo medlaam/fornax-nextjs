@@ -13,10 +13,10 @@ const Contact = ({ contact }) => {
       <Head>
         <title>{contact.frontmatter.title}</title>
       </Head>
-      <div className={`mt-10`}>
+      <div className={`my-24`}>
         <h2 className="text-center text-h2_sm md:text-h2 text-textColor">Contact Me</h2>
-        <div className={`py-16 px-4 sm:px-6 flex justify-center items-center `}>
-          <div className="mx-auto w-full max-w-2xl rounded-xl p-8">
+        <div className={` flex justify-center items-center `}>
+          <div className="mx-auto w-full max-w-2xl rounded-xl px-4">
             <form
               action={email} method="post"
               className="grid grid-cols-1 gap-y-6">
@@ -110,10 +110,10 @@ const Contact = ({ contact }) => {
                   {errors?.message?.message}
                 </span>
               </div>
-              <div>
+              <div className="text-right">
               <button
                   type="submit"
-                  className="primary-button transition duration-300 ease-in-outs bg-primaryColor hover:bg-black">
+                  className=" primary-button transition duration-300 ease-in-outs bg-primaryColor hover:bg-black">
                   Submit
                 </button>
               </div>

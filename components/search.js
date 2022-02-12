@@ -4,6 +4,8 @@ import { useContext } from 'react';
 import Link from 'next/link';
 import { AppContext } from './context';
 import { kebabCase } from '../utils/kebabcase';
+import { BsFillTagFill } from 'react-icons/bs';
+import { BsFillCalendar2DateFill } from 'react-icons/bs';
 
 
 const Search = () => {
@@ -44,9 +46,9 @@ const Search = () => {
 
   return (
     <>
-      <div className={`${styles.searchContainer} relative`}>
-        <div className={`${styles.search} overflow-auto fixed right-0 left-0 top-0 sm:top-20 z-50 justify-center items-center md:inset-0 h-modal sm:h-full`} id="large-modal">
-          <div className={`relative px-4 w-full md:w-2/3 max-w-4xl h-full md:h-auto ${styles.searchModal}`}>
+      <div  className={`${styles.searchContainer} relative`}>
+        <div  className={`${styles.search} transition-all overflow-auto fixed right-0 left-0 top-0 sm:top-20 z-50 justify-center items-center md:inset-0 h-modal sm:h-full`} id="large-modal">
+          <div className={`relative px-4 w-full md:w-2/3 max-w-4xl  ${styles.searchModal}`}>
             <div className="relative bg-body rounded-lg shadow">
               <div className="flex justify-between items-center rounded-t">
                 <input className="rounded focus:outline-none bg-body	w-full" type="text" value={searchTerm} placeholder="Search here" onChange={(e) => { setSearchTerm(e.target.value) }} ref={inputElement => {if (inputElement) {
@@ -66,16 +68,16 @@ const Search = () => {
                         return (
                           <div key={i} className="p-4 block border-b-2  overflow-hidden">
 
-                            <div onClick={() => setShowSearch(!showSearch)} className={`text-2xl ${styles.heading}`}>
+                            <div onClick={() => setShowSearch(!showSearch)} className={`text-2xl mb-4 ${styles.heading}`}>
                               <Link href={`/blog/${b.slug}`} ><a className="md:text-textColor hover:text-primaryColor">{b.frontmatter.title}</a></Link>
                             </div>
-                            <div className="flex mt-6">
-                              <div className="sm:mr-4 mr-1"><small className="text-textLight">&#x25C8; {new Date(b.frontmatter.date).toLocaleDateString("en-US", options)}</small>
+                            <div className="flex">
+                              <div className="sm:mr-4 mr-1"><small className="date flex items-center text-textLight text-large "><BsFillCalendar2DateFill/> {new Date(b.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                               </div>
-                              <div className="sm:mr-4 mr-1">
+                              <div className="flex sm:mr-4 mr-1 tag">
                                 {
                                   b.frontmatter.category.map((c, i) => (
-                                    <a key={i} className="text-textLight text-sm ml-2">&#x25C8; {kebabCase(c)}</a>
+                                    <a key={i} className="flex items-center text-textLight text-large ml-2"><BsFillTagFill/> {kebabCase(c)}</a>
                                   ))
                                 }
                               </div>

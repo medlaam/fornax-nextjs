@@ -53,13 +53,13 @@ const Navbar = ({ toggle, isOpen }) => {
                 </li>
               ))
             }
-            <div className=" flex items-center justify-center border-l-2 p-4 ml-4">
+            <div className=" flex items-center justify-center border-l-2 px-4 ml-4">
               {
                 socialIcons.socialMedia.map((s, i) => (
                   <div key={i}>
                     {socialHeader.parameter.headerSocial &&
                       <li className="text-textColor transition  duration-300 ease-in-out hover:text-primaryColor">
-                        <a className="p-6" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
+                        <a className="mx-4" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
                       </li>
                     }
                   </div>
@@ -68,7 +68,7 @@ const Navbar = ({ toggle, isOpen }) => {
             </div>
             {
               search.parameter.search &&
-              <div className="cursor-pointer flex items-start justify-center text-textColortransition  duration-300 ease-in-out  hover:text-primaryColor"><a onClick={() => setShowSearch(!showSearch)} className="p-2 mr-2"><VscSearch /></a>
+              <div className="cursor-pointer flex items-start justify-center text-textColortransition  duration-300 ease-in-out  hover:text-primaryColor"><a onClick={() => setShowSearch(!showSearch)} className="p-2 ml-4"><VscSearch /></a>
               </div>
             }
           </ul>
