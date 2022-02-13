@@ -12,10 +12,11 @@ body {
   color: #ffff;
   padding: 12px;
 }
-.tag svg {
-  @apply mr-1 w-4 h-4;
+.tag,
+.date svg {
+  @apply mr-1 w-5 h-5 text-textLight;
 }
 
 .date svg {
-  @apply mr-1 w-3 h-3;
+  @apply w-4 h-4;
 }

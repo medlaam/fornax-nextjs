@@ -4,7 +4,7 @@ author: 'AZUMI'
 date: 'Thu Dec 30 2021 12:04:21 GMT+0600'
 tag: ['technology', 'Creative']
 category: [tech, Creative]
-images: '/02.jpg'
+images: '/04.jpg'
 ---
 
 loneliness is part of the human condition. A primeval warning sign, like hunger or thirst, to seek out a primary resource: connection. Millions of years of evolution have shaped us into creatures who need social bonds in the same way that we need food and water.

@@ -15,14 +15,14 @@ const Footer = () => {
       <ul className={`${styles.icons} mb-4 sm:mb-8 flex items-center justify-center`}>
         {
           socialIcons.socialMedia.map(s => (
-            <li key={s.name}>
-              <a className="p-4  transition  duration-300 ease-in-out hover:text-primaryColor" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
+            <li  key={s.name}>
+              <a className="p-0 mx-4 transition  duration-300 ease-in-out hover:text-primaryColor" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
             </li>
           ))
         }
       </ul>
       <div className="text-center">
-        <div className="markdown" dangerouslySetInnerHTML={{ __html: marked(footer.copyright) }}>
+        <div className="markdown mb-2" dangerouslySetInnerHTML={{ __html: marked(footer.copyright) }}>
 
         </div>
         {footer.theme_copyright && (

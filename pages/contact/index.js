@@ -14,7 +14,7 @@ const Contact = ({ contact }) => {
         <title>{contact.frontmatter.title}</title>
       </Head>
       <div className={`my-24`}>
-        <h2 className="text-center text-h2_sm md:text-h2 text-textColor">Contact Me</h2>
+        <h1 className="text-center text-textColor text-h2 font-bold mb-10">Contact Me</h1>
         <div className={` flex justify-center items-center `}>
           <div className="mx-auto w-full max-w-2xl rounded-xl px-4">
             <form
@@ -32,7 +32,7 @@ const Contact = ({ contact }) => {
                       message: 'You must enter your name',
                     },
                   })}
-                  className={`block w-full border-2 py-3 px-4 placeholder-textLight ${errors ? 'ring-2 ring-red-500' : null
+                  className={`block w-full py-3 border-2 px-4 placeholder-textLight focus:outline-none focus:border-sky-200 focus:ring-sky-200 rounded-md focus:ring-1 focus:ring-offset-1 ${errors ? '' : null
                     }`}
                   placeholder="Full name"
                 />
@@ -64,7 +64,7 @@ const Contact = ({ contact }) => {
                       message: 'This needs to be a valid email address',
                     },
                   })}
-                  className={`block w-full py-3 border-2 px-4 placeholder-textLight ${errors ? 'ring-2 ring-red-500' : null
+                  className={`block w-full py-3 border-2 px-4 placeholder-textLight focus:outline-none focus:border-sky-200 focus:ring-sky-200 rounded-md focus:ring-1 focus:ring-offset-1 ${errors ? '' : null
                     }`}
                   placeholder="Email"
                 />
@@ -79,7 +79,7 @@ const Contact = ({ contact }) => {
                 <input
                   type="text"
                   {...register('phone')}
-                  className="block w-full py-3 px-4 border-2 placeholder-textLight"
+                  className="block w-full py-3 border-2 px-4 placeholder-textLight focus:outline-none focus:border-sky-200 focus:ring-sky-200 rounded-md focus:ring-1 focus:ring-offset-1"
                   placeholder="Phone"
                 />
               </div>
@@ -103,7 +103,7 @@ const Contact = ({ contact }) => {
                       message: 'Your message must be longer than this!',
                     },
                   })}
-                  className={`block w-full py-3 px-4 border-2 placeholder-textLight ${errors ? 'ring-2 ring-red-500' : null
+                  className={`block w-full py-3 border-2 px-4 placeholder-textLight focus:outline-none focus:border-sky-200 focus:ring-sky-200 rounded-md focus:ring-1 focus:ring-offset-1 ${errors ? '' : null
                     }`}
                   placeholder="Message"></textarea>
                 <span className="text-red-400 text-sm py-2">
@@ -113,7 +113,7 @@ const Contact = ({ contact }) => {
               <div className="text-right">
               <button
                   type="submit"
-                  className=" primary-button transition duration-300 ease-in-outs bg-primaryColor hover:bg-black">
+                  className=" rounded-md primary-button transition duration-300 ease-in-outs bg-primaryColor hover:bg-black">
                   Submit
                 </button>
               </div>

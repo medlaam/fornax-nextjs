@@ -4,7 +4,7 @@
 
 @layer components {
   .markdown {
-    @apply prose mx-auto sm:prose-2xl prose-p:text-base  sm:prose-li:text-base  prose-li:text-small prose-headings:font-primary prose-p:font-primary
+    @apply prose mx-auto sm:prose-2xl prose-p:text-base sm:prose-li:text-base  prose-li:text-small prose-headings:font-primary prose-p:font-primary prose-p:leading-9
     prose-li:font-primary
     prose-h1:text-h1
     prose-h2:text-h2
@@ -14,4 +14,3 @@
     prose-a:no-underline;
   }
 }
-

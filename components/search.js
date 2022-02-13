@@ -72,12 +72,17 @@ const Search = () => {
                               <Link href={`/blog/${b.slug}`} ><a className="md:text-textColor hover:text-primaryColor">{b.frontmatter.title}</a></Link>
                             </div>
                             <div className="flex">
-                              <div className="sm:mr-4 mr-1"><small className="date flex items-center text-textLight text-large "><BsFillCalendar2DateFill/> {new Date(b.frontmatter.date).toLocaleDateString("en-US", options)}</small>
+                              <div className="sm:mr-4 mr-1"><small className="flex items-center text-textLight text-large ">
+                                <div className="date mr-2"><BsFillCalendar2DateFill/></div>
+                                {new Date(b.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                               </div>
-                              <div className="flex sm:mr-4 mr-1 tag">
+                              <div className="flex items-center sm:mr-4 mr-1 ">
+                                <div className="tag">
+                                <BsFillTagFill/>
+                              </div>
                                 {
                                   b.frontmatter.category.map((c, i) => (
-                                    <a key={i} className="flex items-center text-textLight text-large ml-2"><BsFillTagFill/> {kebabCase(c)}</a>
+                                    <a key={i} className="flex items-center text-textLight text-large mr-3"> {kebabCase(c)} </a>
                                   ))
                                 }
                               </div>

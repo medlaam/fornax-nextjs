@@ -11,7 +11,7 @@ const Blogs = ({ postsBlog, authors }) => {
   let options = { year: "numeric", month: "long", day: "numeric" }
   return (
     <div className={styles.container}>
-      <div className="flex flex-wrap justify-center container m-auto mt-16 md:mt-24">
+      <div className="flex flex-wrap justify-center container m-auto mt-16 md:mt-24 mb-5">
         {
           postsBlog.map((b, i) => {
             return (
@@ -24,31 +24,34 @@ const Blogs = ({ postsBlog, authors }) => {
                   </h3>
                 </div>
                 <div className="flex flex-wrap mb-4 ">
-                  <div className="sm:mr-2 mr-1">
-                    <div className={`flex ${styles.author}`}>
+                  <div className="sm:mr-3 mr-1 mb-2">
+                    <div className={` flex ${styles.author}`}>
                       {
-                        authors.map((a, i) => a.frontmatter.name === b.frontmatter.author && <div key={i}><img src={a.frontmatter.image} /></div>)
+                        authors.map((a, i) => a.frontmatter.name === b.frontmatter.author && <div  key={i}><img src={a.frontmatter.image} /></div>)
                       }
-                      <span><Link href={`/authors/${kebabCase(b.frontmatter.author)}`}><a className="text-textLight text-base hover:text-primaryColor transition-all duration-300 ease-in-out">{b.frontmatter.author}</a></Link></span>
+                      <span><Link href={`/authors/${kebabCase(b.frontmatter.author)}`}><a className="text-textLight text-base hover:text-primaryColor transition-all duration-300 ease-in-out uppercase">{b.frontmatter.author}</a></Link></span>
                     </div>
 
                   </div>
-                  <div className="date sm:mr-2 mr-1">
-                    <small className="text-textLight  flex items-center text-base"><BsFillCalendar2DateFill/> {new Date(b.frontmatter.date).toLocaleDateString("en-US", options)}</small>
+                  <div className="sm:mr-3 mr-1 mb-2">
+                    <small className="text-textLight  flex items-center text-base">
+                      <div className="date"><BsFillCalendar2DateFill/></div>
+                      {new Date(b.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                   </div>
-                  <div className="tag flex "> <BsFillTagFill/>
+                  <div className="flex items-center mb-2"> 
+                    <div className="tag"><BsFillTagFill/></div>
                     {
                       b.frontmatter.category.map((c, i) => (
                      
                         <Link key={i} href={`/categories/${kebabCase(c)}`} >
                           
-                          <a className={`flex items-center text-textLight text-base hover:text-primaryColor transition-all duration-300 ease-in-out ${styles.tags}`}>{c}</a>
+                          <a className={`flex items-center text-textLight text-base hover:text-primaryColor transition-all duration-300 ease-in-out mr-3 ${styles.tags}`}>{c}</a>
                         </Link>
                       ))
                     }
                   </div>
                 </div>
-                <div className=" text-large text-textLight" dangerouslySetInnerHTML={{ __html: marked.parse(b.content).slice(0, 140) + ' ...' }}>
+                <div className=" text-large text-textLight pr-4" dangerouslySetInnerHTML={{ __html: marked.parse(b.content).slice(0, 140) + ' ...' }}>
                 </div>
               </div>
             )

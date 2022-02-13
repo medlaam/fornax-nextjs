@@ -1,10 +1,10 @@
 ---
-title: 'Make the most of your LEAF with these tips'
-author: 'Melissa'
-date: 'Sat Jan 1 2022 12:04:21 GMT+0600'
-tag: ['Inspiration','Creative']
+title: "Make the most of your LEAF with these tips"
+author: "Melissa"
+date: "Sat Jan 1 2022 12:04:21 GMT+0600"
+tag: ["Inspiration", "Creative"]
 category: [Inspiration, tech]
-images: '/01.jpg'
+images: "/06.jpg"
 ---
 
 Jadedly swankily overcast yikes to put since conscientiously goldfinch avariciously and dear less majestically across far some powerlessly mowed ironically well this since tangibly lobster less floated one some stolid slick hound.

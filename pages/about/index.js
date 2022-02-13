@@ -30,7 +30,7 @@ const About = ({ about }) => {
               ))
             }
               </ul>
-              <div className="text-textColor prose-p:text-xl" dangerouslySetInnerHTML={{ __html: marked.parse(a.content) }}>
+              <div className=" prose-p:text-large leading-8 text-textLight" dangerouslySetInnerHTML={{ __html: marked.parse(a.content) }}>
               </div>
             </div>
           </div>
