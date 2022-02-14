@@ -1,10 +1,10 @@
 ---
-title: 'Coffee vs Bear! which one is your favorite'
-author: 'AZUMI'
-date: 'Sun Jan 16 2022 12:04:21 GMT+0600'
-tag: ['Creative','tech']
+title: "Coffee vs Bear! which one is your favorite"
+author: "AZUMI"
+date: "Sun Jan 16 2022 12:04:21 GMT+0600"
+tag: ["Creative", "tech"]
 category: [Creative, tech]
-images: '/01.jpg'
+images: "/01.jpg"
 ---
 
 Believe it or not, coffee and beer can form a great team if you're trying to get through a project. Beer improves your creativity, while coffee keeps you alert and ready to carry out the ideas you had while drinking. Just be careful not to consume them at the same time—or drink too much of either—or else you'll get nothing done. I Love Coffee created this infographic that looks at the difference between how drinking coffee and drinking beer affect your overall productivity.
@@ -15,7 +15,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur
 
 <br>
 
-![Markdown Logo](/01.jpg)
+![Markdown Logo](/07.jpg)
 
 <br>
 

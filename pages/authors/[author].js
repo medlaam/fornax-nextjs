@@ -27,8 +27,8 @@ const SingleAuthor = ({ authorName, author }) => {
               <ul className={`flex items-center justify-center mt-10 ${styles.writersLink}`}>
                 {
                   socialIcons.socialMedia.map(s => (
-                    <li key={s.name} className="hover:text-primaryColor">
-                      <a className="ml-5" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
+                    <li key={s.name} className="social-icon">
+                      <a className="mx-4" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
                     </li>
                   ))
                 }

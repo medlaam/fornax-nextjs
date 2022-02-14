@@ -15,6 +15,7 @@
 .author img {
   border-radius: 50%;
   height: 26px;
+  width: 26px;
   margin-right: 8px;
 }
 
@@ -28,23 +29,18 @@
 }
 
 .cardHeader a {
-  font-size: 20px;
+  /* font-size: 20px; */
   font-weight: 600;
-  line-height: 1.4;
+  /* line-height: 1.4; */
 }
 
 .writer {
   align-items: center;
 }
 
-.writer h5 {
-  font-size: 20px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
 .writer img {
   border-radius: 50%;
+  height: 150px;
 }
 
 .writersLink li {
@@ -53,7 +49,6 @@
 }
 
 .author a {
-  font-size: 13px !important;
   font-weight: 500 !important;
 }
 

@@ -14,9 +14,22 @@ body {
 }
 .tag,
 .date svg {
-  @apply mr-1 w-5 h-5 text-textLight;
+  @apply mr-1 text-textLight;
+}
+.author-title {
+  @apply inline-block text-center font-bold text-textColor text-h5 md:text-h4 transition  duration-300 ease-in-out hover:text-primaryColor mb-6;
+}
+.blog-title {
+  @apply text-lg xl:text-h4 mb-4 block text-textColor transition duration-300 ease-in-out hover:text-primaryColor leading-9;
 }
 
-.date svg {
-  @apply w-4 h-4;
+.blog-tag {
+  @apply text-textLight text-base hover:text-primaryColor transition-all duration-300 ease-in-out capitalize;
+}
+.social-icon-bg {
+  @apply ml-5 translate-y-0 hover:-translate-y-2 text-textWhite transition-all duration-300 ease-in-out;
+}
+
+.social-icon {
+  @apply hover:text-primaryColor transition duration-300 ease-in-out;
 }

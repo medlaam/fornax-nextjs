@@ -68,11 +68,11 @@ const Search = () => {
                         return (
                           <div key={i} className="p-4 block border-b-2  overflow-hidden">
 
-                            <div onClick={() => setShowSearch(!showSearch)} className={`text-2xl mb-4 ${styles.heading}`}>
-                              <Link href={`/blog/${b.slug}`} ><a className="md:text-textColor hover:text-primaryColor">{b.frontmatter.title}</a></Link>
+                            <div onClick={() => setShowSearch(!showSearch)} className={`blog-title ${styles.heading}`}>
+                              <Link href={`/blog/${b.slug}`} ><a className="">{b.frontmatter.title}</a></Link>
                             </div>
                             <div className="flex">
-                              <div className="sm:mr-4 mr-1"><small className="flex items-center text-textLight text-large ">
+                              <div className="sm:mr-4 mr-1"><small className="flex items-center blog-tag">
                                 <div className="date mr-2"><BsFillCalendar2DateFill/></div>
                                 {new Date(b.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                               </div>
@@ -82,7 +82,7 @@ const Search = () => {
                               </div>
                                 {
                                   b.frontmatter.category.map((c, i) => (
-                                    <a key={i} className="flex items-center text-textLight text-large mr-3"> {kebabCase(c)} </a>
+                                    <a key={i} className="blog-tag flex items-center mr-2"> {kebabCase(c)} ;</a>
                                   ))
                                 }
                               </div>

@@ -1,21 +1,15 @@
 .author img {
   border-radius: 50%;
   height: 26px;
+  width: 26px;
   margin-right: 8px;
 }
 
 .container a {
-  font-size: 30px;
   font-weight: 600;
-  line-height: 1.4;
 }
 
-.tags {
-  font-size: 13px !important;
-  font-weight: 500 !important;
-}
-
+.tags,
 .author a {
-  font-size: 13px !important;
   font-weight: 500 !important;
 }

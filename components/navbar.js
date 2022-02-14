@@ -58,7 +58,7 @@ const Navbar = ({ toggle, isOpen }) => {
                 socialIcons.socialMedia.map((s, i) => (
                   <div key={i}>
                     {socialHeader.parameter.headerSocial &&
-                      <li className="text-textColor transition  duration-300 ease-in-out hover:text-primaryColor">
+                      <li className="social-icon">
                         <a className="mx-4" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
                       </li>
                     }

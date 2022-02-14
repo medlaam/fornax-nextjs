@@ -19,8 +19,8 @@ const Blogs = ({ postsBlog, authors }) => {
                 <div className={styles.cardHeader}>
                   <Link href={`/blog/${b.slug}`} ><a className="mb-8 block"> <Image layout="responsive" width={350} height={200} objectFit={'cover'} preload="true" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAANQTFRF2+HjWMCWZAAAAApJREFUeJxjYAAAAAIAAUivpHEAAAAASUVORK5CYII=" src={b.frontmatter.images} ></Image></a>
                   </Link>
-                  <h3 className="text-h4 mb-4 ">
-                    <Link href={`/blog/${b.slug}`} ><a className="block text-textColor transition  duration-300 ease-in-out hover:text-primaryColor">{b.frontmatter.title}</a></Link>
+                  <h3 className="blog-title">
+                    <Link href={`/blog/${b.slug}`} ><a className="">{b.frontmatter.title}</a></Link>
                   </h3>
                 </div>
                 <div className="flex flex-wrap mb-4 ">
@@ -29,12 +29,12 @@ const Blogs = ({ postsBlog, authors }) => {
                       {
                         authors.map((a, i) => a.frontmatter.name === b.frontmatter.author && <div  key={i}><img src={a.frontmatter.image} /></div>)
                       }
-                      <span><Link href={`/authors/${kebabCase(b.frontmatter.author)}`}><a className="text-textLight text-base hover:text-primaryColor transition-all duration-300 ease-in-out uppercase">{b.frontmatter.author}</a></Link></span>
+                      <span><Link href={`/authors/${kebabCase(b.frontmatter.author)}`}><a className="blog-tag">{b.frontmatter.author}</a></Link></span>
                     </div>
 
                   </div>
                   <div className="sm:mr-3 mr-1 mb-2">
-                    <small className="text-textLight  flex items-center text-base">
+                    <small className="text-textLight flex items-center text-base">
                       <div className="date"><BsFillCalendar2DateFill/></div>
                       {new Date(b.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                   </div>
@@ -45,7 +45,7 @@ const Blogs = ({ postsBlog, authors }) => {
                      
                         <Link key={i} href={`/categories/${kebabCase(c)}`} >
                           
-                          <a className={`flex items-center text-textLight text-base hover:text-primaryColor transition-all duration-300 ease-in-out mr-3 ${styles.tags}`}>{c}</a>
+                          <a className={`blog-tag flex items-center mr-1 ${styles.tags}`}>{c} ;</a>
                         </Link>
                       ))
                     }

@@ -13,7 +13,8 @@ import { getAuthor } from '../../lib/author';
 import shareOption from '../../config/config.json';
 import { kebabCase } from '../../utils/kebabcase';
 import socialIcons from '../../config/config.json';
-
+import { BsFillTagFill } from 'react-icons/bs';
+import { BsFillCalendar2DateFill } from 'react-icons/bs';
 
 export default function PostPage({ frontmatter: { title, date, author, images, tag, category }, content, slug, suggestedBlog, authors }) {
 
@@ -33,48 +34,54 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
       </Head>
       <div className={`${styles.singleBlog} container md:m-auto`}>
         <div className="w-full xl:w-2/3 items-center md:m-auto ">
-          <div className={`${styles.blogContainer} p-4  py-16 `}>
-          <h1 className="text-h2_sm lg:text-h2 text-textColor">{title}</h1>
-            <div className="flex items-center sm:justify-between mt-5">
+          <div className={`${styles.blogContainer} my-16 md:mt-24 mb-16 `}>
+          <h1 className="text-h2_sm lg:text-h2 text-textColor mb-6">{title}</h1>
+            <div className="flex items-center sm:justify-between">
               <div className={`flex flex-wrap ${styles.author}`}>
+                <div className="flex items-center mr-3">
                 {
                   authors.map((a, i) => a.frontmatter.name === author && <div key={i}><img src={a.frontmatter.image} /></div>)
                 }
-                <span className="text-textLight"><Link href={`/authors/${kebabCase(author)}`}><a>{author}</a></Link></span>
-                <div className="flex-auto ml-5"><small className="text-textLight">&#x25C8; {new Date(date).toLocaleDateString("en-US", options)}</small>
+                <span className="blog-tag "><Link href={`/authors/${kebabCase(author)}`}><a>{author}</a></Link></span>
+               </div>
+                <div className="flex items-center mr-3">
+                  <small className="text-textLight flex items-center text-base">
+                  <div className="date mr-1"><BsFillCalendar2DateFill /></div> {new Date(date).toLocaleDateString("en-US", options)}</small>
                 </div>
-                <div className="flex-auto ml-5 text-textLight">
+                <div className="flex items-center  text-textLight">
+                <div className="tag mr-2"><BsFillTagFill/></div>
                   {
                     category.map((c, i) => (
                       <Link key={i} href={`/categories/${kebabCase(c)}`}>
-                        <a className="m-0 md:m-2">&#x25C8; {c}</a>
+                        <a className="flex items-center blog-tag mr-1"> {c} ;</a>
                       </Link>
                     ))
                   }
                 </div>
-
               </div>
             </div>
           </div>
         </div>
-        <div className="m-auto my-5 text-center">
+        <div className="m-auto text-center mb-10">
           <Image layout={'responsive'} height={140} width={350} objectFit={'cover'} src={images}></Image>
         </div>
 
         {/* Read content from markdown files */}
 
-        <div className="my-5 w-full p-4 md:w-2/3 m-auto">
-          <div className="mt-5 prose-h1:text-h1 prose-p:text-lg prose-h2:text-h2 prose-h3:text-h3 prose-h4:text-2xl" dangerouslySetInnerHTML={{ __html: marked.parse(content) }}>
+        <div className=" w-full md:w-2/3 m-auto mb-14">
+          <div className="prose-h1:text-h1 prose-p:text-lg prose-h2:text-h2 prose-h3:text-h3 prose-h4:text-2xl prose-p:mb-6 prose-h4:mb-6 prose-h4:text-black prose-h4:font-bold text-textLight prose-li:mb-5 prose-li:text-large prose-p:leading-8 " dangerouslySetInnerHTML={{ __html: marked.parse(content) }}>
           </div>
         </div>
 
-        <div className="md:flex md:justify-between md:w-2/3 block my-5 sm:py-10 m-auto">
+        <div className="md:flex md:justify-between md:w-2/3 block m-auto mb-20">
           <div className={`text-center md:text-right md:justify-between ${styles.postTag}`}>
-            <ul className="flex justify-center my-5 md:my-0">
+            <ul className="flex items-center justify-center ">
+            <div className="tag mr-2"><BsFillTagFill/></div>
               {
                 tag.map((t, i) => (
                   <li key={i}>
-                    <Link href={`/tags/${kebabCase(t)}`}><a className="md:mr-5 ml-3 text-textColor transition duration-300 ease-in-outs hover:text-primaryColor"># {t}</a></Link>
+                    <Link href={`/tags/${kebabCase(t)}`}>
+                      <a className=" blog-tag mr-2"> {t} ; </a></Link>
                   </li>
                 ))
               }
@@ -84,45 +91,81 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
             {
               postShare &&
               <div className={`${styles.socialLink} my-5 md:my-0 flex justify-center`}>
-              <a className="bg-facebook translate-y-0 hover:-translate-y-2 text-textWhite transition-all duration-300 ease-in-out" href={`https://www.facebook.com/sharer/sharer.php?u=+https://fornax-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-              <a className="ml-5 bg-twitter translate-y-0 hover:-translate-y-2 transition-all duration-300 ease-in-out text-textWhite" href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://fornax-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-              <a className="ml-5 bg-instagram translate-y-0 hover:-translate-y-2 transition-all duration-300 ease-in-out text-textWhite" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-              <a className="ml-5 bg-dribles transition-all duration-300 ease-in-out  translate-y-0 hover:-translate-y-2 text-textWhite" href="/#"><FaDribbble /></a>
+              <a className="social-icon-bg ml-0 bg-facebook" href={`https://www.facebook.com/sharer/sharer.php?u=+https://fornax-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+              <a className="social-icon-bg bg-twitter" href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://fornax-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+              <a className="social-icon-bg bg-instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+              <a className="social-icon-bg bg-dribles " href="/#"><FaDribbble /></a>
             </div>
             }
           </div>
         </div>
-        <h3 className={`text-textColor text-h3_sm md:text-h3   ${styles.secondHeader}`}>You may also Like</h3>
-        <div className="my-5 flex flex-wrap justify-center">
 
+        <div className={` flex justify-center items-center md:mb-24`}>
+          <div className={`mx-auto w-full max-w-xl px-8 pt-8 pb-14 shadow-2xl ${styles.writer}`}>
+            <div className="text-center">
+              {
+                authors.map((a, i) => a.frontmatter.name === author && <div key={i} className="flex items-center justify-center mb-5" ><img height={150} width={150} src={a.frontmatter.image} /></div>)
+              }
+              <div className=" w-full">
+                <p className="text-textLight pb-2">Written By</p>
+                <h5 className="author-title"><Link href={`/authors/${kebabCase(author)}`}>{author}</Link></h5>
+                {
+                  author && authorDetails.map((a, i) => (
+                    <div className="text-center prose-p:text-large leading-7 mb-8 text-textLight" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+            <ul className={`flex items-center justify-center  ${styles.writersLink}`}>
+                {
+                  socialIcons.socialMedia.map(s => (
+                    <li key={s.name} className="social-icon ">
+                      <a className="ml-5" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
+                    </li>
+                  ))
+                }
+              </ul>
+          </div>
+        </div>
+
+        {/* some bloge show */}
+        <h3 className={`text-textColor text-h3_sm md:text-h3   ${styles.secondHeader}`}>You may also Like</h3>
+        <div className="mt-10 mb-24 flex flex-wrap justify-center">
           {
             recentBlogByAuthor.map((r, i) => {
               return (
                 <div key={i} className="p-4 bg-body md:w-1/2 lg:w-1/3 overflow-hidden">
                   <div className={styles.cardHeader}>
+                  <Link href={`/blog/${r.slug}`} ><a className="mb-8 block">
                     <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image>
-                    <div className="mt-4">
-                      <Link href={`/blog/${r.slug}`} ><a className="text-textColor transition duration-300 ease-in-outs hover:text-primaryColor">{r.frontmatter.title}</a></Link>
-                    </div>
+                  </a>
+                  </Link>
+                  <h3 className="text-h4 mb-4 blog-title ">
+                      <Link href={`/blog/${r.slug}`} ><a className="">{r.frontmatter.title}</a></Link>
+                    </h3>
                   </div>
-                  <div className="flex flex-wrap mt-6">
-                    <div className="sm:mr-4 mr-1">
+                  <div className="flex flex-wrap mb-6">
+                    <div className="sm:mr-3 mr-1 mb-2">
                       <div className={`flex ${styles.author}`}>
                         {
                           authors.map((a, i) => a.frontmatter.name === r.frontmatter.author && <div key={i}><img src={a.frontmatter.image} /></div>)
                         }
-                        <span><Link href={`/about/${r.frontmatter.author}`}><a className="text-textLight">{r.frontmatter.author}</a></Link></span>
+                        <span><Link href={`/about/${r.frontmatter.author}`}><a className="blog-tag">{r.frontmatter.author}</a></Link></span>
                       </div>
 
                     </div>
-                    <div className="sm:mr-4 mr-1"><small className="text-textLight">&#x25C8; {new Date(r.frontmatter.date).toLocaleDateString("en-US", options)}</small>
+                    <div className="sm:mr-3 mr-1 mb-2">
+                      <small className="text-textLight  flex items-center text-base">
+                        <div className="date"><BsFillCalendar2DateFill /></div>
+                        {new Date(r.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                     </div>
-                    <div className="sm:mr-4 mr-1">
-
+                    <div className="flex items-center">
+                    <div className="tag"><BsFillTagFill/></div>
                       {
                         r.frontmatter.category.map((c, i) => (
                           <Link key={i} href={`/categories/${kebabCase(c)}`} >
-                            <a className={`text-textLight text-small ml-0 md:ml-1`}>&#x25C8; {c}</a>
+                            <a className={`blog-tag flex items-center  mr-1  `}>{c};</a>
                           </Link>
                         ))
                       }
@@ -130,7 +173,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
                     </div>
 
                   </div>
-                  <div className="mt-4 mb-3">
+                  <div className=" text-large text-textLight pr-4">
                     <span dangerouslySetInnerHTML={{ __html: marked.parse(r.content).slice(0, 130) + ' ...' }} className="text-textLight"></span>
                   </div>
                 </div>
@@ -138,34 +181,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
             })
           }
         </div>
-        <div className={` py-10 px-4 sm:px-6 flex justify-center items-center`}>
-          <div className={`mx-auto w-full max-w-xl ${styles.writer}`}>
-            <div className="text-center">
-              {
-                authors.map((a, i) => a.frontmatter.name === author && <div key={i} className="flex items-center justify-center" ><img height={150} width={150} src={a.frontmatter.image} /></div>)
-              }
-              <div className=" mt-5 w-full">
-                <p className="text-textLight">Written By</p>
-                <h5 className="mt-3 text-h5 text-textColor transition duration-300 ease-in-outs hover:text-primaryColor"><Link href={`/authors/${kebabCase(author)}`}>{author}</Link></h5>
-                {
-                  author && authorDetails.map((a, i) => (
-                    <div key={i} className="mt-4" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}></div>
-                  ))
-                }
-              </div>
-            </div>
-
-            <ul className={`flex items-center justify-center mt-5`}>
-              {
-                socialIcons.socialMedia.map(s => (
-                  <li key={s.name}>
-                    <a className="p-4 transition duration-300 ease-in-outs hover:text-primaryColor" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-        </div>
+       
       </div>
 
     </>

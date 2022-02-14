@@ -4,7 +4,7 @@ author: "AZUMI"
 date: "Mon Dec 15 2021 12:04:21 GMT+0600"
 tag: ["Inspiration", "tech"]
 category: [Inspiration, tech]
-images: "/08.jpg"
+images: "/15.jpg"
 ---
 
 Books suck. No question about it, almost everyone who writes a book is a crappy writer.
@@ -19,7 +19,7 @@ But that’s ok. There are a few good books out there.
 
 <br>
 
-![Important books](/02.jpg)
+![Important books](/08.jpg)
 
 <br>
 
@@ -28,6 +28,7 @@ I like reading billion-person books. Books, that if read widely, would change a 
 <br>
 I like reading books where I feel my brain have an IQ orgasm. Like, I literally feel my IQ go up while reading the book.
 <br>
+
 And, (please let me stick with this metaphor one more sentence), I might have a little brain-child that turns into my own special idea or book after reading a great book.
 <br>
 <br>

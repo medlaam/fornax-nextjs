@@ -1,16 +1,18 @@
 ---
-title: 'The quote for this week!'
-author: 'Melissa'
-date: 'Wed Dec 17 2022 12:04:21 GMT+0600'
-tag: ['Inspiration','tech']
+title: "The quote for this week!"
+author: "Melissa"
+date: "Wed Dec 17 2022 12:04:21 GMT+0600"
+tag: ["Inspiration", "tech"]
 category: [Inspiration, tech]
-images: '/05.jpg'
+images: "/05.jpg"
 ---
 
 Try to make at least one person happy every day. If you cannot do a kind deed, speak a kind word. If you cannot speak a kind word, think a kind thought. Count up, if you can, the treasure of happiness that you would dispense in a week, in a year, in a lifetime!
 
 <br>
 <br>
+
+![Important books](/15.jpg)
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
 <br>
