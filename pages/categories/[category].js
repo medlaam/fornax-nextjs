@@ -12,7 +12,6 @@ import path from "path";
 import matter from "gray-matter";
 import { getAllCategory } from '../../lib/category';
 import { BsFillTagFill } from 'react-icons/bs';
-import { BsFillCalendar2DateFill } from 'react-icons/bs';
 
 const Category = ({ post, category, authors }) => {
   const blogsByTag = post.filter((p) => p.length > 0);
@@ -33,44 +32,44 @@ const Category = ({ post, category, authors }) => {
             return (
               <div key={i} className="px-2 mb-10 sm:mb-14 bg-body md:w-1/2 lg:w-1/3 overflow-hidden">
                 <div >
-                <Link href={`/blog/${r.slug}`} ><a className="mb-8 block">
+                  <Link href={`/blog/${r.slug}`} ><a className="mb-8 block">
                     <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image></a>
                   </Link>
                   <h3 className="blog-title">
                     <Link href={`/blog/${r.slug}`} ><a className="">{r.frontmatter.title}</a></Link>
                   </h3>
-                  
-                </div>
-                <div className="flex flex-wrap mb-4 ">
-                  <div className="sm:mr-3 mr-1 mb-2">
-                    <div className={`flex flex-shrink-0 ${styles.author}`}>
-                      {
-                        authors.map((a, i) => a.frontmatter.name === r.frontmatter.author && <div key={i}><img src={a.frontmatter.image} /></div>)
-                      }
-                      <span><Link href={`/authors/${kebabCase(r.frontmatter.author)}`}>
-                        <a className="blog-tag">{r.frontmatter.author}</a></Link></span>
-                    </div>
 
-                  </div>
-                  <div className="sm:mr-3 mr-1 mb-2">
-                    <small className="text-textLight  flex items-center text-base">
-                      <div className="date"><BsFillCalendar2DateFill /></div>
-                      {new Date(r.frontmatter.date).toLocaleDateString("en-US", options)}</small>
-                  </div>
-                  <div className="flex items-center mb-2">
-                  <div className="tag"><BsFillTagFill/></div>
+                </div>
+                <div className="flex flex-wrap mb-2 sm:mb-4 ">
+                  <div className="flex items-center">
+                    <div className="tag"><BsFillTagFill /></div>
                     {
                       r.frontmatter.category.map((c, i) => (
+
                         <Link key={i} href={`/categories/${kebabCase(c)}`} >
-                          <a className={`blog-tag flex items-center mr-1 ${styles.tags}`}>{c} ;</a>
+
+                          <a className={`blog-tag flex items-center mr-1 ${styles.tags}`}>{i == 0 ? '' : ','}{c}</a>
                         </Link>
                       ))
                     }
                   </div>
-
                 </div>
                 <div className=" text-large text-textLight pr-4">
-                  <span dangerouslySetInnerHTML={{ __html: marked.parse(r.content).slice(0, 133) + ' ...' }}></span>
+                  <span dangerouslySetInnerHTML={{ __html: marked.parse(r.content).slice(0, 120) + ' ...' }}></span>
+                </div>
+                <div className="flex items-centers my-5">
+                  <div className="sm:mr-3 mr-1 mb-2">
+                    <div className={` flex ${styles.author}`}>
+                      {
+                        authors.map((a, i) => a.frontmatter.name === r.frontmatter.author && <div key={i}><img src={a.frontmatter.image} /></div>)
+                      }
+                    </div>
+                  </div>
+                  <div className="sm:mr-3 mr-1 mb-2">
+                    <span><Link href={`/authors/${kebabCase(r.frontmatter.author)}`}><a className="blog-tag">{r.frontmatter.author}</a></Link></span>
+                    <small className="text-textLight flex items-center text-base">
+                      {new Date(r.frontmatter.date).toLocaleDateString("en-US", options)}</small>
+                  </div>
                 </div>
               </div>
             )

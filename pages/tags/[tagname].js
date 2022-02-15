@@ -12,7 +12,6 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { BsFillTagFill } from 'react-icons/bs';
-import { BsFillCalendar2DateFill } from 'react-icons/bs';
 
 
 const TagName = ({ post, tags, authors }) => {
@@ -25,7 +24,7 @@ const TagName = ({ post, tags, authors }) => {
         <title>tagname | {tags}</title>
       </Head>
       <div className=" text-center m-auto my-10 sm:mt-16 md:mt-24 sm:mb-16 ">
-        <h3 className="text-h3_sm md:text-h3 text-bold">All <span className="text-primaryColor"> {tags}</span> blogs are here</h3>
+        <h3 className="text-h3_sm md:text-h3 text-bold">All <span className="text-primaryColor"> {tags}</span> tag blogs are here</h3>
       </div>
 
       <div className={` flex flex-wrap justify-center container m-auto  mb-6 sm:mb-10 md:mb-24 px-8 xl:px-0 ${styles.container}`}>
@@ -34,42 +33,42 @@ const TagName = ({ post, tags, authors }) => {
             return (
               <div key={i} className="sm:px-2 mb-10 sm:mb-14 bg-body md:w-1/2 lg:w-1/3 overflow-hidden">
                 <div >
-                <Link href={`/blog/${r.slug}`} ><a className="mb-8 block">
-                  <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image></a>
+                  <Link href={`/blog/${r.slug}`} ><a className="mb-8 block">
+                    <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image></a>
                   </Link>
                   <h3 className="blog-title">
-                    <Link href={`/blog/${r.slug}`} ><a className="">{r.frontmatter.title}</a></Link>
+                    <Link href={`/blog/${r.slug}`} ><a>{r.frontmatter.title}</a></Link>
                   </h3>
                 </div>
-                <div className="flex flex-wrap mb-4 ">
-                  <div className="sm:mr-3 mr-1 mb-2">
-                    <div className={` flex ${styles.author}`}>
-                      {
-                        authors.map((a, i) => a.frontmatter.name === r.frontmatter.author && <div  key={i}><img src={a.frontmatter.image} /></div>)
-                      }
-                      <span><Link href={`/authors/${kebabCase(r.frontmatter.author)}`}><a className="blog-tag">{r.frontmatter.author}</a></Link></span>
-                    </div>
-
-                  </div>
-                  <div className="sm:mr-3 mr-1 mb-2">
-                    <small className="text-textLight flex items-center text-base">
-                      <div className="date"><BsFillCalendar2DateFill/></div>
-                      {new Date(r.frontmatter.date).toLocaleDateString("en-US", options)}</small>
-                  </div>
-                  <div className="flex items-center mb-2"> 
-                    <div className="tag"><BsFillTagFill/></div>
+                <div className="flex flex-wrap mb-4">
+                  <div className="flex items-center">
+                    <div className="tag"><BsFillTagFill /></div>
                     {
                       r.frontmatter.category.map((c, i) => (
-                     
+
                         <Link key={i} href={`/categories/${kebabCase(c)}`} >
-                          
-                          <a className={`blog-tag flex items-center mr-1 ${styles.tags}`}>{c} ;</a>
+
+                          <a className={`blog-tag flex items-center mr-1 ${styles.tags}`}>{i==0 ? '' : ','} {c}</a>
                         </Link>
                       ))
                     }
                   </div>
                 </div>
-               <div className=" text-large text-textLight pr-4" dangerouslySetInnerHTML={{ __html: marked.parse(r.content).slice(0, 130) + ' ...' }}>
+                <div className=" text-large text-textLight pr-4" dangerouslySetInnerHTML={{ __html: marked.parse(r.content).slice(0, 120) + ' ...' }}>
+                </div>
+                <div className="flex items-centers my-5">
+                  <div className="sm:mr-3 mr-1 mb-2">
+                    <div className={` flex ${styles.author}`}>
+                      {
+                        authors.map((a, i) => a.frontmatter.name === r.frontmatter.author && <div key={i}><img src={a.frontmatter.image} /></div>)
+                      }
+                    </div>
+                  </div>
+                  <div className="sm:mr-3 mr-1 mb-2">
+                    <span><Link href={`/authors/${kebabCase(r.frontmatter.author)}`}><a className="blog-tag">{r.frontmatter.author}</a></Link></span>
+                    <small className="text-textLight flex items-center text-base">
+                      {new Date(r.frontmatter.date).toLocaleDateString("en-US", options)}</small>
+                  </div>
                 </div>
               </div>
             )

@@ -1,6 +1,6 @@
 ---
 title: "Scientists Are Working on a Pill for Loneliness"
-author: "AZUMI"
+author: "Azumi"
 date: "Thu Dec 30 2021 12:04:21 GMT+0600"
 tag: ["technology", "Creative"]
 category: [tech, Creative]

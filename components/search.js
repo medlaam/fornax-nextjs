@@ -42,7 +42,7 @@ const Search = () => {
     setSearchTerm("");
   };
 
-  let options = { year: "numeric", month: "long", day: "numeric" };
+  let options = { year: "numeric", month: "short", day: "numeric" };
 
   return (
     <>
@@ -84,7 +84,7 @@ const Search = () => {
                               
                                   <Link key={i} href={`/categories/${kebabCase(c)}`} >
                                     
-                                    <a className={`blog-tag flex items-center mr-1 ${styles.tags}`}>{c} ;</a>
+                                    <a className={`blog-tag flex items-center mr-1 ${styles.tags}`}>{i==0 ?'':','} {c}</a>
                                   </Link>
                                 ))
                               }
