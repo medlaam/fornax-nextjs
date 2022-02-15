@@ -10,16 +10,16 @@ const Blogs = ({ postsBlog, authors }) => {
   let options = { year: "numeric", month: "short", day: "numeric" }
   return (
     <div className={styles.container}>
-      <div className="flex flex-wrap justify-center container m-auto mt-10 sm:mt-16 md:mt-24 sm:mb-5 px-8 xl:px-0">
+      <div className="flex flex-wrap justify-center container m-auto mt-10 sm:mt-16 md:mt-24 sm:mb-5 sm:px-8 xl:px-0">
         {
           postsBlog.map((b, i) => {
             return (
-              <div key={i} className="sm:px-2 mb-10 sm:mb-14 bg-body md:w-1/2 lg:w-1/3 overflow-hidden">
+              <div key={i} className="px-4 mb-10 sm:mb-14 bg-body md:w-1/2 lg:w-1/3 overflow-hidden">
                 <div className={styles.cardHeader}>
                   <Link href={`/blog/${b.slug}`} ><a className="mb-4 sm:mb-8 block"> <Image layout="responsive" width={350} height={200} objectFit={'cover'} preload="true" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAANQTFRF2+HjWMCWZAAAAApJREFUeJxjYAAAAAIAAUivpHEAAAAASUVORK5CYII=" src={b.frontmatter.images} ></Image></a>
                   </Link>
-                  <h3 className="blog-title">
-                    <Link href={`/blog/${b.slug}`} ><a>{b.frontmatter.title}</a></Link>
+                  <h3 className="mb-4 block">
+                    <Link href={`/blog/${b.slug}`} ><a className="blog-title">{b.frontmatter.title}</a></Link>
                   </h3>
                 </div>
                 <div className="flex flex-wrap mb-2 sm:mb-4 ">

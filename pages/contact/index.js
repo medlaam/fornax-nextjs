@@ -32,7 +32,7 @@ const Contact = ({ contact }) => {
                       message: 'You must enter your name',
                     },
                   })}
-                  className={`block w-full py-3 border-2 px-4 placeholder-textLight focus:outline-none focus:border-sky-200 focus:ring-sky-200 rounded-md focus:ring-1 focus:ring-offset-1 ${errors ? '' : null
+                  className={`block w-full py-3 border-2 px-4 placeholder-textLight focus:outline-none focus:border-sky-200 focus:ring-sky-200  focus:ring-1 focus:ring-offset-1 ${errors ? '' : null
                     }`}
                   placeholder="Full name"
                 />
@@ -64,7 +64,7 @@ const Contact = ({ contact }) => {
                       message: 'This needs to be a valid email address',
                     },
                   })}
-                  className={`block w-full py-3 border-2 px-4 placeholder-textLight focus:outline-none focus:border-sky-200 focus:ring-sky-200 rounded-md focus:ring-1 focus:ring-offset-1 ${errors ? '' : null
+                  className={`block w-full py-3 border-2 px-4 placeholder-textLight focus:outline-none focus:border-sky-200 focus:ring-sky-200  focus:ring-1 focus:ring-offset-1 ${errors ? '' : null
                     }`}
                   placeholder="Email"
                 />
@@ -79,7 +79,7 @@ const Contact = ({ contact }) => {
                 <input
                   type="text"
                   {...register('phone')}
-                  className="block w-full py-3 border-2 px-4 placeholder-textLight focus:outline-none focus:border-sky-200 focus:ring-sky-200 rounded-md focus:ring-1 focus:ring-offset-1"
+                  className="block w-full py-3 border-2 px-4 placeholder-textLight focus:outline-none focus:border-sky-200 focus:ring-sky-200  focus:ring-1 focus:ring-offset-1"
                   placeholder="Phone"
                 />
               </div>
@@ -103,7 +103,7 @@ const Contact = ({ contact }) => {
                       message: 'Your message must be longer than this!',
                     },
                   })}
-                  className={`block w-full py-3 border-2 px-4 placeholder-textLight focus:outline-none focus:border-sky-200 focus:ring-sky-200 rounded-md focus:ring-1 focus:ring-offset-1 ${errors ? '' : null
+                  className={`block w-full py-3 border-2 px-4 placeholder-textLight focus:outline-none focus:border-sky-200 focus:ring-sky-200  focus:ring-1 focus:ring-offset-1 ${errors ? '' : null
                     }`}
                   placeholder="Message"></textarea>
                 <span className="text-red-400 text-sm py-2">
@@ -113,7 +113,7 @@ const Contact = ({ contact }) => {
               <div className="text-right">
               <button
                   type="submit"
-                  className=" rounded-md primary-button transition duration-300 ease-in-outs bg-primaryColor hover:bg-black">
+                  className="  primary-button transition duration-300 ease-in-outs bg-primaryColor hover:bg-black">
                   Submit
                 </button>
               </div>

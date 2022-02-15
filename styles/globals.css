@@ -20,7 +20,7 @@ body {
   @apply inline-block text-center font-bold text-textColor text-h5 md:text-h4 transition  duration-300 ease-in-out hover:text-primaryColor mb-6;
 }
 .blog-title {
-  @apply text-h5 xl:text-h4 mb-4 block text-textColor transition duration-300 ease-in-out hover:text-primaryColor leading-8 xl:leading-9;
+  @apply text-h5 xl:text-h4   text-textColor transition duration-300 ease-in-out hover:text-primaryColor leading-8 xl:leading-9;
 }
 
 .blog-tag {

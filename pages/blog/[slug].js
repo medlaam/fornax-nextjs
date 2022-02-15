@@ -34,7 +34,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
       <div className={`${styles.singleBlog} container md:m-auto`}>
         <div className="w-full xl:w-2/3 items-center md:m-auto px-8 xl:px-0">
           <div className={`${styles.blogContainer} my-10 sm:mt-16 md:mt-24 sm:mb-16 `}>
-            <h1 className="text-h4 lg:text-h2 leading-8 sm:leading-9 text-textColor mb-4 sm:mb-6">{title}</h1>
+            <h1 className="text-h4 lg:text-h2   text-textColor mb-4 sm:mb-6">{title}</h1>
             <div className="flex items-center sm:justify-between">
               <div className={`flex flex-wrap ${styles.author}`}>
                 <div className="flex items-center mr-1 sm:mr-3 mb-2">
@@ -130,11 +130,11 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
 
         {/* some blog show */}
         <h3 className={`text-textColor text-h3_sm md:text-h3   ${styles.secondHeader}`}>You may also Like</h3>
-        <div className="mt-10 mb-16 md:mb-24 flex flex-wrap justify-center px-8 xl;px-0">
+        <div className="mt-10 mb-10 flex flex-wrap justify-center px-8 xl;px-0">
           {
             recentBlogByAuthor.map((r, i) => {
               return (
-                <div key={i} className="sm:px-2 mb-10 sm:mb-14 bg-body md:w-1/2 lg:w-1/3 overflow-hidden">
+                <div key={i} className="px-4 mb-10 sm:mb-14 bg-body md:w-1/2 lg:w-1/3 overflow-hidden">
                   <div className={styles.cardHeader}>
                     <Link href={`/blog/${r.slug}`} ><a className="mb-8 block">
                       <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image>

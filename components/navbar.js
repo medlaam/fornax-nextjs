@@ -28,8 +28,8 @@ const Navbar = ({ toggle, isOpen }) => {
 
   return (
     <div>
-      <nav className="flex justify-between items-center h-18 bg-body relative shadow-sm" role="navigation">
-        <Link href="/"><a className="md:ml-8 p-4 md:p-8 mt-2">
+      <nav className="px-4 py-4 sm:py-8 sm:px-12 xl:pl-24 xl:pr-20 flex justify-between items-center h-18 bg-body relative shadow-sm" role="navigation">
+        <Link href="/"><a className="">
           <Image width="134" height="29" objectFit="contain" src={logo.parameter.logo}></Image>
         </a></Link>
 
@@ -49,7 +49,7 @@ const Navbar = ({ toggle, isOpen }) => {
             {
               Menu.header.map((h, i) => (
                 <li key={i} className="text-textColor transition  duration-300 ease-in-out hover:text-primaryColor">
-                  <Link href={h.link}><a className={router.pathname == `${h.link}` ? `text-primaryColor p-6` : "p-6"}>{h.menu}</a></Link>
+                  <Link href={h.link}><a className={router.pathname == `${h.link}` ? `text-primaryColor mx-6` : "mx-6"}>{h.menu}</a></Link>
                 </li>
               ))
             }

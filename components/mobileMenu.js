@@ -8,7 +8,7 @@ const MobileMenu = ({ isOpen, toggle }) => {
   return (
     <div className={`${styles.Container} `}>
       <div className={isOpen ? "text-center block shadow-sm" : 'hidden top-0 h-0'}>
-        <ul className={`inline-block ${styles.navLink}`}>
+        <ul className={`inline-block ${styles.navLink} mt-2`}>
           {
             Menu.header.map(n => {
               return (

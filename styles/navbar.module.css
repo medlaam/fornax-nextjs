@@ -1,10 +1,8 @@
 .navLink {
   font-size: 16px;
   font-weight: 600;
-  padding: 15px;
 }
 
-.mobileMenu li{
+.mobileMenu li {
   list-style: none;
 }
-
