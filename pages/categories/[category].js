@@ -16,7 +16,7 @@ import { BsFillCalendar2DateFill } from 'react-icons/bs';
 
 const Category = ({ post, category, authors }) => {
   const blogsByTag = post.filter((p) => p.length > 0);
-  let options = { year: "numeric", month: "long", day: "numeric" };
+  let options = { year: "numeric", month: "short", day: "numeric" };
 
   return (
     <>

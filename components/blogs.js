@@ -8,7 +8,7 @@ import { BsFillTagFill } from 'react-icons/bs';
 import { BsFillCalendar2DateFill } from 'react-icons/bs';
 
 const Blogs = ({ postsBlog, authors }) => {
-  let options = { year: "numeric", month: "long", day: "numeric" }
+  let options = { year: "numeric", month: "short", day: "numeric" }
   return (
     <div className={styles.container}>
       <div className="flex flex-wrap justify-center container m-auto mt-10 sm:mt-16 md:mt-24 sm:mb-5 px-8 xl:px-0">

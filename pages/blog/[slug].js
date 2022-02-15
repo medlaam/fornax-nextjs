@@ -13,8 +13,7 @@ import { getAuthor } from '../../lib/author';
 import shareOption from '../../config/config.json';
 import { kebabCase } from '../../utils/kebabcase';
 import socialIcons from '../../config/config.json';
-import { BsFillTagFill } from 'react-icons/bs';
-import { BsFillCalendar2DateFill } from 'react-icons/bs';
+import { BsFillTagFill, BsFillCalendar2DateFill } from 'react-icons/bs';
 
 export default function PostPage({ frontmatter: { title, date, author, images, tag, category }, content, slug, suggestedBlog, authors }) {
 
@@ -25,7 +24,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
   const authorDetails = authors.filter(a => a.frontmatter.name === author);
 
   const postShare = shareOption.parameter.sharePost;
-  let options = { year: "numeric", month: "long", day: "numeric" };
+  let options = { year: "numeric", month: "short", day: "numeric" };
 
   return (
     <>
@@ -35,21 +34,21 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
       <div className={`${styles.singleBlog} container md:m-auto`}>
         <div className="w-full xl:w-2/3 items-center md:m-auto px-8 xl:px-0">
           <div className={`${styles.blogContainer} my-10 sm:mt-16 md:mt-24 sm:mb-16 `}>
-          <h1 className="text-h4 lg:text-h2 leading-8 sm:leading-9 text-textColor mb-4 sm:mb-6">{title}</h1>
+            <h1 className="text-h4 lg:text-h2 leading-8 sm:leading-9 text-textColor mb-4 sm:mb-6">{title}</h1>
             <div className="flex items-center sm:justify-between">
               <div className={`flex flex-wrap ${styles.author}`}>
                 <div className="flex items-center mr-1 sm:mr-3 mb-2">
-                {
-                  authors.map((a, i) => a.frontmatter.name === author && <div key={i}><img src={a.frontmatter.image} /></div>)
-                }
-                <span className="blog-tag "><Link href={`/authors/${kebabCase(author)}`}><a>{author}</a></Link></span>
-               </div>
+                  {
+                    authors.map((a, i) => a.frontmatter.name === author && <div key={i}><img src={a.frontmatter.image} /></div>)
+                  }
+                  <span className="blog-tag "><Link href={`/authors/${kebabCase(author)}`}><a>{author}</a></Link></span>
+                </div>
                 <div className="flex items-center mr-1 sm:mr-3 mb-2">
                   <small className="text-textLight flex items-center text-base">
-                  <div className="date mr-1"><BsFillCalendar2DateFill /></div> {new Date(date).toLocaleDateString("en-US", options)}</small>
+                    <div className="date mr-1"><BsFillCalendar2DateFill /></div> {new Date(date).toLocaleDateString("en-US", options)}</small>
                 </div>
                 <div className="flex items-center  text-textLight">
-                <div className="tag mr-2"><BsFillTagFill/></div>
+                  <div className="tag mr-2"><BsFillTagFill /></div>
                   {
                     category.map((c, i) => (
                       <Link key={i} href={`/categories/${kebabCase(c)}`}>
@@ -76,7 +75,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
         <div className="md:flex md:justify-between md:w-2/3 block m-auto mb-10 md:mb-20">
           <div className={`text-center md:text-right md:justify-between ${styles.postTag}`}>
             <ul className="flex items-center justify-center ">
-            <div className="tag mr-2"><BsFillTagFill/></div>
+              <div className="tag mr-2"><BsFillTagFill /></div>
               {
                 tag.map((t, i) => (
                   <li key={i}>
@@ -91,11 +90,11 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
             {
               postShare &&
               <div className={`${styles.socialLink} my-5 md:my-0 flex justify-center`}>
-              <a className="social-icon-bg ml-0 bg-facebook" href={`https://www.facebook.com/sharer/sharer.php?u=+https://fornax-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-              <a className="social-icon-bg bg-twitter" href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://fornax-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-              <a className="social-icon-bg bg-instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-              <a className="social-icon-bg bg-dribles " href="/#"><FaDribbble /></a>
-            </div>
+                <a className="social-icon-bg ml-0 bg-facebook" href={`https://www.facebook.com/sharer/sharer.php?u=+https://fornax-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+                <a className="social-icon-bg bg-twitter" href={`https://twitter.com/intent/tweet/?text=What%20else%20do%20we%20need%20to%20make%20this%20a%20success%3f&url=+https://fornax-blogs.netlify.app/blog/${slug}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+                <a className="social-icon-bg bg-instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                <a className="social-icon-bg bg-dribles " href="/#"><FaDribbble /></a>
+              </div>
             }
           </div>
         </div>
@@ -118,14 +117,14 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
               </div>
             </div>
             <ul className={`flex items-center justify-center  ${styles.writersLink}`}>
-                {
-                  socialIcons.socialMedia.map(s => (
-                    <li key={s.name} className="social-icon ">
-                      <a className="ml-5" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
-                    </li>
-                  ))
-                }
-              </ul>
+              {
+                socialIcons.socialMedia.map(s => (
+                  <li key={s.name} className="social-icon ">
+                    <a className="ml-5" href={s.link}><i className={`not-italic ${s.icon}`}></i></a>
+                  </li>
+                ))
+              }
+            </ul>
           </div>
         </div>
 
@@ -137,11 +136,11 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
               return (
                 <div key={i} className="sm:px-2 mb-10 sm:mb-14 bg-body md:w-1/2 lg:w-1/3 overflow-hidden">
                   <div className={styles.cardHeader}>
-                  <Link href={`/blog/${r.slug}`} ><a className="mb-8 block">
-                    <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image>
-                  </a>
-                  </Link>
-                  <h3 className="text-h4 mb-4 blog-title ">
+                    <Link href={`/blog/${r.slug}`} ><a className="mb-8 block">
+                      <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image>
+                    </a>
+                    </Link>
+                    <h3 className="text-h4 mb-4 blog-title ">
                       <Link href={`/blog/${r.slug}`} ><a className="">{r.frontmatter.title}</a></Link>
                     </h3>
                   </div>
@@ -151,7 +150,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
                         {
                           authors.map((a, i) => a.frontmatter.name === r.frontmatter.author && <div key={i}><img src={a.frontmatter.image} /></div>)
                         }
-                        <span><Link href={`/about/${r.frontmatter.author}`}><a className="blog-tag">{r.frontmatter.author}</a></Link></span>
+                        <span><Link href={`/authors/${kebabCase(r.frontmatter.author)}`}><a className="blog-tag">{r.frontmatter.author}</a></Link></span>
                       </div>
 
                     </div>
@@ -161,7 +160,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
                         {new Date(r.frontmatter.date).toLocaleDateString("en-US", options)}</small>
                     </div>
                     <div className="flex items-center">
-                    <div className="tag"><BsFillTagFill/></div>
+                      <div className="tag"><BsFillTagFill /></div>
                       {
                         r.frontmatter.category.map((c, i) => (
                           <Link key={i} href={`/categories/${kebabCase(c)}`} >
@@ -181,7 +180,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
             })
           }
         </div>
-       
+
       </div>
 
     </>
