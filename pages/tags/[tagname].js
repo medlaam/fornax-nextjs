@@ -24,15 +24,15 @@ const TagName = ({ post, tags, authors }) => {
       <Head>
         <title>tagname | {tags}</title>
       </Head>
-      <div className=" text-center m-auto mt-16 md:mt-24 mb-16 ">
+      <div className=" text-center m-auto my-10 sm:mt-16 md:mt-24 sm:mb-16 ">
         <h3 className="text-h3_sm md:text-h3 text-bold">All <span className="text-primaryColor"> {tags}</span> blogs are here</h3>
       </div>
 
-      <div className={` flex flex-wrap justify-center container m-auto mb-16 md:mb-24 ${styles.container}`}>
+      <div className={` flex flex-wrap justify-center container m-auto  mb-6 sm:mb-10 md:mb-24 px-8 xl:px-0 ${styles.container}`}>
         {
           blogsByTag[0].map((r, i) => {
             return (
-              <div key={i} className="px-4 mb-14 bg-body md:w-1/2 lg:w-1/3  overflow-hidden">
+              <div key={i} className="sm:px-2 mb-10 sm:mb-14 bg-body md:w-1/2 lg:w-1/3 overflow-hidden">
                 <div >
                 <Link href={`/blog/${r.slug}`} ><a className="mb-8 block">
                   <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image></a>

@@ -4,7 +4,7 @@ author: "AZUMI"
 date: "Mon Dec 15 2021 12:04:21 GMT+0600"
 tag: ["Inspiration", "tech"]
 category: [Inspiration, tech]
-images: "/15.jpg"
+images: "/17.jpg"
 ---
 
 Books suck. No question about it, almost everyone who writes a book is a crappy writer.
@@ -20,8 +20,6 @@ But that’s ok. There are a few good books out there.
 <br>
 
 ![Important books](/08.jpg)
-
-<br>
 
 I like reading billion-person books. Books, that if read widely, would change a billion lives.
 <br>

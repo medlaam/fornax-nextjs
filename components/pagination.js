@@ -13,11 +13,11 @@ const Pagination = ({ postPerPage, totalPost, page, paginate, hasNextPage, hasPr
 
 
   return (
-    <div className="container m-auto mb-16 md:mb-24">
+    <div className="container m-auto mb-10 sm:mb-16 md:mb-24">
       <ul className={`flex justify-between ${styles.pagination}`}>
         {
           hasPreviousPage ?
-            <li onClick={() => router.push(`/page/${page - 1}`)} className={`px-5 h-10 ${styles.page} transition  duration-300 ease-in-out hover:bg-primaryColor`}>
+            <li onClick={() => router.push(`/page/${page - 1}`)} className={` ${styles.page} transition  duration-300 ease-in-out hover:bg-primaryColor`}>
               <a className={styles.arrow}><FaAngleLeft /></a>
             </li> :
             <button disabled className={`px-5 h-10 ${styles.disablePage}`}>

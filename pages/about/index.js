@@ -15,8 +15,8 @@ const About = ({ about }) => {
       </Head>
       {
         about.map((a, i) => (
-          <div key={i} className={`my-24 flex justify-center items-center ${styles.about}`}>
-            <div className="mx-auto w-full max-w-4xl">
+          <div key={i} className={`my-10 sm:my-16 md:my-24 flex justify-center items-center ${styles.about}`}>
+            <div className="px-8 xl:px-0 mx-auto w-full max-w-4xl">
               <div className="relative w-full md:h-37 h-60 mb-6">
                 <Image src={a.frontmatter.image} layout='fill' objectFit="cover" placeholder='blur' priority="true" blurDataURL='/9j/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYAAAAAAQwAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAAHRyWFlaAAABZAAAABRnWFlaAAABeAAAABRiWFlaAAABjAAAABRyVFJDAAABoAAAAChnVFJDAAABoAAAAChiVFJDAAABoAAAACh3dHB0AAAByAAAABRjcHJ0AAAB3AAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAFgAAAAcAHMAUgBHAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABvogAAOPUAAAOQWFlaIAAAAAAAAGKZAAC3hQAAGNpYWVogAAAAAAAAJKAAAA+EAAC2z3Bhcm'></Image>
               </div>
@@ -30,7 +30,7 @@ const About = ({ about }) => {
               ))
             }
               </ul>
-              <div className=" prose-p:text-large leading-9 text-textLight" dangerouslySetInnerHTML={{ __html: marked.parse(a.content) }}>
+              <div className=" prose-p:text-large leading-8 sm:leading-9 text-textLight" dangerouslySetInnerHTML={{ __html: marked.parse(a.content) }}>
               </div>
             </div>
           </div>

@@ -17,12 +17,12 @@ const Authors = ({ authorsData, authorDefaultPage }) => {
       <Head>
         <title>{title}</title>
       </Head>
-      <div className={` my-16 md:my-24 ${styles.about}`}>
+      <div className={` mt-10 sm:mt-16 mb-6 md:mt-24 md:mb-14 xl:my-24 ${styles.about}`}>
         <h1 className="text-center text-textColor text-h2 font-bold">{title}</h1>
-        <div className="flex gap-4 flex-wrap my-10 justify-center mx-auto">
+        <div className="flex gap-4 flex-wrap mt-10  justify-center mx-auto">
           {
             authorsData.map((a, i) => (
-              <div key={i} className="text-center px-8 pt-8 pb-14 shadow-2xl w-2/4 max-w-xl">
+              <div key={i} className="text-center px-8 py-10 md:py-14 shadow-2xl w-full max-w-md mb-10 xl:mb-0">
                 <div className=" mb-6">
                   <Image className="rounded-full" height={150} width={150} objectFit="cover" priority="true" src={a.frontmatter.image} />
                 </div>

@@ -13,7 +13,7 @@ const Contact = ({ contact }) => {
       <Head>
         <title>{contact.frontmatter.title}</title>
       </Head>
-      <div className={`my-24`}>
+      <div className={`my-10 sm:my-16 md:my-24`}>
         <h1 className="text-center text-textColor text-h2 font-bold mb-10">Contact Me</h1>
         <div className={` flex justify-center items-center `}>
           <div className="mx-auto w-full max-w-2xl rounded-xl px-4">

@@ -23,15 +23,15 @@ const Category = ({ post, category, authors }) => {
       <Head>
         <title>tagname | {category}</title>
       </Head>
-      <div className="my-7 text-center m-auto">
+      <div className="px-8 sm:px-0 my-10 sm:mt-16 md:mt-24 sm:mb-16 text-center m-auto">
         <h3 className="text-h3_sm md:text-h3 text-bold">All <span className="text-primaryColor"> {category}</span> Categories blogs are here</h3>
       </div>
 
-      <div className={`my-14 flex flex-wrap justify-center container m-auto ${styles.container}`}>
+      <div className={` sm:mb-4 md:mb-10 flex flex-wrap justify-center container m-auto px-8 xl:px-0 ${styles.container}`}>
         {
           blogsByTag[0].map((r, i) => {
             return (
-              <div key={i} className="px-2 mb-14 bg-body md:w-1/2 lg:w-1/3   overflow-hidden">
+              <div key={i} className="px-2 mb-10 sm:mb-14 bg-body md:w-1/2 lg:w-1/3 overflow-hidden">
                 <div >
                 <Link href={`/blog/${r.slug}`} ><a className="mb-8 block">
                     <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image></a>

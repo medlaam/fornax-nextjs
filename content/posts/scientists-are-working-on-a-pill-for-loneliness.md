@@ -15,8 +15,6 @@ And yet we increasingly find ourselves isolated. Loneliness is no longer a power
 
 ![Important books](/14.jpg)
 
-<br>
-
 It’s hard to compare our collective loneliness against that of previous generations, as we simply haven’t been measuring it consistently, but recent estimates suggest that anywhere from 22% to 75% of American adults are persistently lonely.
 <br>
 <br>

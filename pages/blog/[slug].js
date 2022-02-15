@@ -33,18 +33,18 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
         <title>{title}</title>
       </Head>
       <div className={`${styles.singleBlog} container md:m-auto`}>
-        <div className="w-full xl:w-2/3 items-center md:m-auto ">
-          <div className={`${styles.blogContainer} my-16 md:mt-24 mb-16 `}>
-          <h1 className="text-h2_sm lg:text-h2 text-textColor mb-6">{title}</h1>
+        <div className="w-full xl:w-2/3 items-center md:m-auto px-8 xl:px-0">
+          <div className={`${styles.blogContainer} my-10 sm:mt-16 md:mt-24 sm:mb-16 `}>
+          <h1 className="text-h4 lg:text-h2 leading-8 sm:leading-9 text-textColor mb-4 sm:mb-6">{title}</h1>
             <div className="flex items-center sm:justify-between">
               <div className={`flex flex-wrap ${styles.author}`}>
-                <div className="flex items-center mr-3">
+                <div className="flex items-center mr-1 sm:mr-3 mb-2">
                 {
                   authors.map((a, i) => a.frontmatter.name === author && <div key={i}><img src={a.frontmatter.image} /></div>)
                 }
                 <span className="blog-tag "><Link href={`/authors/${kebabCase(author)}`}><a>{author}</a></Link></span>
                </div>
-                <div className="flex items-center mr-3">
+                <div className="flex items-center mr-1 sm:mr-3 mb-2">
                   <small className="text-textLight flex items-center text-base">
                   <div className="date mr-1"><BsFillCalendar2DateFill /></div> {new Date(date).toLocaleDateString("en-US", options)}</small>
                 </div>
@@ -62,18 +62,18 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
             </div>
           </div>
         </div>
-        <div className="m-auto text-center mb-10">
+        <div className="px-4 xl:px-0 mx-auto text-center mb-10">
           <Image layout={'responsive'} height={140} width={350} objectFit={'cover'} src={images}></Image>
         </div>
 
         {/* Read content from markdown files */}
 
-        <div className=" w-full md:w-2/3 m-auto mb-14">
-          <div className="prose-h1:text-h1 prose-p:text-lg prose-h2:text-h2 prose-h3:text-h3 prose-h4:text-2xl prose-p:mb-6 prose-h4:mb-6 prose-h4:text-black prose-h4:font-bold text-textLight prose-li:mb-5 prose-li:text-large prose-p:leading-8 " dangerouslySetInnerHTML={{ __html: marked.parse(content) }}>
+        <div className="px-8 md:px-0 w-full md:w-2/3 m-auto mb-10 md:mb-14">
+          <div className="prose-h1:text-h1 prose-p:text-lg prose-h2:text-h2 prose-h3:text-h3 prose-h4:text-lg sm:prose-h4:text-2xl prose-p:mb-6 prose-h4:mb-6 prose-h4:text-black prose-h4:font-bold text-textLight prose-li:mb-5 prose-li:text-large prose-p:leading-8 " dangerouslySetInnerHTML={{ __html: marked.parse(content) }}>
           </div>
         </div>
 
-        <div className="md:flex md:justify-between md:w-2/3 block m-auto mb-20">
+        <div className="md:flex md:justify-between md:w-2/3 block m-auto mb-10 md:mb-20">
           <div className={`text-center md:text-right md:justify-between ${styles.postTag}`}>
             <ul className="flex items-center justify-center ">
             <div className="tag mr-2"><BsFillTagFill/></div>
@@ -100,8 +100,8 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
           </div>
         </div>
 
-        <div className={` flex justify-center items-center md:mb-24`}>
-          <div className={`mx-auto w-full max-w-xl px-8 pt-8 pb-14 shadow-2xl ${styles.writer}`}>
+        <div className={` flex justify-center items-center mb-16 md:mb-24`}>
+          <div className={`mx-auto w-full max-w-xl py-8 px-6 sm:px-8 sm:pt-8 sm:pb-14 shadow-2xl ${styles.writer}`}>
             <div className="text-center">
               {
                 authors.map((a, i) => a.frontmatter.name === author && <div key={i} className="flex items-center justify-center mb-5" ><img height={150} width={150} src={a.frontmatter.image} /></div>)
@@ -131,11 +131,11 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
 
         {/* some bloge show */}
         <h3 className={`text-textColor text-h3_sm md:text-h3   ${styles.secondHeader}`}>You may also Like</h3>
-        <div className="mt-10 mb-24 flex flex-wrap justify-center">
+        <div className="mt-10 mb-16 md:mb-24 flex flex-wrap justify-center px-8 xl;px-0">
           {
             recentBlogByAuthor.map((r, i) => {
               return (
-                <div key={i} className="p-4 bg-body md:w-1/2 lg:w-1/3 overflow-hidden">
+                <div key={i} className="sm:px-2 mb-10 sm:mb-14 bg-body md:w-1/2 lg:w-1/3 overflow-hidden">
                   <div className={styles.cardHeader}>
                   <Link href={`/blog/${r.slug}`} ><a className="mb-8 block">
                     <Image layout="responsive" width={350} height={200} objectFit={'cover'} src={r.frontmatter.images} ></Image>
@@ -173,7 +173,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
                     </div>
 
                   </div>
-                  <div className=" text-large text-textLight pr-4">
+                  <div className=" text-base sm:text-large text-textLight pr-4">
                     <span dangerouslySetInnerHTML={{ __html: marked.parse(r.content).slice(0, 130) + ' ...' }} className="text-textLight"></span>
                   </div>
                 </div>

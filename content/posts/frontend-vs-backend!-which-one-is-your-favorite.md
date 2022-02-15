@@ -14,7 +14,6 @@ Front end development is programming which focuses on the visual elements of a w
 <br>
 
 ![Frontend](/02.jpg)
-<br>
 
 #### Front and back end developers work in different languages
 

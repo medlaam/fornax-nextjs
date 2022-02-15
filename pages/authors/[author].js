@@ -16,7 +16,7 @@ const SingleAuthor = ({ authorName, author }) => {
       </Head>
       {
         authors.map((a, i) => (
-          <div key={i} className="my-16 md:my-24 px-4 sm:px-6 flex justify-center items-center">
+          <div key={i} className="my-10 sm:my-16 md:my-24 px-4 sm:px-6 flex justify-center items-center">
             <div className={`mx-auto w-full max-w-xl ${styles.about}`}>
               <div className="text-center">
                 <Image className="rounded-full " height={200} width={200} src={a.frontmatter.image}></Image>
