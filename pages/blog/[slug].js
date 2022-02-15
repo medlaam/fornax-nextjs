@@ -110,7 +110,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
                 <h5 className="author-title"><Link href={`/authors/${kebabCase(author)}`}>{author}</Link></h5>
                 {
                   author && authorDetails.map((a, i) => (
-                    <div className="text-center prose-p:text-large leading-7 mb-8 text-textLight" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}>
+                    <div key={i} className="text-center prose-p:text-large leading-7 mb-8 text-textLight" dangerouslySetInnerHTML={{ __html: marked.parse(a.content).slice(0, 150) }}>
                     </div>
                   ))
                 }
@@ -180,7 +180,6 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
             })
           }
         </div>
-
       </div>
 
     </>
