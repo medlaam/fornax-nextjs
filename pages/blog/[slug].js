@@ -47,7 +47,7 @@ export default function PostPage({ frontmatter: { title, date, author, images, t
                   <small className="text-textLight flex items-center text-base">
                     <div className="date mr-1"><BsFillCalendar2DateFill /></div> {new Date(date).toLocaleDateString("en-US", options)}</small>
                 </div>
-                <div className="flex items-center  text-textLight">
+                <div className="flex items-center  text-textLight mr-1 sm:mr-3 mb-2">
                   <div className="tag mr-2"><BsFillTagFill /></div>
                   {
                     category.map((c, i) => (
